@@ -9,6 +9,8 @@ import static org.junit.Assert.*;
 
 public class BusDriverFactoryTest {
 
+
+
     @Before
     public void setUp() throws Exception {
 
@@ -25,7 +27,7 @@ public class BusDriverFactoryTest {
         BusDriver s=BusDriverFactory.getBusDriver(name,lname,license,age);
 
         System.out.println(s);
-        Assert.assertNotNull(s.getDriverName());
+
 
 
     }
