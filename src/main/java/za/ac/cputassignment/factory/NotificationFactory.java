@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.Notification;
+import za.ac.cputassignment.domain.eventTriggs.Notification;
 
 public class NotificationFactory {
 

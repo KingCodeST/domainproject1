@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.BusInfor;
+import za.ac.cputassignment.domain.transport.BusInfor;
 
 public class BusInforFactory {
 

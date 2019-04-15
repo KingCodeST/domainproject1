@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.Bus;
+import za.ac.cputassignment.domain.transport.Bus;
 
 public class BusFactory {
 

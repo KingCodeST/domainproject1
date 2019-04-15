@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.Student;
+import za.ac.cputassignment.domain.person.Student;
 
 public class StudentFactory {
 

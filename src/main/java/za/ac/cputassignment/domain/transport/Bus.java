@@ -1,4 +1,4 @@
-package za.ac.cputassignment.domain;
+package za.ac.cputassignment.domain.transport;
 
 public class Bus {
 

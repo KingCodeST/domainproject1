@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.DriverInfor;
+import za.ac.cputassignment.domain.person.DriverInfor;
 
 public class DriverInforFactory {
 
