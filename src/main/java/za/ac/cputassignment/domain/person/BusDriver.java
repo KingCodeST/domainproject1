@@ -1,6 +1,8 @@
 package za.ac.cputassignment.domain.person;
 
-public class BusDriver {
+import za.ac.cputassignment.domain.login.User;
+
+public class BusDriver implements User {
 
     private String driverID, driverName,driverLastName,licanseCode;
     private int age;
@@ -34,6 +36,26 @@ public class BusDriver {
     public int getAge()
     {
         return  age;
+    }
+
+    @Override
+    public void profile() {
+        
+    }
+
+    @Override
+    public void editProfile() {
+
+    }
+
+    @Override
+    public void userName() {
+
+    }
+
+    @Override
+    public void passWord() {
+
     }
 
     public static class Builder{

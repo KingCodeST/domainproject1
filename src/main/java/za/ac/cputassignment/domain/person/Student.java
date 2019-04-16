@@ -1,8 +1,10 @@
 package za.ac.cputassignment.domain.person;
 
+import za.ac.cputassignment.domain.login.User;
+
 import java.util.Objects;
 
-public class Student {
+public class Student implements User {
 
         private String studentNum;
         private String firstname,lastname;
@@ -36,6 +38,26 @@ public class Student {
 
     public int getAge() {
         return age;
+    }
+
+    @Override
+    public void profile() {
+
+    }
+
+    @Override
+    public void editProfile() {
+
+    }
+
+    @Override
+    public void userName() {
+
+    }
+
+    @Override
+    public void passWord() {
+
     }
 
     public static class Builder{

@@ -1,5 +1,6 @@
 package za.ac.cputassignment.factory;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.cputassignment.domain.person.BusDriver;
@@ -23,6 +24,7 @@ public class BusDriverFactoryTest {
         int     age=34;
         BusDriver s=BusDriverFactory.getBusDriver(name,lname,license,age);
 
+        Assert.assertEquals(name,s.getDriverName());
         System.out.println(s);
 
 

@@ -1,4 +1,15 @@
 package za.ac.cputassignment.domain.person;
 
-public class DriverInfor {
+import java.util.ArrayList;
+import java.util.List;
+
+public class DriverInfor   {
+
+    List<BusDriver>    busDriverList= new ArrayList<BusDriver>();
+
+
+
+
+
+
 }

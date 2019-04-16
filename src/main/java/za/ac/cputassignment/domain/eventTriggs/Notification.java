@@ -8,7 +8,7 @@ public class Notification  {
 
 
 
-    private Notification(){}
+    public Notification(){}
 
 
 
