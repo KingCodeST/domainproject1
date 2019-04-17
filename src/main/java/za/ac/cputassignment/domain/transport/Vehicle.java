@@ -1,4 +1,16 @@
 package za.ac.cputassignment.domain.transport;
 
-public class Vehicle {
+public interface Vehicle {
+
+    public  void VehicleType();
+
+    public void LicenseDisk();
+
+    public void Service();
+
+
+
+
+
+
 }

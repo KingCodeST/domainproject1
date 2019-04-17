@@ -4,11 +4,15 @@ import za.ac.cputassignment.factory.NotificationFactory;
 
 import java.util.Date;
 
-public class Notification  {
+public interface Notification  {
 
 
 
-    public Notification(){}
+   public void Color();
+
+   public void Distance();
+
+   public void Time();
 
 
 
