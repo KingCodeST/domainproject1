@@ -4,14 +4,16 @@ import za.ac.cputassignment.domain.transport.Van;
 
 public class VanFactory {
 
-    public static Van getVan(String brand,String plate,double patrol)
+
+
+    public static Van getVan()
     {
 
         return  new Van.Builder()
 
-                .brand(brand)
-                .numPlate(plate)
-                .patrol(patrol)
+                .brand("BMW")
+                .numPlate("CEM87930")
+                .patrol(90.9)
                 .build();
 
 

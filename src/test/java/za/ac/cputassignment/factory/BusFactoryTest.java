@@ -17,7 +17,7 @@ public class BusFactoryTest {
     }
 
     @Test
-    public void getBus(String brands,int engine,String sms,int nam,String woth) {
+    public void getBus() {
 
         String brand="Toyota";
         int    enginee=564930;
@@ -27,14 +27,14 @@ public class BusFactoryTest {
 
 
         b=new Bus.Builder()
-                .brandName(brands)
-                .engineNumber(engine)
-                .modelNo(sms)
-                .quantity(nam)
-                .roadWorty(woth)
+                .brandName(brand)
+                .engineNumber(enginee)
+                .modelNo(sm)
+                .quantity(num)
+                .roadWorty(worthy)
                 .build();
 
-
+        Assert.assertNotNull(b);
 
     }
 }

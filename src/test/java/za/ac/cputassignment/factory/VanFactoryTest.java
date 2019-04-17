@@ -18,11 +18,10 @@ public class VanFactoryTest {
     public void getVan() {
 
         car=new Van.Builder()
-
-                .numPlate("CA323")
-                .brand("Farrari")
-                .patrol(50.0)
-                .build();
+                   .numPlate("CA3238")
+                   .brand("Farrari")
+                   .patrol(50.0)
+                   .build();
 
         Assert.assertNotNull(car);
 
