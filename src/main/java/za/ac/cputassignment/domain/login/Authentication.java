@@ -1,4 +1,11 @@
 package za.ac.cputassignment.domain.login;
 
-public class Authentication {
+public interface Authentication {
+
+    public void validate();
+    public void forgotPassword();
+
+
+
+
 }

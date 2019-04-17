@@ -5,10 +5,6 @@ import za.ac.cputassignment.domain.eventTriggs.Timetable;
 public class TimetableFactory {
 
 
-    public  static Timetable getTimetable()
-    {
-        return  new Timetable();
-    }
 
 
 
