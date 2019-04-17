@@ -13,5 +13,8 @@ public class LocationInforFactoryTest {
 
     @Test
     public void getLocationInfor() {
+
+
+
     }
 }

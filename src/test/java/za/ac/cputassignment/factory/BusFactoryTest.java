@@ -36,7 +36,7 @@ public class BusFactoryTest {
 
      Assert.assertNull(b.getBrandName());
 
-
+    Assert.assertEquals(b,b.getBrandName());
 
     }
 }

@@ -13,5 +13,8 @@ public class LocationFactoryTest {
 
     @Test
     public void getLocation() {
+
+        String
+
     }
 }

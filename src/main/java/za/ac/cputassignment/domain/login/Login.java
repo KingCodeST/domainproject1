@@ -1,6 +1,5 @@
 package za.ac.cputassignment.domain.login;
 
-import sun.security.util.Password;
 
 import java.util.Objects;
 
@@ -8,7 +7,7 @@ public class Login {
 
     private String loginId;
     private String username;
-    private Password password;
+    private String password;
 
     private Login (){}
 
@@ -25,7 +24,7 @@ public class Login {
         return username;
     }
 
-    public Password getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -37,7 +36,7 @@ public class Login {
     {
         private String loginId;
         private String username;
-        private Password password;
+        private String password;
 
         public Builder loginId(String loginId)
         {
@@ -51,7 +50,7 @@ public class Login {
             return this;
         }
 
-        public Builder password(Password password)
+        public Builder password(String password)
         {
             this.password =password;
             return this;

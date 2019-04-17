@@ -1,7 +1,5 @@
 package za.ac.cputassignment.domain.transport;
 
-import org.graalvm.compiler.nodes.extended.ValueAnchorNode;
-
 import java.util.Objects;
 
 public class Van implements Vehicle {
