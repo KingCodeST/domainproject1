@@ -1,9 +1,12 @@
 package za.ac.cputassignment.domain.location;
 
-public class Residence {
+import java.util.Objects;
+
+public class Residence implements Location {
 
     private String residenceName;
     private int redisenceId;
+    private String Address;
 
     private Residence (){}
 
@@ -12,6 +15,7 @@ public class Residence {
     {
         this.residenceName=builder.residenceName;
         this.redisenceId =builder.redisenceId;
+        this.Address  =builder.address;
 
     }
 
@@ -23,10 +27,30 @@ public class Residence {
         return redisenceId;
     }
 
+    public String getAddress() {
+        return Address;
+    }
+
+    @Override
+    public void LocationName() {
+        
+    }
+
+    @Override
+    public void numberStudents() {
+
+    }
+
+    @Override
+    public void RideInfor() {
+
+    }
+
     public static class Builder
     {
         private int redisenceId;
         private String residenceName;
+        private String address;
 
 
         public Builder residenceId(int residenceId)
@@ -41,6 +65,12 @@ public class Residence {
             return this;
         }
 
+        public  Builder address(String address)
+        {
+            this.address =address;
+            return  this;
+        }
+
 
 
         public  Residence build()
@@ -50,4 +80,26 @@ public class Residence {
 
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Residence residence = (Residence) o;
+        return redisenceId == residence.redisenceId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(redisenceId);
+    }
+
+    @Override
+    public String toString() {
+        return "Residence{" +
+                "residenceName='" + residenceName + '\'' +
+                ", redisenceId=" + redisenceId +
+                ", Address='" + Address + '\'' +
+                '}';
+    }
 }
