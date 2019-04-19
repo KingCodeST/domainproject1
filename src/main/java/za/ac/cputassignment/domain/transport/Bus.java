@@ -1,6 +1,6 @@
 package za.ac.cputassignment.domain.transport;
 
-public class Bus {
+public class Bus implements  Vehicle{
 
     private String busId;
     private String brandName;
@@ -45,6 +45,21 @@ public class Bus {
 
     public String getRoadWorthy() {
         return roadWorthy;
+    }
+
+    @Override
+    public void VehicleType() {
+
+    }
+
+    @Override
+    public void LicenseDisk() {
+
+    }
+
+    @Override
+    public void Service() {
+
     }
 
     public static class Builder{
