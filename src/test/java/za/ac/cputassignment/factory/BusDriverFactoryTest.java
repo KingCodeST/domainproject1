@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.person.BusDriver;
 
 public class BusDriverFactoryTest {
 
-
+    BusDriver s;
 
     @Before
     public void setUp() throws Exception {
@@ -18,16 +18,21 @@ public class BusDriverFactoryTest {
     @Test
     public void getBusDriver() {
 
-        String name ="Michael ";
+        String dname ="Michael ";
         String lname="valia";
         String license="code19";
         int     age=34;
-        BusDriver s=BusDriverFactory.getBusDriver(name,lname,license,age);
 
-        Assert.assertEquals(name,s.getDriverName());
-        System.out.println(s);
+         s=new BusDriver.Builder()
+                        .driverLastName(lname)
+                        .driverName(dname)
+                        .age(age)
+                        .licanseCode(license)
+
+                        .build();
 
 
+    Assert.assertNotNull(s);
 
     }
 }
