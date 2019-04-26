@@ -22,4 +22,30 @@ public class BusRepositoryImpl implements BusRepository {
     }
 
 
+    @Override
+    public Set<Bus> getAll() {
+        return this.buses;
+    }
+
+    @Override
+    public Bus create(Bus bus) {
+        this.buses.add(bus);
+
+        return bus;
+    }
+
+    @Override
+    public Bus update(Bus bus) {
+        return null;
+    }
+
+    @Override
+    public void delete(String s) {
+
+    }
+
+    @Override
+    public Bus read(String s) {
+        return null;
+    }
 }
