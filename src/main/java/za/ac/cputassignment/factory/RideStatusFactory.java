@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.eventTriggs.RideStatus;
+import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 
 public class RideStatusFactory {
 

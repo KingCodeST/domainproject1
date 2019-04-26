@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.eventTriggs.TimetableInfo;
+import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 
 public class TimetableInfoFactory {
 

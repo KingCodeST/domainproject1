@@ -1,4 +1,4 @@
-package za.ac.cputassignment.domain.eventTriggs;
+package za.ac.cputassignment.domain.eventTrigger;
 
 import za.ac.cputassignment.domain.location.Location;
 import za.ac.cputassignment.domain.transport.Vehicle;

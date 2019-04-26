@@ -3,9 +3,7 @@ package za.ac.cputassignment.factory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cputassignment.domain.eventTriggs.Ride;
-
-import static org.junit.Assert.*;
+import za.ac.cputassignment.domain.eventTrigger.Ride;
 
 public class RideFactoryTest {
         Ride rd;

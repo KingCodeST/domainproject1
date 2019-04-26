@@ -1,4 +1,4 @@
-package za.ac.cputassignment.domain.eventTriggs;
+package za.ac.cputassignment.domain.eventTrigger;
 
 import java.util.Date;
 

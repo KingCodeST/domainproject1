@@ -2,9 +2,7 @@ package za.ac.cputassignment.factory;
 
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cputassignment.domain.eventTriggs.Timetable;
-
-import static org.junit.Assert.*;
+import za.ac.cputassignment.domain.eventTrigger.Timetable;
 
 public class TimetableFactoryTest {
 

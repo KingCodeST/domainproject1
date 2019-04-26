@@ -1,6 +1,6 @@
 package za.ac.cputassignment.factory;
 
-import za.ac.cputassignment.domain.eventTriggs.ArletInfor;
+import za.ac.cputassignment.domain.eventTrigger.ArletInfor;
 
 public class ArletInforFactory {
 
