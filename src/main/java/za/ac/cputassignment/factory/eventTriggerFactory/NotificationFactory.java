@@ -1,4 +1,4 @@
-package za.ac.cputassignment.factory;
+package za.ac.cputassignment.factory.eventTriggerFactory;
 
 public class NotificationFactory {
 //

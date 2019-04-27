@@ -1,4 +1,4 @@
-package za.ac.cputassignment.factory;
+package za.ac.cputassignment.factory.eventTriggerFactory;
 
 import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 

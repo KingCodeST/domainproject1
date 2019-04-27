@@ -1,4 +1,4 @@
-package za.ac.cputassignment.factory;
+package za.ac.cputassignment.factory.loginFactory;
 
 import za.ac.cputassignment.domain.login.Logout;
 

@@ -1,4 +1,4 @@
-package za.ac.cputassignment.factory;
+package za.ac.cputassignment.factory.transportFactory;
 
 import za.ac.cputassignment.domain.transport.Bus;
 

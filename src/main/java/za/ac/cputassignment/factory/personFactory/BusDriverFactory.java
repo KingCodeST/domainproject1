@@ -1,4 +1,4 @@
-package za.ac.cputassignment.factory;
+package za.ac.cputassignment.factory.personFactory;
 
 import za.ac.cputassignment.domain.person.BusDriver;
 

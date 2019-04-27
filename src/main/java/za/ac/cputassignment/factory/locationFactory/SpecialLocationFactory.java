@@ -1,4 +1,4 @@
-package za.ac.cputassignment.factory;
+package za.ac.cputassignment.factory.locationFactory;
 
 import za.ac.cputassignment.domain.location.SpecialLocation;
 
