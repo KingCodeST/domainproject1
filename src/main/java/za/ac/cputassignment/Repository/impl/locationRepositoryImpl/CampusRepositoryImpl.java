@@ -24,15 +24,20 @@ public class CampusRepositoryImpl implements CampusRepository {
 
     public Campus read(String campusId)
     {
+
         return null;
     }
 
     public void delete(String campusId)
     {
+        this.campusSet.remove(campusId);
+
+
     }
 
     public Campus update(Campus campus)
     {
+        this.campusSet.addAll(getAll());
         return campus;
     }
 
