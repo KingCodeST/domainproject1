@@ -11,7 +11,7 @@ public class CampusRepositoryImpl implements CampusRepository {
     private static CampusRepositoryImpl repository=null;
     private Set<Campus> campusSet;
 
-    private CampusRepositoryImpl getRepository()
+    public static CampusRepositoryImpl getRepository()
     {
         if(repository==null) repository =new CampusRepositoryImpl();
         return repository;

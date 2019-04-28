@@ -9,7 +9,9 @@ public class TimetableInfoFactory {
     {
 
 
-        return  new TimetableInfo();
+        return  new TimetableInfo.Builder()
+                                .timetableId(12)
+                                .build();
 
 
     }

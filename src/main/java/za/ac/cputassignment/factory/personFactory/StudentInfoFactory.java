@@ -6,7 +6,9 @@ public class StudentInfoFactory {
 
     public  static StudentInfo getStudentInfo()
     {
-        return  new StudentInfo();
+        return  new StudentInfo.Builder()
+                                .address("1836 tambo hermanus")
+                                .build();
     }
 
 
