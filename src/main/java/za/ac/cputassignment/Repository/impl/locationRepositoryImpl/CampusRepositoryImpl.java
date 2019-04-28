@@ -5,6 +5,7 @@ import za.ac.cputassignment.domain.location.Campus;
 
 import java.util.Set;
 
+
 public class CampusRepositoryImpl implements CampusRepository {
 
     private static CampusRepositoryImpl repository=null;
