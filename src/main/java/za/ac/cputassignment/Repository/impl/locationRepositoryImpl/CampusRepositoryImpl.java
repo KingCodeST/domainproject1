@@ -2,6 +2,7 @@ package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
 import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.domain.location.Campus;
+import za.ac.cputassignment.factory.locationFactory.CampusFactory;
 
 import java.util.Set;
 
@@ -10,6 +11,8 @@ public class CampusRepositoryImpl implements CampusRepository {
 
     private static CampusRepositoryImpl repository=null;
     private Set<Campus> campusSet;
+    Campus campuss;
+    CampusFactory campusFactory;
 
     public static CampusRepositoryImpl getRepository()
     {
