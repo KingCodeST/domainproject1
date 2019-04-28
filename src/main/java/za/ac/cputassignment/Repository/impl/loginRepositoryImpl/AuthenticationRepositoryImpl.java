@@ -40,6 +40,7 @@ public class AuthenticationRepositoryImpl implements AuthenticationRepository {
 
     @Override
     public Authentication read(String s) {
+       this.getAll();
         return null;
     }
 }

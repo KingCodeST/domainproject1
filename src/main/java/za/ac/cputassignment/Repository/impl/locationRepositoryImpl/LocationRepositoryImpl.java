@@ -29,18 +29,20 @@ public class LocationRepositoryImpl implements LocationRepository {
 
     public Location read(String locationId)
     {
-
+        this.locations.containsAll(getAll());
         return null;
     }
 
     public Location update(Location location)
     {
+        this.create(location);
+
         return null;
     }
 
     public void delete(String student)
     {
-
+        this.locations.remove(student);
     }
 
     public Set<Location> getAll()
