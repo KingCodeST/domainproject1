@@ -2,6 +2,9 @@ package za.ac.cputassignment.domain.location;
 
 import java.util.Objects;
 
+
+
+
 public class Campus {
 
     private String campusname;
