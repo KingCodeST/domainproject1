@@ -1,7 +1,8 @@
 package za.ac.cputassignment.domain.person;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import za.ac.cputassignment.domain.login.User;
-
+@EntityScan
 public class BusDriver implements User {
 
     private String driverID, driverName,driverLastName,licanseCode;

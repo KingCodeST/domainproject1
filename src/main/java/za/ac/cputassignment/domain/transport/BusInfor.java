@@ -1,5 +1,8 @@
 package za.ac.cputassignment.domain.transport;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@EntityScan
 public class BusInfor implements Vehicle{
 
 
