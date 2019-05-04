@@ -37,7 +37,11 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public Student update(Student student) {
-        return null;
+
+        for(Student r: students)
+        students.add(r);
+
+        return student;
     }
 
     @Override
