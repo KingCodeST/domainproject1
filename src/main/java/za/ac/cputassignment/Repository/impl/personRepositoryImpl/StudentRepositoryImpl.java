@@ -38,19 +38,41 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public Student update(Student student) {
 
-        for(Student r: students)
-        students.add(r);
+        if(students.contains(student))
+        {
+            for(Student st: students)
+            {
+                if(st.equals(student))
+                    return st;
+            }
+        }
 
-        return student;
+        return  null;
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String studentId) {
+        for(Student sth: students)
+        {
+            if(sth.getStudentNum().equals(studentId))
+            {
+                students.remove(studentId);
+            }
+
+        }
 
     }
 
     @Override
     public Student read(String s) {
+
+        for(Student st: students)
+        {
+            s.equals(st);
+        }
+
         return null;
+
+
     }
 }
