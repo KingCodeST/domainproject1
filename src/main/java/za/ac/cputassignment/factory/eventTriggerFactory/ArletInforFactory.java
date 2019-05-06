@@ -6,7 +6,7 @@ public class ArletInforFactory {
 
     public static ArletInfor getArletInfor()
     {
-        return  new ArletInfor();
+        return  new ArletInfor("Blue","Grye","Frid","Glwo");
     }
 
 }

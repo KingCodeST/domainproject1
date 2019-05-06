@@ -8,12 +8,15 @@ public class ArletInfor {
 
     private int id;
 
+    public ArletInfor(String bluee, String bluer, String greye, String er) {
+    }
+
     public int getId() {
         return id;
     }
 
     private String blue,red,greed;
-    private Date simpledate;
+    private String simpledate;
 
     public String getBlue() {
         return blue;
@@ -31,7 +34,7 @@ public class ArletInfor {
         return greed;
     }
 
-    public Date getSimpledate() {
+    public String getSimpledate() {
         return simpledate;
 
 
@@ -49,7 +52,7 @@ public class ArletInfor {
         this.greed = greed;
     }
 
-    public void setSimpledate(Date simpledate) {
+    public void setSimpledate(String simpledate) {
         this.simpledate = simpledate;
     }
 
