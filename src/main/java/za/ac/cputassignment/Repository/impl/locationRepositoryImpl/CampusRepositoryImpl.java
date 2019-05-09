@@ -29,7 +29,7 @@ public class CampusRepositoryImpl implements CampusRepository {
     public Campus read(String campusId)
     {
 
-        return campusSet.stream().filter(g->getAll().equals(campusId)).findFirst().get();
+        return repository.read(campusId);
     }
 
     public void delete(String campusId)

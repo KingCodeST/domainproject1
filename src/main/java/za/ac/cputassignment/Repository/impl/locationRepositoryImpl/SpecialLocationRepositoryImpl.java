@@ -38,7 +38,7 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
 
     @Override
     public void delete(String s) {
-
+        repository.delete(s);
     }
 
     @Override
