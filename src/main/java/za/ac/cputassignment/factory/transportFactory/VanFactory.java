@@ -6,7 +6,7 @@ public class VanFactory {
 
 
 
-    public static Van getVan()
+    public static Van getVan(String id,String brand,String numPlate,double patrol)
     {
 
         return  new Van.Builder()
@@ -20,5 +20,7 @@ public class VanFactory {
     }
 
 
-
+    public static Van BuildVan(String test_van) {
+        return null;
+    }
 }

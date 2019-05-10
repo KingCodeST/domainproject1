@@ -6,7 +6,9 @@ public class BusInforFactory {
 
     public static BusInfor getBusInfor()
     {
-        return  new BusInfor();
+        return  new BusInfor.Builder()
+                            .yearsofservice(1)
+                            .buid();
 
     }
 

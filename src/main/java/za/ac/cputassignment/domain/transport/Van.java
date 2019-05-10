@@ -10,7 +10,7 @@ public class Van implements Vehicle {
     private String numPlate;
     private String brand;
     private double patrol;
-    private int vanId;
+    private String vanId;
 
 
     private Van(Builder builder)
@@ -25,7 +25,7 @@ public class Van implements Vehicle {
 
     private Van() {}
 
-    public int getVanId()
+    public String getVanId()
     {
         return  vanId;
     }
@@ -48,7 +48,7 @@ public class Van implements Vehicle {
         private String numPlate;
         private String brand;
         private double patrol;
-        private int vanId;
+        private String vanId;
 
         public Builder numPlate(String numPlate)
         {
@@ -69,7 +69,7 @@ public class Van implements Vehicle {
         }
 
 
-        public Builder vanId(int vanId)
+        public Builder vanId(String vanId)
         {
             this.vanId =vanId;
             return this;

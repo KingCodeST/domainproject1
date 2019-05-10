@@ -2,7 +2,7 @@ package za.ac.cputassignment.Repository.impl.trasportRepositoryImpl;
 
 import za.ac.cputassignment.Repository.trasportRepository.BusRepository;
 import za.ac.cputassignment.domain.transport.Bus;
-import za.ac.cputassignment.domain.transport.BusInfor;
+import za.ac.cputassignment.domain.transport.Bus;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -21,6 +21,11 @@ public class BusRepositoryImpl implements BusRepository {
         return repository;
     }
 
+    private Bus findBus(String busId)
+    {
+        return (Bus) this.buses.stream().filter(bus -> bus.getBusId().trim().equals(busId))
+                .findAny().orElse(null);
+    }
 
     @Override
     public Set<Bus> getAll() {
@@ -36,16 +41,23 @@ public class BusRepositoryImpl implements BusRepository {
 
     @Override
     public Bus update(Bus bus) {
+        Bus toDelete =findBus(bus.getBusId());
+        if(toDelete !=null){
+            this.buses.remove(toDelete);
+        return create(bus);}
         return null;
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String busId) {
+        Bus bus =findBus(busId);
+        if(bus !=null) this.buses.remove(busId);
 
     }
 
     @Override
-    public Bus read(String s) {
+    public Bus read(String busId) {
+        Bus bus=findBus(busId);
         return null;
     }
 }

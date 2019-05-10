@@ -5,6 +5,7 @@ import za.ac.cputassignment.domain.transport.Van;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class VanRepositoryImpl implements VanRepository {
 
@@ -14,6 +15,13 @@ public class VanRepositoryImpl implements VanRepository {
     private VanRepositoryImpl()
     {
         this.vans =new HashSet<>();
+    }
+
+
+    private Van findVan(String vanId)
+    {
+        return this.vans.stream()
+                .filter(van -> van.getVanId().trim().equals(vanId)).findAny().orElse(null);
     }
 
     public static VanRepository getRepository()
@@ -40,12 +48,16 @@ public class VanRepositoryImpl implements VanRepository {
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String vanId) {
+       Van van=findVan(vanId);
+        if(van !=null) this.vans.remove(van);
+
 
     }
 
     @Override
-    public Van read(String s) {
-        return null;
+    public Van read( String vanId) {
+        Van van= findVan(vanId);
+        return van;
     }
 }
