@@ -10,7 +10,7 @@ public class VanFactory {
     {
 
         return  new Van.Builder()
-
+                .vanId("")
                 .brand("BMW")
                 .numPlate("CEM87930")
                 .patrol(90.9)
@@ -20,7 +20,5 @@ public class VanFactory {
     }
 
 
-    public static Van BuildVan(String test_van) {
-        return null;
-    }
+
 }
