@@ -2,35 +2,39 @@ package za.ac.cputassignment.Repository.impl.trasportRepositoryImpl;
 
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusDriverRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
+import za.ac.cputassignment.Repository.trasportRepository.BusInforRepository;
 import za.ac.cputassignment.domain.person.BusDriver;
+import za.ac.cputassignment.domain.transport.BusInfor;
 
 import java.util.Set;
 
-public class BusInforRepositoryImpl implements BusDriverRepository {
+public class BusInforRepositoryImpl implements BusInforRepository {
 
-    private static BusDriverRepositoryImpl repository=null;
-    private Set<BusDriver> busDrivers;
+    //   private static StudentRepositoryImpl repository=null;
+    //    private  Set<Student> students;
 
-    private BusDriverRepository getRepository()
+    private static BusInforRepositoryImpl repository=null;
+    private Set<BusInforRepository> busInforRepositorySet;
+
+    private BusInfor findBusInfor(String busInforId)
     {
-        if(repository ==null) repository =new BusDriverRepositoryImpl();
-        return repository;
+        return this.busInforRepositorySet.stream()
+                    .filter(businfor ->
+    }
 
+
+    @Override
+    public Set<BusInfor> getAll() {
+        return null;
     }
 
     @Override
-    public Set<BusDriver> getAll() {
-        return this.busDrivers;
+    public BusInfor create(BusInfor busInfor) {
+        return null;
     }
 
     @Override
-    public BusDriver create(BusDriver busDriver) {
-        this.busDrivers.add(busDriver);
-        return busDriver;
-    }
-
-    @Override
-    public BusDriver update(BusDriver busDriver) {
+    public BusInfor update(BusInfor busInfor) {
         return null;
     }
 
@@ -40,7 +44,7 @@ public class BusInforRepositoryImpl implements BusDriverRepository {
     }
 
     @Override
-    public BusDriver read(String s) {
+    public BusInfor read(String s) {
         return null;
     }
 }

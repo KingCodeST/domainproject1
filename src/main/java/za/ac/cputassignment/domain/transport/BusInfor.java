@@ -5,7 +5,50 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @EntityScan
 public class BusInfor implements Vehicle{
 
+    private String id;
+    private int yearsofservice;
 
+    private BusInfor(){}
+
+    public  BusInfor(Builder build)
+    {
+        super();
+        this.id =build.id;
+        this.yearsofservice=build.yearsofservice;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public int getYearsofservice() {
+        return yearsofservice;
+    }
+
+    public static class Builder
+    {
+        private String id;
+        private int yearsofservice;
+
+        public Builder id(String id)
+        {
+            this.id=id;
+            return this;
+        }
+
+        public Builder yearsofservice(int yearsofservice)
+        {
+            this.yearsofservice =yearsofservice;
+            return this;
+        }
+
+
+        public BusInfor buid()
+        {
+            return new BusInfor();
+        }
+
+    }
 
     @Override
     public void VehicleType() {
