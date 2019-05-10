@@ -28,31 +28,40 @@ public class VanRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = (VanRepositoryImpl) VanRepositoryImpl.getRepository();
-        this.van = getVan("Test Van","BL$#233","CA3234",8.09);
+        van =new Van.Builder().vanId("test van")
+                              .patrol(9.0)
+                              .numPlate("CA3234")
+                              .brand("BL$#233")
+                              .brand("Toyota")
+                              .build();
+       // this.van = getVan("Test Van","BL$#233","CA3234",8.09);
+        System.out.println("The object"+van);
 
     }
-
-
-
-
-
-
-
     @Test
     public void a_create() {
-        Van createdvan =this.repository.create(this.van);
+        Van createdvan =this.repository.create(van);
         System.out.println("In create, createdvan ="+createdvan);
         d_getAll();
         Assert.assertSame(createdvan,this.van);
     }
 
     @Test
-    public void update() {
+    public void c_update() {
+        String newvan ="Test Van";
+        String brasnd="CA434";
+        String numplate="C232";
+        double petrol =9.00;
+//      00//  Van van1 = new Van.Builder().copy(getSavedVan();
+//        System.out.println("In update, about to update"+ van1);
+//        Van updated =this.repository.update(van1);
+//        System.out.println("In Update,Updated = "+updated);
+//        assertSame(van1,updated);
 
     }
 
     @Test
-    public void c_delete() {
+    public void e_delete() {
         Van savedVan=getSavedVan();
         this.repository.delete(savedVan.getVanId());
         d_getAll();

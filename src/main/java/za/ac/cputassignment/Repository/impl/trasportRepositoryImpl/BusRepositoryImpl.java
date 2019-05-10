@@ -23,7 +23,7 @@ public class BusRepositoryImpl implements BusRepository {
 
     private Bus findBus(String busId)
     {
-        return (Bus) this.buses.stream().filter(bus -> bus.getBusId().trim().equals(busId))
+        return (Bus) this.buses.stream().filter(bus -> bus.getId().trim().equals(busId))
                 .findAny().orElse(null);
     }
 
@@ -41,7 +41,7 @@ public class BusRepositoryImpl implements BusRepository {
 
     @Override
     public Bus update(Bus bus) {
-        Bus toDelete =findBus(bus.getBusId());
+        Bus toDelete =findBus(bus.getId());
         if(toDelete !=null){
             this.buses.remove(toDelete);
         return create(bus);}
