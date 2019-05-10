@@ -1,12 +1,14 @@
 package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @EntityScan
 public class Van implements Vehicle {
 
+    @Id
     private String numPlate;
     private String brand;
     private double patrol;

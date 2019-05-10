@@ -1,11 +1,13 @@
 package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 @EntityScan
 public class Bus implements  Vehicle{
 
-    private String busId;
+    @Id
+    private String Id;
     private String brandName;
     private String modelNo;
     private int quantity;
@@ -17,7 +19,7 @@ public class Bus implements  Vehicle{
 
     private Bus(Builder builder)
     {
-        this.busId =builder.busId;
+        this.Id =builder.Id;
         this.brandName =builder.brandName;
         this.engineNumber =builder.engineNumber;
         this.modelNo = builder.modelNo;
@@ -26,8 +28,8 @@ public class Bus implements  Vehicle{
     }
 
 
-    public String getBusId() {
-        return busId;
+    public String getId() {
+        return Id;
     }
 
     public String getBrandName() {
@@ -67,16 +69,16 @@ public class Bus implements  Vehicle{
 
     public static class Builder{
 
-        private String busId;
+        private String Id;
         private String brandName;
         private int engineNumber;
         private String modelNo;
         private int quantity;
         private String roadWorthy;
 
-        public Builder busId(String busId)
+        public Builder Id(String Id)
         {
-            this.busId =busId;
+            this.Id =Id;
             return  this;
         }
 
@@ -121,7 +123,7 @@ public class Bus implements  Vehicle{
     @Override
     public String toString() {
         return "Bus{" +
-                "busId='" + busId + '\'' +
+                "busId='" + Id + '\'' +
                 ", brandName='" + brandName + '\'' +
                 ", modelNo='" + modelNo + '\'' +
                 ", quantity=" + quantity +
