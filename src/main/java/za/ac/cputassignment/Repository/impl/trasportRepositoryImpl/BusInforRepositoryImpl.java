@@ -14,20 +14,14 @@ public class BusInforRepositoryImpl implements BusInforRepository {
 
 
     private static BusInforRepositoryImpl repository=null;
-    private Set<BusInforRepository> busInforRepositorySet;
+    private Set<BusInforRepository> busSetRepo;
 
     private BusInforRepositoryImpl()
     {
-        this.busInforRepositorySet =new HashSet<>();
+        this.busSetRepo =new HashSet<>();
     }
 
-
-
-    private BusInfor findBus(String busId)
-    {
-        return this.busInforRepositorySet.stream()
-                                        .filter(busInforRepository -> busInforRepository.)
-    }
+    
 
     public static BusInforRepositoryImpl getRepository()
     {

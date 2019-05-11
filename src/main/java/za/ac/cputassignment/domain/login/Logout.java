@@ -15,26 +15,26 @@ public class Logout {
     }
 
 
-    private Logout(Builder build)
+    private Logout(Builder builder)
     {
-        this.id =id;
+        this.id =builder.id;
     }
 
     public String getId() {
         return id;
     }
 
-    private static class Builder{
+    public static class Builder{
 
-        private String id;
+        public String id;
 
-        private Builder id(String id)
+        public Builder id(String id)
         {
             this.id =id;
             return  this;
         }
 
-        private Logout build()
+        public Logout build()
         {
             return new Logout(this);
         }

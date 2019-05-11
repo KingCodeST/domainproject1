@@ -7,6 +7,7 @@ public class BusInforFactory {
     public static BusInfor getBusInfor()
     {
         return  new BusInfor.Builder()
+                            .id("231")
                             .yearsofservice(1)
                             .buid();
 

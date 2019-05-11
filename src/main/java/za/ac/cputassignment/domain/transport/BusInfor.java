@@ -10,7 +10,7 @@ public class BusInfor implements Vehicle{
 
     private BusInfor(){}
 
-    public  BusInfor(Builder build)
+    private  BusInfor(Builder build)
     {
        // super();
         this.id =build.id;

@@ -7,7 +7,7 @@ public class LogoutFactory {
 
     public static Logout getLogout()
     {
-        return new Logout();
+        return new Logout.Builder().id("765").build();
     }
 
 

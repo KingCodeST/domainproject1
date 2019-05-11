@@ -23,17 +23,17 @@ public class LocationInfor {
         return id;
     }
 
-    private static class Builder{
+    public static class Builder{
             private String id;
 
 
-            private Builder id(String id)
+            public Builder id(String id)
             {
                 this.id =id;
                 return this;
             }
 
-            private LocationInfor build()
+            public LocationInfor build()
             {
                 return new LocationInfor(this);
             }

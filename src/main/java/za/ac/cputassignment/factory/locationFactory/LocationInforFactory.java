@@ -7,7 +7,7 @@ public class LocationInforFactory {
     public static LocationInfor getLocationInfor()
     {
 
-        return  new LocationInfor();
+        return  new LocationInfor.Builder().id("564H").build();
 
 
     }
