@@ -14,14 +14,20 @@ public class BusInforRepositoryImpl implements BusInforRepository {
 
 
     private static BusInforRepositoryImpl repository=null;
-    private Set<BusInforRepository> busSetRepo;
+    private Set<BusInfor> busSetRepo;
 
     private BusInforRepositoryImpl()
     {
         this.busSetRepo =new HashSet<>();
     }
 
-    
+    private BusInfor findBusinfor(String businfId)
+    {
+        return this.busSetRepo.stream().filter(busInfor -> busInfor.getId().trim().equals(businfId))
+                                .findAny()
+                                .orElse(null);
+
+    }
 
     public static BusInforRepositoryImpl getRepository()
     {
@@ -30,28 +36,42 @@ public class BusInforRepositoryImpl implements BusInforRepository {
     }
 
 
-    @Override
-    public Set<BusInfor> getAll() {
-        return null;
-    }
 
     @Override
     public BusInfor create(BusInfor busInfor) {
-        return null;
+        this.busSetRepo.add(busInfor);
+        return busInfor;
     }
+
+    @Override
+    public BusInfor read(String busInforId) {
+        BusInfor busInfor=findBusinfor(busInforId);
+        return busInfor;
+    }
+
 
     @Override
     public BusInfor update(BusInfor busInfor) {
+        BusInfor busInfor1=findBusinfor(busInfor.getId());
+        if(busInfor1 !=null)
+        {
+            this.busSetRepo.remove(busInfor);
+            return create(busInfor);
+        }
         return null;
     }
 
     @Override
-    public void delete(String s) {
-
+    public void delete(String busInforId) {
+        BusInfor busInfor=findBusinfor(busInforId);
+        if(busInfor ==null) this.busSetRepo.remove(busInfor);
     }
+
+
 
     @Override
-    public BusInfor read(String s) {
-        return null;
+    public Set<BusInfor> getAll() {
+        return this.busSetRepo;
     }
+
 }

@@ -21,7 +21,6 @@ public class CampusFactoryTest {
 
         cp =new Campus.Builder()
                       .campusName(Cname)
-                      .campusId(idnum)
                       .build();
 
         Assert.assertNotNull(cp);

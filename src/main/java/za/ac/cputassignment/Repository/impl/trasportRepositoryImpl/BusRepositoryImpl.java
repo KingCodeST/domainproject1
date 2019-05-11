@@ -35,7 +35,6 @@ public class BusRepositoryImpl implements BusRepository {
     @Override
     public Bus create(Bus bus) {
         this.buses.add(bus);
-
         return bus;
     }
 
@@ -51,13 +50,13 @@ public class BusRepositoryImpl implements BusRepository {
     @Override
     public void delete(String busId) {
         Bus bus =findBus(busId);
-        if(bus !=null) this.buses.remove(busId);
+        if(bus !=null) this.buses.remove(bus);
 
     }
 
     @Override
     public Bus read(String busId) {
         Bus bus=findBus(busId);
-        return null;
+        return bus;
     }
 }
