@@ -17,16 +17,21 @@ public class ArletInforRepositoryImpl implements ArletInforRepository {
         this.arletInfors =new HashSet<>();
     }
 
+    private ArletInfor findArlet(String arletId)
+    {
+        return arletInfors.stream()
+                .filter(arletInfor -> arletInfor.getId().trim().equals(arletId))
+                .findAny()
+                .orElse(null);
+    }
+
     public  static ArletInforRepository getRepository()
     {
         if(repository == null) repository = new ArletInforRepositoryImpl();
         return repository;
     }
 
-    @Override
-    public Set<ArletInfor> getAll() {
-        return this.arletInfors;
-    }
+
 
     @Override
     public ArletInfor create(ArletInfor arletInfor) {
@@ -35,17 +40,32 @@ public class ArletInforRepositoryImpl implements ArletInforRepository {
     }
 
     @Override
+    public ArletInfor read(String arlteId) {
+        ArletInfor arletInfor=findArlet(arlteId);
+        return arletInfor;
+    }
+
+
+    @Override
     public ArletInfor update(ArletInfor arletInfor) {
+       ArletInfor arletInfor1 =findArlet(arletInfor.getId());
+       if(arletInfor1 !=null)
+       {
+           this.arletInfors.remove(arletInfor1);
+           return create(arletInfor);
+       }
         return null;
     }
 
     @Override
-    public void delete(String s) {
-
+    public void delete(String arletId) {
+        ArletInfor arletInfor=findArlet(arletId);
+        if(arletInfor !=null) this.arletInfors.remove(arletInfor);
     }
 
+
     @Override
-    public ArletInfor read(String s) {
-        return null;
+    public Set<ArletInfor> getAll() {
+        return this.arletInfors;
     }
 }

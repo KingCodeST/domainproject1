@@ -30,16 +30,20 @@ public class TimetableInfo {
         return timetableid;
     }
 
-    public static class Builder{
+    public String getId() {
+        return id;
+    }
 
+    public static class Builder{
+        private  String id;
         private Date simple;
         private Location location;
         private Vehicle vehicle;
         private int timetableid;
 
-        public  Builder timetableId(int timetableid)
+        public  Builder Id(String id)
         {
-            this.timetableid = timetableid;
+            this.id = id;
             return this;
         }
 

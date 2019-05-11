@@ -7,6 +7,7 @@ import java.util.Objects;
 @EntityScan
 public class SportField implements Location {
 
+    private String id;
     private int sFieldID;
     private String fname;
     private String address;
@@ -17,9 +18,14 @@ public class SportField implements Location {
 
     public SportField(Builder builder)
     {
+        this.id =builder.id;
         this.sFieldID =builder.sFieldID;
         this.fname =builder.fname;
         this.address =builder.address;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public int getsFieldID() {
@@ -50,10 +56,16 @@ public class SportField implements Location {
     }
 
     public static class Builder{
-
+        private String id;
         private int sFieldID;
         private String fname;
         private String address;
+
+        public Builder id(String id)
+        {
+            this.id =id;
+            return  this;
+        }
 
         public Builder sFieldID(int sFieldID)
         {

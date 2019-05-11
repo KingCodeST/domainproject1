@@ -10,7 +10,7 @@ public class TimetableInfoFactory {
 
 
         return  new TimetableInfo.Builder()
-                                .timetableId(12)
+                                .Id("343")
                                 .build();
 
 

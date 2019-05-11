@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Residence implements Location {
 
+    private String id;
     private String residenceName;
     private int redisenceId;
     private String Address;
@@ -13,10 +14,16 @@ public class Residence implements Location {
 
     public Residence(Builder builder)
     {
+        this.id =builder.id;
         this.residenceName=builder.residenceName;
         this.redisenceId =builder.redisenceId;
         this.Address  =builder.address;
 
+
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getresidenceName() {
@@ -48,10 +55,16 @@ public class Residence implements Location {
 
     public static class Builder
     {
+        private String id;
         private int redisenceId;
         private String residenceName;
         private String address;
 
+        public Builder id(String id)
+        {
+            this.id =id;
+            return this;
+        }
 
         public Builder residenceId(int residenceId)
         {

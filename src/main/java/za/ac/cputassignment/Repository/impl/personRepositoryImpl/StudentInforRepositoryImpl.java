@@ -22,10 +22,13 @@ public class StudentInforRepositoryImpl implements StudentInforRepository {
         return repository;
     }
 
-    @Override
-    public Set<StudentInfo> getAll() {
-        return this.studentInfos;
+    private StudentInfo findstunt(String stId)
+    {
+        return this.studentInfos.stream().filter(studentInfo -> studentInfo.getId().trim().equals(stId))
+                                        .findAny()
+                                        .orElse(null);
     }
+
 
     @Override
     public StudentInfo create(StudentInfo studentInfo) {
@@ -34,17 +37,33 @@ public class StudentInforRepositoryImpl implements StudentInforRepository {
     }
 
     @Override
+    public StudentInfo read(String s) {
+        StudentInfo studentInfo =findstunt(s);
+        return studentInfo;
+    }
+
+
+    @Override
     public StudentInfo update(StudentInfo studentInfo) {
+        StudentInfo studentInfo1 =findstunt(studentInfo.getId());
+        if(studentInfo1 !=null)
+        {
+            this.studentInfos.remove(studentInfo1);
+            return create(studentInfo);
+        }
         return null;
     }
 
     @Override
     public void delete(String s) {
-
+        StudentInfo studentInfo =findstunt(s);
+        if(studentInfo !=null) this.studentInfos.remove(studentInfo);
     }
+
 
     @Override
-    public StudentInfo read(String s) {
-        return null;
+    public Set<StudentInfo> getAll() {
+        return this.studentInfos;
     }
+
 }

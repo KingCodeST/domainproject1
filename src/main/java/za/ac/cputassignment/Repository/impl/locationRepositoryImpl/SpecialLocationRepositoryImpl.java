@@ -18,12 +18,24 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
         this.specialLocations =new HashSet<>();
     }
 
-
-
-    @Override
-    public Set<SpecialLocation> getAll() {
-        return this.specialLocations;
+    public static SpecialLocationRepositoryImpl getRepository()
+    {
+        if(repository ==null) repository =new SpecialLocationRepositoryImpl();
+        return repository;
     }
+
+
+
+
+
+    private SpecialLocation findSpecialLocation(String lId)
+    {
+        return this.specialLocations.stream()
+                .filter(specialLocation -> specialLocation.getId().trim().equals(lId))
+                .findAny()
+                .orElse(null);
+    }
+
 
     @Override
     public SpecialLocation create(SpecialLocation specialLocation) {
@@ -32,17 +44,33 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
     }
 
     @Override
+    public SpecialLocation read(String s) {
+        SpecialLocation specialLocation =findSpecialLocation(s);
+        return specialLocation;
+    }
+
+    @Override
     public SpecialLocation update(SpecialLocation specialLocation) {
+        SpecialLocation specialLocation1 =findSpecialLocation(specialLocation.getId());
+        if(specialLocation1 !=null)
+        {
+            this.specialLocations.remove(specialLocation1);
+            return create(specialLocation);
+        }
         return null;
     }
 
     @Override
     public void delete(String s) {
-        repository.delete(s);
+        SpecialLocation specialLocation =findSpecialLocation(s);
+        if(specialLocation !=null) this.specialLocations.remove(specialLocation);
     }
 
+
+
     @Override
-    public SpecialLocation read(String s) {
-        return null;
+    public Set<SpecialLocation> getAll() {
+        return this.specialLocations;
     }
+
 }

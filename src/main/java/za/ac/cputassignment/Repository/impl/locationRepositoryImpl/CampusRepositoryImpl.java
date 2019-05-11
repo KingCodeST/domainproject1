@@ -4,6 +4,7 @@ import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.domain.location.Campus;
 import za.ac.cputassignment.factory.locationFactory.CampusFactory;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -13,6 +14,11 @@ public class CampusRepositoryImpl implements CampusRepository {
     private Set<Campus> campusSet;
     Campus campuss;
     CampusFactory campusFactory;
+
+    private CampusRepositoryImpl()
+    {
+        this.campusSet =new HashSet<>();
+    }
 
     private Campus findCampus(String campusId)
     {

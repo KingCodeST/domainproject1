@@ -4,64 +4,61 @@ import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cputassignment.Repository.LocationRepository.SportFieldRepository;
 import za.ac.cputassignment.domain.location.SportField;
 
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
 public class SportFieldRepositoryImpl implements SportFieldRepository {
 
+   private static  SportFieldRepositoryImpl repository =null;
+   private Set<SportField> sportFieldSet;
+
+
+   private SportFieldRepositoryImpl()
+   {
+       this.sportFieldSet =new HashSet<>();
+   }
+
+
+   private SportFieldRepositoryImpl getRepository()
+   {
+       if(repository ==null) repository =new SportFieldRepositoryImpl();
+       return repository;
+   }
+
+   private SportField findSportfield(String sId)
+   {
+       return this.sportFieldSet.stream()
+                                .filter(sportField -> sportField.getId().trim().equals(sId))
+                                .findAny()
+                                .orElse(null);
+   }
+
+
 
 
     @Override
-    public <S extends SportField> S save(S s) {
-        return this.save(s);
+    public SportField create(SportField sportField) {
+        return null;
     }
 
     @Override
-    public <S extends SportField> Iterable<S> saveAll(Iterable<S> iterable) {
-        return this.saveAll(iterable);
+    public SportField read(String s) {
+        return null;
     }
 
     @Override
-    public Optional<SportField> findById(String s) {
-        return Optional.empty();
-    }
-
-    @Override
-    public boolean existsById(String s) {
-        return false;
-    }
-
-    @Override
-    public Iterable<SportField> findAll() {
-        return this.findAll();
-    }
-
-    @Override
-    public Iterable<SportField> findAllById(Iterable<String> iterable) {
-        return findAllById(iterable);
-    }
-
-    @Override
-    public long count() {
-        return 0;
-    }
-
-    @Override
-    public void deleteById(String s) {
-
-    }
-
-    @Override
-    public void delete(SportField sportField) {
+    public void delete(String s) {
 
     }
 
     @Override
-    public void deleteAll(Iterable<? extends SportField> iterable) {
+    public SportField update(SportField sportField) {
+        return null;
     }
 
     @Override
-    public void deleteAll() {
-
+    public Set<SportField> getAll() {
+        return null;
     }
 }

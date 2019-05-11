@@ -8,6 +8,7 @@ import java.util.Objects;
 @EntityScan
 public class Student implements User {
 
+        private String id;
         private String studentNum;
         private String firstname,lastname;
         private int age;
@@ -18,6 +19,7 @@ public class Student implements User {
 
         private Student(Builder builder)
         {
+            this.id =builder.id;
             this.studentNum = builder.studentNum;
             this.firstname =builder.firstname;
             this.lastname =builder.lastname;
@@ -25,6 +27,9 @@ public class Student implements User {
 
         }
 
+    public String getId() {
+        return id;
+    }
 
     public String getStudentNum() {
         return studentNum;
@@ -64,9 +69,16 @@ public class Student implements User {
 
     public static class Builder{
 
+        private String id;
         private String studentNum;
         private String firstname,lastname;
         private int age;
+
+        private Builder id(String id)
+        {
+            this.id =id;
+            return this;
+        }
 
       public Builder studentNum(String studentNum)
       {

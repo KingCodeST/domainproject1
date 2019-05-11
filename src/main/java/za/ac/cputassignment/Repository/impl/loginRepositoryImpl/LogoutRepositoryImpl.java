@@ -16,16 +16,19 @@ public class LogoutRepositoryImpl implements LogoutRepository {
        this.logouts = new HashSet<>();
    }
 
+   private Logout findLogout(String ouId)
+   {
+       return this.logouts.stream().filter(logout -> logout.getId().trim().equals(ouId))
+                                    .findAny()
+                                    .orElse(null);
+   }
+
    public static LogoutRepository getRepository()
    {
        if(repository ==null) repository =new LogoutRepositoryImpl();
        return repository;
    }
 
-    @Override
-    public Set<Logout> getAll() {
-        return this.logouts;
-    }
 
     @Override
     public Logout create(Logout logout) {
@@ -35,16 +38,30 @@ public class LogoutRepositoryImpl implements LogoutRepository {
 
     @Override
     public Logout update(Logout logout) {
-        return null;
+       Logout logout1 =findLogout(logout.getId());
+       if(logout1 !=null)
+       {
+           this.logouts.remove(logout1);
+           return create(logout);
+       }
+       return null;
     }
 
     @Override
     public void delete(String s) {
-
+        Logout logout =findLogout(s);
+        if(logout !=null) this.logouts.remove(logout);
     }
 
     @Override
     public Logout read(String s) {
-        return null;
+       Logout logout=findLogout(s);
+       return logout;
     }
+
+    @Override
+    public Set<Logout> getAll() {
+        return this.logouts;
+    }
+
 }

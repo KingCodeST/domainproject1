@@ -16,6 +16,7 @@ public class LocationInforRepositoryImpl implements LocationInforRepository {
         this.locationInforSet =new HashSet<>();
     }
 
+
     private LocationInfor findLocationInfor(String locationInforId)
     {
         return locationInforSet.stream()

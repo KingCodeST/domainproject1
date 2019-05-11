@@ -2,7 +2,7 @@ package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@EntityScan
+
 public class BusInfor implements Vehicle{
 
     private String id;
@@ -12,7 +12,7 @@ public class BusInfor implements Vehicle{
 
     public  BusInfor(Builder build)
     {
-        super();
+       // super();
         this.id =build.id;
         this.yearsofservice=build.yearsofservice;
     }
@@ -45,7 +45,7 @@ public class BusInfor implements Vehicle{
 
         public BusInfor buid()
         {
-            return new BusInfor();
+            return new BusInfor(this);
         }
 
     }

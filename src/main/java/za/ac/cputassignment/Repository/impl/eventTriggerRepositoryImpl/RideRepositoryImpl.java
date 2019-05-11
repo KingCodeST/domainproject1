@@ -4,12 +4,18 @@ import za.ac.cputassignment.Repository.LocationRepository.ResidenceRepository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.RideRepository;
 import za.ac.cputassignment.domain.eventTrigger.Ride;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class RideRepositoryImpl implements RideRepository {
 
     private static RideRepositoryImpl repository=null;
     private Set<Ride> rides;
+
+    private RideRepositoryImpl()
+    {
+        this.rides =new HashSet<>();
+    }
 
     private Ride findRide(String Rideid){
         return this.rides.stream()
@@ -23,11 +29,6 @@ public class RideRepositoryImpl implements RideRepository {
         if(repository == null) repository =new RideRepositoryImpl();
         return repository;
     }
-
-
-
-
-
 
 
     @Override

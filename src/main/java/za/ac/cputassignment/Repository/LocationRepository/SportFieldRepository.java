@@ -6,6 +6,6 @@ import za.ac.cputassignment.domain.location.SportField;
 
 import java.util.Set;
 
-public interface SportFieldRepository extends CrudRepository<SportField,String> {
-
+public interface SportFieldRepository extends IRepository<SportField,String> {
+    Set<SportField> getAll();
 }

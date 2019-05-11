@@ -11,11 +11,20 @@ public class DisplayWelcomRepositoryImpl implements DisplayWelcomRepository {
    private static DisplayWelcomRepositoryImpl repository =null;
    private Set<DisplayWelcom> displayWelcoms;
 
+
+
    private DisplayWelcomRepositoryImpl()
    {
        this.displayWelcoms =new HashSet<>();
    }
 
+   private DisplayWelcom findWelco(String wel)
+   {
+       return this.displayWelcoms.stream()
+                                .filter(displayWelcom -> displayWelcom.getId().trim().equals(wel))
+                                .findAny()
+                                .orElse(null);
+   }
 
    public static DisplayWelcomRepository getRepository()
    {
@@ -24,29 +33,41 @@ public class DisplayWelcomRepositoryImpl implements DisplayWelcomRepository {
    }
 
 
-    @Override
-    public Set<DisplayWelcom> getAll() {
-        return this.displayWelcoms;
-    }
 
     @Override
     public DisplayWelcom create(DisplayWelcom displayWelcom) {
        this.displayWelcoms.add(displayWelcom);
        return displayWelcom;
     }
+    @Override
+    public DisplayWelcom read(String s) {
+        DisplayWelcom displayWelcom =findWelco(s);
+       return displayWelcom;
+    }
 
     @Override
     public DisplayWelcom update(DisplayWelcom displayWelcom) {
-        return null;
+       DisplayWelcom displayWelcom1=findWelco(displayWelcom.getId());
+       if(displayWelcom1 !=null)
+       {
+           this.displayWelcoms.remove(displayWelcom1);
+           return create(displayWelcom);
+       }
+       return null;
     }
 
     @Override
     public void delete(String s) {
+       DisplayWelcom displayWelcom =findWelco(s);
+       if(displayWelcom !=null)this.displayWelcoms.remove(displayWelcom);
 
     }
 
     @Override
-    public DisplayWelcom read(String s) {
-        return null;
+    public Set<DisplayWelcom> getAll() {
+        return this.displayWelcoms;
     }
+
+
+
 }

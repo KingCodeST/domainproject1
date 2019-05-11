@@ -17,6 +17,14 @@ public class StudentRepositoryImpl implements StudentRepository {
         this.students =new HashSet<>();
     }
 
+    private Student findStudent(String sId)
+    {
+        return this.students.stream()
+                            .filter(student -> student.getId().trim().equals(sId))
+                            .findAny()
+                            .orElse(null);
+    }
+
     private static StudentRepository getRepository()
     {
         if(repository ==null) repository =new StudentRepositoryImpl();
@@ -24,27 +32,27 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
 
-    @Override
-    public Set<Student> getAll() {
-        return this.students;
-    }
+
 
     @Override
     public Student create(Student student) {
         this.students.add(student);
         return student;
     }
+    @Override
+    public Student read(String s) {
+        Student student =findStudent(s);
+        return student;
+    }
 
     @Override
     public Student update(Student student) {
 
-        if(students.contains(student))
+        Student student1 =findStudent(student.getId());
+        if(student1 !=null)
         {
-            for(Student st: students)
-            {
-                if(st.equals(student))
-                    return st;
-            }
+            this.students.remove(student1);
+            return create(student);
         }
 
         return  null;
@@ -52,27 +60,15 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public void delete(String studentId) {
-        for(Student sth: students)
-        {
-            if(sth.getStudentNum().equals(studentId))
-            {
-                students.remove(studentId);
-            }
-
-        }
+        Student student =findStudent(studentId);
+        if(student !=null )this.students.remove(student);
 
     }
 
     @Override
-    public Student read(String s) {
-
-        for(Student st: students)
-        {
-            s.equals(st);
-        }
-
-        return null;
-
-
+    public Set<Student> getAll() {
+        return this.students;
     }
+
+
 }
