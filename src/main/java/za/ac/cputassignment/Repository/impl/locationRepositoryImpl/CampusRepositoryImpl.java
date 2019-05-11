@@ -14,6 +14,14 @@ public class CampusRepositoryImpl implements CampusRepository {
     Campus campuss;
     CampusFactory campusFactory;
 
+    private Campus findCampus(String campusId)
+    {
+        return this.campusSet.stream()
+                             .filter(campus -> campus.getCampusId().trim().equals(campusId))
+                             .findAny()
+                             .orElse(null);
+    }
+
     public static CampusRepositoryImpl getRepository()
     {
         if(repository==null) repository =new CampusRepositoryImpl();
@@ -28,21 +36,26 @@ public class CampusRepositoryImpl implements CampusRepository {
 
     public Campus read(String campusId)
     {
-
-        return repository.read(campusId);
+        Campus campus =findCampus(campusId);
+        return campus;
     }
 
     public void delete(String campusId)
     {
-        this.campusSet.remove(campusId);
-
+        Campus deleteCamp=findCampus(campusId);
+        if(deleteCamp !=null)this.campusSet.remove(deleteCamp);
 
     }
 
     public Campus update(Campus campus)
     {
-        this.campusSet.addAll(getAll());
-        return campus;
+        Campus campus1 =findCampus(campus.getCampusId());
+        if(campus1 !=null)
+        {
+            this.campusSet.remove(campus1);
+            return this.create(campus1);
+        }
+        return null;
     }
 
     public Set<Campus> getAll()

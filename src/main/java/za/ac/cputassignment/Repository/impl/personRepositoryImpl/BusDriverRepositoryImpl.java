@@ -16,6 +16,15 @@ public class BusDriverRepositoryImpl implements BusDriverRepository {
         this.busDrivers =new HashSet<>();
     }
 
+
+    private BusDriver findBusDriver(String BusDriverId)
+    {
+        return this.busDrivers.stream()
+                                .filter(busDriver -> busDriver.getDriverID().trim().equals(BusDriverId))
+                                .findAny()
+                                .orElse(null);
+    }
+
     public static BusDriverRepository getRepository()
     {
         if(repository ==null) repository =new BusDriverRepositoryImpl();
@@ -24,29 +33,41 @@ public class BusDriverRepositoryImpl implements BusDriverRepository {
 
 
 
-    @Override
-    public Set<BusDriver> getAll() {
-        return this.busDrivers;
-    }
 
     @Override
     public BusDriver create(BusDriver busDriver) {
         this.busDrivers.add(busDriver);
         return busDriver;
     }
+    @Override
+    public BusDriver read(String BusDriverId) {
+       BusDriver busDriver= findBusDriver(BusDriverId);
+        return busDriver;
+    }
+
+    @Override
+    public void delete(String busDriverId) {
+        BusDriver busDriver=findBusDriver(busDriverId);
+        if(busDriver !=null) this.busDrivers.remove(busDriver);
+    }
+
 
     @Override
     public BusDriver update(BusDriver busDriver) {
+        BusDriver busDriver1=findBusDriver(busDriver.getDriverID());
+        if(busDriver1 !=null) {
+            this.busDrivers.remove(busDriver1);
+        }
         return null;
+
     }
+
+
+
 
     @Override
-    public void delete(String s) {
-
+    public Set<BusDriver> getAll() {
+        return this.busDrivers;
     }
 
-    @Override
-    public BusDriver read(String s) {
-        return null;
-    }
 }

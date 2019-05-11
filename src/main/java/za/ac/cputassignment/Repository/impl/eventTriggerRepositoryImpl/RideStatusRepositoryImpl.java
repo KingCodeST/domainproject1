@@ -17,10 +17,11 @@ public class RideStatusRepositoryImpl implements RideStatusRepository {
         return repository;
     }
 
-    private Ride findRide(String rideId)
+    private RideStatus findRide(String rideStatusId)
     {
-        return this.rideStatuses.stream()
-                                .filter(rideStatus -> rideStatus.)
+        return this.rideStatuses.stream().filter(rideStatus -> rideStatus.getId().trim().equals(rideStatusId))
+                                .findAny()
+                                .orElse(null);
     }
 
     @Override

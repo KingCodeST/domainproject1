@@ -11,6 +11,12 @@ public class RideRepositoryImpl implements RideRepository {
     private static RideRepositoryImpl repository=null;
     private Set<Ride> rides;
 
+    private Ride findRide(String Rideid){
+        return this.rides.stream()
+                         .filter(ride -> ride.getId().trim().equals(Rideid))
+                        .findAny()
+                        .orElse(null);
+    }
 
     private RideRepositoryImpl getRepository( )
     {
@@ -22,10 +28,7 @@ public class RideRepositoryImpl implements RideRepository {
 
 
 
-    @Override
-    public Set<Ride> getAll() {
-        return this.rides;
-    }
+
 
     @Override
     public Ride create(Ride ride) {
@@ -34,17 +37,32 @@ public class RideRepositoryImpl implements RideRepository {
     }
 
     @Override
+    public Ride read(String RideId) {
+        Ride ride=findRide(RideId);
+        return ride;
+    }
+
+    @Override
     public Ride update(Ride ride) {
+        Ride toDelete =findRide(ride.getId());
+        if(toDelete !=null)
+        {
+            this.rides.remove(toDelete);
+            return create(ride);
+        }
         return null;
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String RideId) {
+        Ride ride =findRide(RideId);
+        if(ride !=null) this.rides.remove(ride);
 
     }
 
+
     @Override
-    public Ride read(String s) {
-        return null;
+    public Set<Ride> getAll() {
+        return this.rides;
     }
 }

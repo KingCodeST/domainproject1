@@ -9,14 +9,16 @@ public class DBImpl implements CampusRepository {
 
 
     @Override
-    public Set<Campus> getAll() {
+    public Campus create(Campus campus) {
         return null;
     }
 
     @Override
-    public Campus create(Campus campus) {
+    public Campus read(String s) {
         return null;
     }
+
+
 
     @Override
     public Campus update(Campus campus) {
@@ -28,8 +30,11 @@ public class DBImpl implements CampusRepository {
 
     }
 
+
     @Override
-    public Campus read(String s) {
+    public Set<Campus> getAll() {
         return null;
     }
+
+
 }

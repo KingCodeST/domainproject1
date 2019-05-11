@@ -24,24 +24,25 @@ public class DriverInfor   {
         return id;
     }
 
-    private static class Builder{
+    public static class Builder{
 
         private String id;
 
-        private Builder id(String id)
+        public Builder id(String id)
         {
             this.id =id;
             return this;
         }
 
 
-        private DriverInfor build()
+        public DriverInfor build()
         {
             return new DriverInfor(this);
         }
 
     }
 
+    @org.jetbrains.annotations.Contract(value = "null -> false", pure = true)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

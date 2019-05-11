@@ -3,7 +3,9 @@ package za.ac.cputassignment.Repository.MainInterface;
 public interface IRepository<T, ID> {
 
     T create(T t);
-    T update(T t);
-    void delete(ID id);
     T read(ID id);
+    void delete(ID id);
+    T update(T t);
+
+
 }

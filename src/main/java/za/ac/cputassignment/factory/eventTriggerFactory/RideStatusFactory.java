@@ -7,7 +7,9 @@ public class RideStatusFactory {
 
     public static RideStatus getRideStatus()
     {
-        return  new RideStatus();
+        return  new RideStatus.Builder()
+                              .id("190")
+                              .build();
     }
 
 

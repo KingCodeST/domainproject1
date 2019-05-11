@@ -10,7 +10,7 @@ import java.util.Objects;
 public class Campus {
 
 
-    private int campusId;
+    private String Id;
     private String campusname;
 
     private Campus (){}
@@ -19,7 +19,7 @@ public class Campus {
     public Campus(Builder builder)
     {
         this.campusname =builder.campusname;
-        this.campusId =builder.campusId;
+        this.Id =builder.Id;
 
     }
 
@@ -27,19 +27,20 @@ public class Campus {
         return campusname;
     }
 
-    public int getCampusId() {
-        return campusId;
+    public String getCampusId() {
+        return Id;
     }
 
     public static class Builder
     {
-        private int campusId;
+        public String Id;
+
         private String campusname;
 
 
-        public Builder campusId(int campusId)
+        public Builder Id(String Id)
         {
-            this.campusId =campusId;
+            this.Id =Id;
             return this;
         }
 
@@ -63,19 +64,19 @@ public class Campus {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Campus campus = (Campus) o;
-        return campusId == campus.campusId;
+        return Id == campus.Id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(campusId);
+        return Objects.hash(Id);
     }
 
     @Override
     public String toString() {
         return "Campus{" +
                 "campusname='" + campusname + '\'' +
-                ", campusId=" + campusId +
+                ", campusId=" + Id +
                 '}';
     }
 }

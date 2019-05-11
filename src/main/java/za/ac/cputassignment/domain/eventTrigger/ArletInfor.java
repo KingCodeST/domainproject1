@@ -6,54 +6,89 @@ import java.util.Objects;
 
 public class ArletInfor {
 
-    private int id;
+    private String id;
 
-    public ArletInfor(String bluee, String bluer, String greye, String er) {
+    private String blue,red,green;
+    private String simpledate;
+
+
+    private ArletInfor(){}
+
+
+    private ArletInfor(Builder builder)
+    {
+        this.id =builder.id;
+        this.blue =builder.blue;
+        this.green =builder.green;
+        this.red =builder.red;
+        this.simpledate =builder.simpledate;
+
     }
 
-    public int getId() {
+
+    public String getId() {
         return id;
     }
 
-    private String blue,red,greed;
-    private String simpledate;
-
     public String getBlue() {
         return blue;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getRed() {
         return red;
     }
 
-    public String getGreed() {
-        return greed;
+    public String getGreen() {
+        return green;
     }
 
     public String getSimpledate() {
         return simpledate;
-
-
     }
 
-    public void setBlue(String blue) {
-        this.blue = blue;
-    }
+    public static class Builder
+    {
+        private String id;
 
-    public void setRed(String red) {
-        this.red = red;
-    }
+        private String blue,red,green;
+        private String simpledate;
 
-    public void setGreed(String greed) {
-        this.greed = greed;
-    }
+        public Builder id(String id)
+        {
+            this.id =id;
+            return this;
+        }
 
-    public void setSimpledate(String simpledate) {
-        this.simpledate = simpledate;
+        public Builder blue(String blue)
+        {
+            this.blue =blue;
+            return this;
+        }
+
+        public Builder red(String red)
+        {
+            this.red =red;
+            return this;
+        }
+
+        public Builder green(String green)
+        {
+            this.green =green;
+            return this;
+        }
+
+        public Builder simpledate(String simpledate)
+        {
+            this.simpledate =simpledate;
+            return this;
+        }
+
+        public ArletInfor build()
+        {
+            return  new ArletInfor(this);
+        }
+
+
     }
 
     @Override
@@ -61,7 +96,7 @@ public class ArletInfor {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ArletInfor that = (ArletInfor) o;
-        return id == that.id;
+        return id.equals(that.id);
     }
 
     @Override
@@ -69,5 +104,14 @@ public class ArletInfor {
         return Objects.hash(id);
     }
 
-
+    @Override
+    public String toString() {
+        return "ArletInfor{" +
+                "id='" + id + '\'' +
+                ", blue='" + blue + '\'' +
+                ", red='" + red + '\'' +
+                ", green='" + green + '\'' +
+                ", simpledate='" + simpledate + '\'' +
+                '}';
+    }
 }
