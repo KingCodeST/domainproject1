@@ -4,6 +4,7 @@ public class RideStatus implements Notification {
 
 
 
+    private String id;
 
 
 

@@ -7,7 +7,7 @@ public class DriverInforFactory {
     public static DriverInfor getDriverInfor()
     {
 
-        return new DriverInfor();
+        return new DriverInfor().;
 
     }
 

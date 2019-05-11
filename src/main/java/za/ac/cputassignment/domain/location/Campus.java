@@ -9,8 +9,9 @@ import java.util.Objects;
 @EntityScan
 public class Campus {
 
-    private String campusname;
+
     private int campusId;
+    private String campusname;
 
     private Campus (){}
 

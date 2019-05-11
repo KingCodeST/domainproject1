@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Ride {
 
+    private String id;
         private String color;
       private  List<Location>  local=new ArrayList<Location>();
       private  List<Timetable> listTime=new ArrayList<Timetable>();

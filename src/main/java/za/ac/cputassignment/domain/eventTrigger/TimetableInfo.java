@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class TimetableInfo {
 
+    private String id;
     private Date simple;
     private Location location;
     private Vehicle vehicle;

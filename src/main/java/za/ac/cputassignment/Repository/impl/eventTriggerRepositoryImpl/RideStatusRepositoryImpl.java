@@ -1,6 +1,7 @@
 package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
 import za.ac.cputassignment.Repository.eventTriggerRepository.RideStatusRepository;
+import za.ac.cputassignment.domain.eventTrigger.Ride;
 import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 
 import java.util.Set;
@@ -14,6 +15,12 @@ public class RideStatusRepositoryImpl implements RideStatusRepository {
     private RideRepositoryImpl getRepository() {
         if(repository ==null) repository =new RideRepositoryImpl();
         return repository;
+    }
+
+    private Ride findRide(String rideId)
+    {
+        return this.rideStatuses.stream()
+                                .filter(rideStatus -> rideStatus.)
     }
 
     @Override
