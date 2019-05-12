@@ -27,26 +27,26 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 
     @Override
     public Set<StudentInfo> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public StudentInfo create(StudentInfo studentInfo) {
-        return null;
+        return this.repository.create(studentInfo);
     }
 
     @Override
     public StudentInfo read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public StudentInfo update(StudentInfo studentInfo) {
-        return null;
+        return this.repository.update(studentInfo);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

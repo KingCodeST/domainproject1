@@ -28,26 +28,26 @@ public class DisplayErrorServiceImpl implements DisplayErrorService {
 
     @Override
     public Set<DisplayError> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public DisplayError create(DisplayError displayError) {
-        return null;
+        return this.repository.create(displayError);
     }
 
     @Override
     public DisplayError read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public DisplayError update(DisplayError displayError) {
-        return null;
+        return this.repository.update(displayError);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

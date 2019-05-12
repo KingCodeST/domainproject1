@@ -27,26 +27,26 @@ public class LogoutServiceImpl implements LogoutService {
 
     @Override
     public Set<Logout> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public Logout create(Logout logout) {
-        return null;
+        return this.repository.create(logout);
     }
 
     @Override
     public Logout read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public Logout update(Logout logout) {
-        return null;
+        return this.repository.update(logout);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

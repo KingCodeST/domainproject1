@@ -28,26 +28,26 @@ public class SportFieldServiceImpl implements SportFieldService {
 
     @Override
     public Set<SportField> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public SportField create(SportField sportField) {
-        return null;
+        return this.repository.create(sportField);
     }
 
     @Override
     public SportField read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public SportField update(SportField sportField) {
-        return null;
+        return this.repository.update(sportField);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

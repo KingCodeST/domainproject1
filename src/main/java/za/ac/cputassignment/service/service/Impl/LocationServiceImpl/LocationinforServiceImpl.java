@@ -27,26 +27,27 @@ public class LocationinforServiceImpl implements LocationInforService {
 
     @Override
     public Set<LocationInfor> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public LocationInfor create(LocationInfor locationInfor) {
-        return null;
+        return this.repository.create(locationInfor);
     }
 
     @Override
     public LocationInfor read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public LocationInfor update(LocationInfor locationInfor) {
-        return null;
+        return this.repository.update(locationInfor);
     }
 
     @Override
     public void delete(String s) {
+        this.repository.delete(s);
 
     }
 }

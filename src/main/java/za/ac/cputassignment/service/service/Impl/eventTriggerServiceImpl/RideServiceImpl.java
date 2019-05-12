@@ -28,26 +28,27 @@ public class RideServiceImpl implements RideService {
 
     @Override
     public Set<Ride> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public Ride create(Ride ride) {
-        return null;
+        return this.repository.create(ride);
     }
 
     @Override
     public Ride read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public Ride update(Ride ride) {
-        return null;
+        return this.repository.update(ride);
     }
 
     @Override
     public void delete(String s) {
+        this.repository.delete(s);
 
     }
 }

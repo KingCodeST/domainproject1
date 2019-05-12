@@ -1,24 +1,24 @@
 package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
-import za.ac.cputassignment.Repository.personRepository.DriverInforRepository;
+import za.ac.cputassignment.Repository.personRepository.BusDriverInforRepository;
 import za.ac.cputassignment.domain.person.DriverInfor;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class DriverInforRepositoryImpl implements DriverInforRepository {
+public class BusBusDriverInforRepositoryImpl implements BusDriverInforRepository {
 
-    private static DriverInforRepositoryImpl repository=null;
+    private static BusBusDriverInforRepositoryImpl repository=null;
     private Set<DriverInfor> driverInfors;
 
-    private DriverInforRepositoryImpl()
+    private BusBusDriverInforRepositoryImpl()
     {
         this.driverInfors =new HashSet<>();
     }
 
-    public static DriverInforRepository getRepository()
+    public static BusDriverInforRepository getRepository()
     {
-        if(repository ==null ) repository =new DriverInforRepositoryImpl();
+        if(repository ==null ) repository =new BusBusDriverInforRepositoryImpl();
         return repository;
     }
 

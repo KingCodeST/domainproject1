@@ -26,26 +26,28 @@ public class ArletInforServiceImpl implements ArletInforService {
 
     @Override
     public Set<ArletInfor> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public ArletInfor create(ArletInfor arletInfor) {
-        return null;
+
+        return this.repository.create(arletInfor);
     }
 
     @Override
     public ArletInfor read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public ArletInfor update(ArletInfor arletInfor) {
-        return null;
+        return this.repository.update(arletInfor);
     }
 
     @Override
     public void delete(String s) {
+        this.repository.delete(s);
 
     }
 }

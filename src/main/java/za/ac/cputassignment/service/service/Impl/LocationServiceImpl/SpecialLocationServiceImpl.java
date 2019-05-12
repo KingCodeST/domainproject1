@@ -28,26 +28,26 @@ public class SpecialLocationServiceImpl implements SpecialLocationService {
 
     @Override
     public Set<SpecialLocation> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public SpecialLocation create(SpecialLocation specialLocation) {
-        return null;
+        return this.repository.create(specialLocation);
     }
 
     @Override
     public SpecialLocation read(String s) {
-        return null;
+        return this.read(s);
     }
 
     @Override
     public SpecialLocation update(SpecialLocation specialLocation) {
-        return null;
+        return this.repository.update(specialLocation);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

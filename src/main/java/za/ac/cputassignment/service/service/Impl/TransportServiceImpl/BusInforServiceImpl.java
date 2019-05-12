@@ -30,26 +30,26 @@ public class BusInforServiceImpl implements BusInforService {
 
     @Override
     public Set<BusInfor> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public BusInfor create(BusInfor busInfor) {
-        return null;
+        return this.repository.create(busInfor);
     }
 
     @Override
     public BusInfor read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public BusInfor update(BusInfor busInfor) {
-        return null;
+        return this.repository.update(busInfor);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

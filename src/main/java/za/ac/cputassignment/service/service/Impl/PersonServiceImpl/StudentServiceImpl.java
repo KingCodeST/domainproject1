@@ -27,26 +27,26 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Set<Student> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public Student create(Student student) {
-        return null;
+        return this.repository.create(student);
     }
 
     @Override
     public Student read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public Student update(Student student) {
-        return null;
+        return this.repository.update(student);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

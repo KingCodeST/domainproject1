@@ -28,26 +28,26 @@ public class DisplayWelcomServiceImpl implements DisplayWelcomService {
 
     @Override
     public Set<DisplayWelcom> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public DisplayWelcom create(DisplayWelcom displayWelcom) {
-        return null;
+        return this.repository.create(displayWelcom);
     }
 
     @Override
     public DisplayWelcom read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public DisplayWelcom update(DisplayWelcom displayWelcom) {
-        return null;
+        return this.repository.update(displayWelcom);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

@@ -27,26 +27,26 @@ public class VanServiceImpl implements VanService {
 
     @Override
     public Set<Van> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public Van create(Van van) {
-        return null;
+        return this.repository.create(van);
     }
 
     @Override
     public Van read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public Van update(Van van) {
-        return null;
+        return this.repository.update(van);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

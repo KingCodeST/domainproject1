@@ -27,26 +27,26 @@ public class TimetableInfoServiceImpl implements TimetableInfoService {
 
     @Override
     public Set<TimetableInfo> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public TimetableInfo create(TimetableInfo timetableInfo) {
-        return null;
+        return this.repository.create(timetableInfo);
     }
 
     @Override
     public TimetableInfo read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public TimetableInfo update(TimetableInfo timetableInfo) {
-        return null;
+        return this.repository.update(timetableInfo);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

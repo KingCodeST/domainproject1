@@ -28,26 +28,26 @@ public class BusDriverServiceImpl implements BusDriverService {
 
     @Override
     public Set<BusDriver> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public BusDriver create(BusDriver busDriver) {
-        return null;
+        return this.repository.create(busDriver);
     }
 
     @Override
     public BusDriver read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public BusDriver update(BusDriver busDriver) {
-        return null;
+        return this.repository.update(busDriver);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

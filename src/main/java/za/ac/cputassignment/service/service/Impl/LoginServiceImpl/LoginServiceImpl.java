@@ -27,26 +27,26 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public Set<Login> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public Login create(Login login) {
-        return null;
+        return this.repository.create(login);
     }
 
     @Override
     public Login read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public Login update(Login login) {
-        return null;
+        return this.repository.update(login);
     }
 
     @Override
     public void delete(String s) {
-
+        this.repository.delete(s);
     }
 }

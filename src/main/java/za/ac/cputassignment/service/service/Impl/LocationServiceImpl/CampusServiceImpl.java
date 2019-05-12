@@ -27,26 +27,27 @@ public class CampusServiceImpl implements CampusService {
 
     @Override
     public Set<Campus> getAll() {
-        return null;
+        return this.campusRepository.getAll();
     }
 
     @Override
     public Campus create(Campus campus) {
-        return null;
+        return this.campusRepository.create(campus);
     }
 
     @Override
     public Campus read(String s) {
-        return null;
+        return this.campusRepository.read(s);
     }
 
     @Override
     public Campus update(Campus campus) {
-        return null;
+        return this.campusRepository.update(campus);
     }
 
     @Override
     public void delete(String s) {
+        this.campusRepository.delete(s);
 
     }
 }

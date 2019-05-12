@@ -29,26 +29,26 @@ public class BusServiceImpl implements BusService {
 
     @Override
     public Set<Bus> getAll() {
-        return null;
+        return this.repository.getAll();
     }
 
     @Override
     public Bus create(Bus bus) {
-        return null;
+        return this.repository.create(bus);
     }
 
     @Override
     public Bus read(String s) {
-        return null;
+        return this.repository.read(s);
     }
 
     @Override
     public Bus update(Bus bus) {
-        return null;
+        return this.repository.update(bus);
     }
 
     @Override
     public void delete(String s) {
-
+    this.repository.delete(s);
     }
 }
