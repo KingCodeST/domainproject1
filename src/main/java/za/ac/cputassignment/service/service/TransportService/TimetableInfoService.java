@@ -1,4 +1,10 @@
 package za.ac.cputassignment.service.service.TransportService;
 
-public class TimetableInfoService {
+import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
+import za.ac.cputassignment.service.IService;
+
+import java.util.Set;
+
+public interface TimetableInfoService extends IService<TimetableInfo,String> {
+    Set<TimetableInfo> getAll();
 }

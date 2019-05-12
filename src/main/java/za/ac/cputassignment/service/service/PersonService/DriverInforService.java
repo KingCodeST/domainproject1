@@ -1,4 +1,10 @@
 package za.ac.cputassignment.service.service.PersonService;
 
-public class DriverInforService {
+import za.ac.cputassignment.domain.person.DriverInfor;
+import za.ac.cputassignment.service.IService;
+
+import java.util.Set;
+
+public interface DriverInforService extends IService<DriverInfor,String> {
+    Set<DriverInfor> getAll();
 }
