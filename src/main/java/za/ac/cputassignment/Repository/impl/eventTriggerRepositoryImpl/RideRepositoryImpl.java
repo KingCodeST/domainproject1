@@ -24,7 +24,7 @@ public class RideRepositoryImpl implements RideRepository {
                         .orElse(null);
     }
 
-    private RideRepositoryImpl getRepository( )
+    public static RideRepositoryImpl getRepository()
     {
         if(repository == null) repository =new RideRepositoryImpl();
         return repository;

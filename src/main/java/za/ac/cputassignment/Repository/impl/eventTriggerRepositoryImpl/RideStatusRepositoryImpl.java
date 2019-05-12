@@ -18,7 +18,7 @@ public class RideStatusRepositoryImpl implements RideStatusRepository {
     }
 
 
-    private RideStatusRepositoryImpl getRepository() {
+    public static RideStatusRepositoryImpl getRepository() {
         if(repository ==null) repository =new RideStatusRepositoryImpl();
         return repository;
     }
