@@ -3,46 +3,46 @@ package za.ac.cputassignment.service.service.Impl.PersonServiceImpl;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusDriverRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
-import za.ac.cputassignment.domain.person.BusDriver;
-import za.ac.cputassignment.service.service.PersonService.BusDriverService;
+import za.ac.cputassignment.domain.person.DriverInfor;
+import za.ac.cputassignment.service.service.PersonService.BusDriverInforService;
 
 import java.util.Set;
 
 @Service
-public class BusDriverServiceImpl implements BusDriverService {
+public class BusDriverInforServiceImpl implements BusDriverInforService {
 
-    private static  BusDriverServiceImpl service=null;
+    private static BusDriverInforServiceImpl service=null;
     private BusDriverRepository repository;
 
-    private BusDriverServiceImpl()
+    public BusDriverInforServiceImpl()
     {
         this.repository = BusDriverRepositoryImpl.getRepository();
+
     }
 
-
-    public static BusDriverServiceImpl getService()
+    public static BusDriverInforServiceImpl getService()
     {
-        if(service ==null) service =new BusDriverServiceImpl();
+        if(service ==null) service =new BusDriverInforServiceImpl();
         return service;
     }
 
     @Override
-    public Set<BusDriver> getAll() {
+    public Set<DriverInfor> getAll() {
         return null;
     }
 
     @Override
-    public BusDriver create(BusDriver busDriver) {
+    public DriverInfor create(DriverInfor driverInfor) {
         return null;
     }
 
     @Override
-    public BusDriver read(String s) {
+    public DriverInfor read(String s) {
         return null;
     }
 
     @Override
-    public BusDriver update(BusDriver busDriver) {
+    public DriverInfor update(DriverInfor driverInfor) {
         return null;
     }
 

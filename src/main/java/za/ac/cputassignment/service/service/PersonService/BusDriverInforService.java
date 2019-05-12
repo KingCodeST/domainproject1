@@ -5,6 +5,6 @@ import za.ac.cputassignment.service.IService;
 
 import java.util.Set;
 
-public interface DriverInforService extends IService<DriverInfor,String> {
+public interface BusDriverInforService extends IService<DriverInfor,String> {
     Set<DriverInfor> getAll();
 }
