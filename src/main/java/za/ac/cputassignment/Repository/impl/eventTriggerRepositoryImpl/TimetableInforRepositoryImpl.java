@@ -25,7 +25,7 @@ public class TimetableInforRepositoryImpl implements TimetableInforRepository {
                     .orElse(null);
     }
 
-    private TimetableInforRepositoryImpl getRepository()
+    public static TimetableInforRepositoryImpl getRepository()
     {
         if(repository ==null) repository=new TimetableInforRepositoryImpl();
         return repository;

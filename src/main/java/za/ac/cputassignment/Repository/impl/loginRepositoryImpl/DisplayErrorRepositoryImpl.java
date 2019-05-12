@@ -24,7 +24,7 @@ public class DisplayErrorRepositoryImpl implements DisplayErrorRepository {
                                 .orElse(null);
     }
 
-    private DisplayErrorRepositoryImpl getRepository()
+    public static DisplayErrorRepositoryImpl getRepository()
     {
         if(repository ==null) repository=new DisplayErrorRepositoryImpl();
         return repository;

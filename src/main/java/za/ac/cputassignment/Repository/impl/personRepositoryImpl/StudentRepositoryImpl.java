@@ -25,7 +25,7 @@ public class StudentRepositoryImpl implements StudentRepository {
                             .orElse(null);
     }
 
-    private static StudentRepository getRepository()
+    public static StudentRepository getRepository()
     {
         if(repository ==null) repository =new StudentRepositoryImpl();
         return repository;

@@ -1,14 +1,32 @@
 package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
+import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
+import za.ac.cputassignment.domain.person.BusDriver;
+import za.ac.cputassignment.factory.personFactory.BusDriverFactory;
+
+import java.util.Set;
 
 import static org.junit.Assert.*;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BusDriverRepositoryImplTest {
+
+    private BusDriverRepository repository;
+    private BusDriver busDriver;
+
+    private BusDriver getSavedBusDriver()
+    {
+        Set<BusDriver> savedBusDriver=this.repository.getAll();
+        return savedBusDriver.iterator().next();
+    }
 
     @Before
     public void setUp() throws Exception {
+        this.repository =BusDriverRepositoryImpl.getRepository();
+        this.busDriver = BusDriverFactory.getBusDriver("Vuyo","Mogen","C2090",5);
     }
 
     @Test

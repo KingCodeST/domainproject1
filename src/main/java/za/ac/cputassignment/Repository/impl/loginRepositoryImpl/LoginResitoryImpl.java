@@ -24,7 +24,7 @@ public class LoginResitoryImpl implements LoginRepository {
                             .orElse(null);
     }
 
-    private static LoginRepository getRepository()
+    public static LoginRepository getRepository()
     {
         if(resitory ==null)resitory =new LoginResitoryImpl();
         return resitory;

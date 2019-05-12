@@ -1,14 +1,32 @@
 package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
+import za.ac.cputassignment.Repository.personRepository.DriverInforRepository;
+import za.ac.cputassignment.domain.person.DriverInfor;
+import za.ac.cputassignment.factory.personFactory.DriverInforFactory;
+
+import java.util.Set;
 
 import static org.junit.Assert.*;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DriverInforRepositoryImplTest {
+
+    private DriverInforRepository repository;
+    private DriverInfor driverInfor;
+
+    private DriverInfor getSavedDriverInfor()
+    {
+        Set<DriverInfor> savedDriverInfor=this.repository.getAll();
+        return savedDriverInfor.iterator().next();
+    }
 
     @Before
     public void setUp() throws Exception {
+        this.repository =DriverInforRepositoryImpl.getRepository();
+        this.driverInfor = DriverInforFactory.getDriverInfor("#C12");
     }
 
     @Test

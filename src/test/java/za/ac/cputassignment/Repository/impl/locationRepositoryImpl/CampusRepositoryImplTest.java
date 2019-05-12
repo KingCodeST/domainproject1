@@ -2,23 +2,33 @@ package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.domain.location.Campus;
+import za.ac.cputassignment.factory.locationFactory.CampusFactory;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.Assert.*;
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CampusRepositoryImplTest {
 
     private CampusRepository repository;
-    Campus campus;
+   private   Campus campus;
+
+    private Campus getSavedCampus()
+    {
+        Set<Campus> savedCampus=this.repository.getAll();
+        return savedCampus.iterator().next();
+    }
 
     @Before
     public void setUp() throws Exception {
         this.repository =CampusRepositoryImpl.getRepository();
+        this.campus = CampusFactory.getCampus("Test Campus");
 
     }
 
@@ -49,26 +59,10 @@ public class CampusRepositoryImplTest {
     }
 
     @Test
-    public void getAll() {
-        try {
-
-            Set<Campus> campuses = this.repository.getAll();
-            Assert.assertEquals(null, campuses.size());
+    public void d_getAll() {
 
 
 
-
-
-
-
-
-
-
-
-        }catch (NullPointerException e)
-        {
-            System.out.println(e);
-        }
     }
 
 

@@ -16,7 +16,7 @@ public class DriverInforRepositoryImpl implements DriverInforRepository {
         this.driverInfors =new HashSet<>();
     }
 
-    private DriverInforRepository getRepository()
+    public static DriverInforRepository getRepository()
     {
         if(repository ==null ) repository =new DriverInforRepositoryImpl();
         return repository;

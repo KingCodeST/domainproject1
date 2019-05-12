@@ -24,17 +24,17 @@ public class DisplayError {
         return id;
     }
 
-    private static class Builder{
+    public static class Builder{
 
         private String id;
 
-        private Builder id(String id)
+        public Builder id(String id)
         {
             this.id =id;
             return this;
         }
 
-        private DisplayError buid()
+        public DisplayError buid()
         {
             return new DisplayError(this);
         }

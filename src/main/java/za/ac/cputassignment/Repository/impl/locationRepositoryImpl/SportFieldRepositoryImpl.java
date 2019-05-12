@@ -20,7 +20,7 @@ public class SportFieldRepositoryImpl implements SportFieldRepository {
    }
 
 
-   private SportFieldRepositoryImpl getRepository()
+   public static SportFieldRepositoryImpl getRepository()
    {
        if(repository ==null) repository =new SportFieldRepositoryImpl();
        return repository;

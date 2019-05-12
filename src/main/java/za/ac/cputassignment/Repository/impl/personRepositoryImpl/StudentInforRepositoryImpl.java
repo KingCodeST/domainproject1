@@ -16,7 +16,7 @@ public class StudentInforRepositoryImpl implements StudentInforRepository {
         this.studentInfos =new HashSet<>();
     }
 
-    public  StudentInforRepository getRepository()
+    public static StudentInforRepository getRepository()
     {
         if(repository ==null )repository =new StudentInforRepositoryImpl();
         return repository;

@@ -22,17 +22,17 @@ public class DisplayWelcom {
         return id;
     }
 
-    private static class Builder{
+    public static class Builder{
 
         private String id;
 
-        private Builder id(String id)
+        public Builder id(String id)
         {
             this.id =id;
             return  this;
         }
 
-        private DisplayWelcom build()
+        public DisplayWelcom build()
         {
             return new DisplayWelcom(this);
         }
