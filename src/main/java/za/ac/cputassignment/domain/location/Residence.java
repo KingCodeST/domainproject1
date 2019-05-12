@@ -1,9 +1,11 @@
 package za.ac.cputassignment.domain.location;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.Objects;
 
 public class Residence implements Location {
-
+    @Id
     private String id;
     private String residenceName;
     private int redisenceId;

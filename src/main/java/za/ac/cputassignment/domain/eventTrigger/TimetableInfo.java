@@ -1,13 +1,15 @@
 package za.ac.cputassignment.domain.eventTrigger;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 import za.ac.cputassignment.domain.location.Location;
 import za.ac.cputassignment.domain.transport.Vehicle;
 
 import java.util.Date;
 import java.util.Objects;
-
+@EntityScan
 public class TimetableInfo {
-
+    @Id
     private String id;
     private Date simple;
     private Location location;

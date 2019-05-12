@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.login.DisplayError;
 import za.ac.cputassignment.service.service.LoginService.DisplayErrorService;
 
 import java.util.Set;
 
+@Service
 public class DisplayErrorServiceImpl implements DisplayErrorService {
     @Override
     public Set<DisplayError> getAll() {

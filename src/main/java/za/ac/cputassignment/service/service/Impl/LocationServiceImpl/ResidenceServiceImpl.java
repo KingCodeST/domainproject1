@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.location.Residence;
 import za.ac.cputassignment.service.service.LocationService.ResidenceService;
 
 import java.util.Set;
 
+@Service
 public class ResidenceServiceImpl implements ResidenceService {
     @Override
     public Set<Residence> getAll() {

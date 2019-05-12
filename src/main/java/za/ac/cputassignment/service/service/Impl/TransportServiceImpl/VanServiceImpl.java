@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.TransportServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.transport.Van;
 import za.ac.cputassignment.service.service.TransportService.VanService;
 
 import java.util.Set;
 
+@Service
 public class VanServiceImpl implements VanService {
     @Override
     public Set<Van> getAll() {

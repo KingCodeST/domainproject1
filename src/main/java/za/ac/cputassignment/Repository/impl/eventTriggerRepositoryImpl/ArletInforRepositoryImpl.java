@@ -1,5 +1,6 @@
 package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.ArletInforRepository;
 import za.ac.cputassignment.domain.eventTrigger.ArletInfor;
 

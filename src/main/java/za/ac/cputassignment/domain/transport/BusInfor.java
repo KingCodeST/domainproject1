@@ -1,10 +1,12 @@
 package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
-
+@EntityScan
 public class BusInfor implements Vehicle{
 
+    @Id
     private String id;
     private int yearsofservice;
 

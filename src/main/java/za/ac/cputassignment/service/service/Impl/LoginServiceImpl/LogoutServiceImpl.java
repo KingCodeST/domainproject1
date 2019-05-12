@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.login.Logout;
 import za.ac.cputassignment.service.service.LoginService.LogoutService;
 
 import java.util.Set;
 
+@Service
 public class LogoutServiceImpl implements LogoutService {
     @Override
     public Set<Logout> getAll() {

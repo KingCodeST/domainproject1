@@ -1,12 +1,14 @@
 package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @EntityScan
 public class StudentInfo  {
 
+    @Id
     private String id;
     private String address;
     private int infid;

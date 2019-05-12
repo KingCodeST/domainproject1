@@ -1,12 +1,13 @@
 package za.ac.cputassignment.domain.login;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @EntityScan
 public class DisplayWelcom {
-
+    @Id
     private String id;
 
 

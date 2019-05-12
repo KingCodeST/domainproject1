@@ -1,6 +1,7 @@
 package za.ac.cputassignment.domain.location;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
@@ -9,8 +10,8 @@ import java.util.Objects;
 @EntityScan
 public class Campus {
 
-
-    private String Id;
+    @Id
+    private String id;
     private String campusname;
 
     private Campus (){}
@@ -19,7 +20,7 @@ public class Campus {
     public Campus(Builder builder)
     {
         this.campusname =builder.campusname;
-        this.Id =builder.Id;
+        this.id =builder.id;
 
     }
 
@@ -28,19 +29,19 @@ public class Campus {
     }
 
     public String getCampusId() {
-        return Id;
+        return id;
     }
 
     public static class Builder
     {
-        public String Id;
+        public String id;
 
         private String campusname;
 
 
-        public Builder Id(String Id)
+        public Builder id(String Id)
         {
-            this.Id =Id;
+            this.id =Id;
             return this;
         }
 
@@ -64,19 +65,19 @@ public class Campus {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Campus campus = (Campus) o;
-        return Id == campus.Id;
+        return id == campus.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Campus{" +
                 "campusname='" + campusname + '\'' +
-                ", campusId=" + Id +
+                ", campusId=" + id +
                 '}';
     }
 }

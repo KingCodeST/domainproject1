@@ -1,12 +1,13 @@
 package za.ac.cputassignment.domain.location;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @EntityScan
 public class SpecialLocation implements Location {
-
+    @Id
     private String id;
     private int SLocalId;
     private String name;

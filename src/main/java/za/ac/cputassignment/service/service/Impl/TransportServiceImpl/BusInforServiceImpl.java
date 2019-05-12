@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.TransportServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.transport.BusInfor;
 import za.ac.cputassignment.service.service.TransportService.BusInforService;
 
 import java.util.Set;
 
+@Service
 public class BusInforServiceImpl implements BusInforService {
     @Override
     public Set<BusInfor> getAll() {

@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.location.LocationInfor;
 import za.ac.cputassignment.service.service.LocationService.LocationInforService;
 
 import java.util.Set;
 
+@Service
 public class LocationinforServiceImpl implements LocationInforService {
     @Override
     public Set<LocationInfor> getAll() {

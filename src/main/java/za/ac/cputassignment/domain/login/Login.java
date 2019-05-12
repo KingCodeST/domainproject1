@@ -2,11 +2,13 @@ package za.ac.cputassignment.domain.login;
 
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 @EntityScan
 public class Login {
 
+    @Id
     private String loginId;
     private String username;
     private String password;

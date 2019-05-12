@@ -1,6 +1,7 @@
 package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Objects;
 @EntityScan
 public class DriverInfor   {
 
+    @Id
     private String id;
 
     List<BusDriver>    busDriverList= new ArrayList<BusDriver>();

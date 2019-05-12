@@ -1,11 +1,15 @@
 package za.ac.cputassignment.domain.eventTrigger;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
+
 import java.util.Objects;
 
+@EntityScan
 public class RideStatus implements Notification {
 
 
-
+    @Id
     private String id;
 
     private RideStatus (){}

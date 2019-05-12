@@ -1,10 +1,12 @@
 package za.ac.cputassignment.service.service.Impl.eventTriggerServiceImpl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.domain.eventTrigger.Ride;
 import za.ac.cputassignment.service.service.eventTriggerService.RideService;
 
 import java.util.Set;
 
+@Service
 public class RideServiceImpl implements RideService {
     @Override
     public Set<Ride> getAll() {
