@@ -6,7 +6,7 @@ public class RideFactory {
 
     public static Ride getRide()
     {
-        return  new Ride.Builder().id("232").color("Color").build();
+        return  new Ride.Builder().Rideid("232").color("Color").build();
     }
 
 }

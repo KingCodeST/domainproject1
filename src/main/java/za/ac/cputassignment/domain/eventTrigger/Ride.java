@@ -6,11 +6,12 @@ import za.ac.cputassignment.domain.location.Location;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @EntityScan
 public class Ride {
     @Id
-    private String id;
+    private String Rideid;
         private String color;
       private  List<Location>  local=new ArrayList<Location>();
       private  List<Timetable> listTime=new ArrayList<Timetable>();
@@ -21,12 +22,12 @@ public class Ride {
 
         private Ride(Builder builder)
         {
-            this.id =builder.id;
+            this.Rideid =builder.Rideid;
             this.color =builder.color;
         }
 
     public String getId() {
-        return id;
+        return Rideid;
     }
 
     public String getColor() {
@@ -43,14 +44,14 @@ public class Ride {
 
     public static class Builder
     {
-        private String id;
+        private String Rideid;
         private String color;
         private  List<Location>  local=new ArrayList<Location>();
         private  List<Timetable> listTime=new ArrayList<Timetable>();
 
-        public Builder id(String id)
+        public Builder Rideid(String Rideid)
         {
-            this.id =id;
+            this.Rideid =Rideid;
             return this;
         }
 
@@ -67,5 +68,16 @@ public class Ride {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ride ride = (Ride) o;
+        return Rideid.equals(ride.Rideid);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(Rideid);
+    }
 }

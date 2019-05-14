@@ -4,27 +4,21 @@ import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.ArletInforRepository;
 import za.ac.cputassignment.domain.eventTrigger.ArletInfor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
+@Repository("InMemory")
 public class ArletInforRepositoryImpl implements ArletInforRepository {
 
     private static ArletInforRepositoryImpl repository=null;
-    private Set<ArletInfor> arletInfors;
+    private Map<String, ArletInfor> arletInfors;
 
 
     private ArletInforRepositoryImpl()
     {
-        this.arletInfors =new HashSet<>();
+        this.arletInfors =new HashMap<>();
     }
 
-    private ArletInfor findArlet(String arletId)
-    {
-        return arletInfors.stream()
-                .filter(arletInfor -> arletInfor.getId().trim().equals(arletId))
-                .findAny()
-                .orElse(null);
-    }
+
 
     public  static ArletInforRepository getRepository()
     {
@@ -36,37 +30,34 @@ public class ArletInforRepositoryImpl implements ArletInforRepository {
 
     @Override
     public ArletInfor create(ArletInfor arletInfor) {
-       this.arletInfors.add(arletInfor);
+       this.arletInfors.put(arletInfor.getId(),arletInfor);
         return arletInfor;
     }
 
     @Override
     public ArletInfor read(String arlteId) {
-        ArletInfor arletInfor=findArlet(arlteId);
-        return arletInfor;
+
+        return this.arletInfors.get(arlteId);
     }
 
 
     @Override
     public ArletInfor update(ArletInfor arletInfor) {
-       ArletInfor arletInfor1 =findArlet(arletInfor.getId());
-       if(arletInfor1 !=null)
-       {
-           this.arletInfors.remove(arletInfor1);
-           return create(arletInfor);
-       }
-        return null;
+       this.arletInfors.replace(arletInfor.getId(),arletInfor);
+       return this.arletInfors.get(arletInfor.getId());
     }
 
     @Override
     public void delete(String arletId) {
-        ArletInfor arletInfor=findArlet(arletId);
-        if(arletInfor !=null) this.arletInfors.remove(arletInfor);
+        this.arletInfors.remove(arletId);
     }
 
 
     @Override
     public Set<ArletInfor> getAll() {
-        return this.arletInfors;
+        Collection<ArletInfor> arletInfors =this.arletInfors.values();
+        Set<ArletInfor> set =new HashSet<>();
+        set.addAll(arletInfors);
+        return set;
     }
 }
