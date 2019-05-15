@@ -1,11 +1,12 @@
 package za.ac.cputassignment.Repository.impl.trasportRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.trasportRepository.VanRepository;
 import za.ac.cputassignment.domain.transport.Van;
 
 import java.util.*;
 import java.util.stream.Stream;
-
+@Repository("InMemory")
 public class VanRepositoryImpl implements VanRepository {
 
     private  static VanRepositoryImpl repository=null;

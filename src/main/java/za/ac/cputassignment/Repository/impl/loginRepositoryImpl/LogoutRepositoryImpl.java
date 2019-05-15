@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.loginRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.loginRepository.LogoutRepository;
 import za.ac.cputassignment.domain.login.Logout;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class LogoutRepositoryImpl implements LogoutRepository {
 
    private static LogoutRepositoryImpl repository =null;

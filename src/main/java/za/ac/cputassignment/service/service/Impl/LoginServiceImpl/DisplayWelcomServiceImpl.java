@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.DisplayWelcomRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.DisplayWelcomRepository;
@@ -8,10 +10,11 @@ import za.ac.cputassignment.service.service.LoginService.DisplayWelcomService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class DisplayWelcomServiceImpl implements DisplayWelcomService {
 
-    private static DisplayWelcomServiceImpl service=null;
+    @Autowired
+    @Qualifier
     private DisplayWelcomRepository repository;
 
 
@@ -20,11 +23,7 @@ public class DisplayWelcomServiceImpl implements DisplayWelcomService {
         this.repository = DisplayWelcomRepositoryImpl.getRepository();
     }
 
-    public static DisplayWelcomServiceImpl getService()
-    {
-        if(service ==null) service=new DisplayWelcomServiceImpl();
-        return service;
-    }
+
 
     @Override
     public Set<DisplayWelcom> getAll() {

@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.LocationRepository.SpecialLocationRepository;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.SpecialLocationRepositoryImpl;
@@ -8,10 +10,11 @@ import za.ac.cputassignment.service.service.LocationService.SpecialLocationServi
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class SpecialLocationServiceImpl implements SpecialLocationService {
 
-    private static SpecialLocationServiceImpl service=null;
+    @Autowired
+    @Qualifier
     private SpecialLocationRepository repository;
 
     private SpecialLocationServiceImpl()
@@ -19,11 +22,6 @@ public class SpecialLocationServiceImpl implements SpecialLocationService {
         this.repository = SpecialLocationRepositoryImpl.getRepository();
     }
 
-    public static SpecialLocationServiceImpl getService()
-    {
-        if(service== null) service =new SpecialLocationServiceImpl();
-        return  service;
-    }
 
 
     @Override

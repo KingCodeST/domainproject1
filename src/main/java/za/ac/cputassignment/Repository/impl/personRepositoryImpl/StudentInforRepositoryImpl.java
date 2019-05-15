@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.personRepository.StudentInforRepository;
 import za.ac.cputassignment.domain.person.StudentInfo;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class StudentInforRepositoryImpl implements StudentInforRepository {
 
     private static StudentInforRepositoryImpl repository=null;

@@ -1,30 +1,28 @@
 package za.ac.cputassignment.service.service.Impl.PersonServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusBusDriverInforRepositoryImpl;
-import za.ac.cputassignment.Repository.personRepository.DriverInforRepository;
+
+import za.ac.cputassignment.Repository.impl.personRepositoryImpl.DriverInforRepositoryImpl;
 import za.ac.cputassignment.domain.person.DriverInfor;
-import za.ac.cputassignment.service.service.PersonService.BusDriverInforService;
+import za.ac.cputassignment.service.service.PersonService.DriverInforService;
 
 import java.util.Set;
 
-@Service
-public class BusDriverInforServiceImpl implements BusDriverInforService {
+@Service("ServiceImpl")
+public class DriverInforServiceImpl implements DriverInforService {
 
-    private static BusDriverInforServiceImpl service=null;
-    private DriverInforRepository repository;
+    @Autowired
+    @Qualifier
+    private DriverInforRepositoryImpl repository;
 
-    public BusDriverInforServiceImpl()
+    private DriverInforServiceImpl()
     {
-        this.repository = BusBusDriverInforRepositoryImpl.getRepository();
-
+        this.repository =DriverInforRepositoryImpl.getRepository();
     }
 
-    public static BusDriverInforServiceImpl getService()
-    {
-        if(service ==null) service =new BusDriverInforServiceImpl();
-        return service;
-    }
+
 
     @Override
     public Set<DriverInfor> getAll() {

@@ -1,11 +1,12 @@
 package za.ac.cputassignment.Repository.impl.trasportRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.trasportRepository.BusRepository;
 import za.ac.cputassignment.domain.transport.Bus;
 import za.ac.cputassignment.domain.transport.Bus;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class BusRepositoryImpl implements BusRepository {
 
     private static BusRepositoryImpl repository = null;

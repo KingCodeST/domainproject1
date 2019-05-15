@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.personRepository.DriverInforRepository;
 import za.ac.cputassignment.domain.person.DriverInfor;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class DriverInforRepositoryImpl implements DriverInforRepository {
 
     private static DriverInforRepositoryImpl repository=null;
@@ -15,7 +16,7 @@ public class DriverInforRepositoryImpl implements DriverInforRepository {
         this.driverInfors =new HashMap<>();
     }
 
-    public static DriverInforRepository getRepository()
+    public static DriverInforRepositoryImpl getRepository()
     {
         if(repository ==null ) repository =new DriverInforRepositoryImpl();
         return repository;

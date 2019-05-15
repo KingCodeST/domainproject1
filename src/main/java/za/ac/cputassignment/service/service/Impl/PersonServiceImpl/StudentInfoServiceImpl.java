@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.PersonServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.StudentInforRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.StudentInforRepository;
@@ -8,10 +10,11 @@ import za.ac.cputassignment.service.service.PersonService.StudentInfoService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class StudentInfoServiceImpl implements StudentInfoService {
 
-    private  static StudentInfoServiceImpl service=null;
+    @Autowired
+    @Qualifier
     private StudentInforRepository repository;
 
     private StudentInfoServiceImpl()
@@ -19,11 +22,7 @@ public class StudentInfoServiceImpl implements StudentInfoService {
         this.repository = StudentInforRepositoryImpl.getRepository();
     }
 
-    public static StudentInfoServiceImpl getService()
-    {
-        if(service ==null) service=StudentInfoServiceImpl.getService();
-        return service;
-    }
+
 
     @Override
     public Set<StudentInfo> getAll() {

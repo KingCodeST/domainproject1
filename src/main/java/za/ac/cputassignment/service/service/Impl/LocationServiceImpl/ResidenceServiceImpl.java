@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.LocationRepository.ResidenceRepository;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.ResidenceRepositoryImpl;
@@ -8,9 +10,12 @@ import za.ac.cputassignment.service.service.LocationService.ResidenceService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class ResidenceServiceImpl implements ResidenceService {
-    private static ResidenceServiceImpl service=null;
+
+
+    @Autowired
+    @Qualifier
     private ResidenceRepository repository;
 
     private ResidenceServiceImpl()
@@ -19,11 +24,7 @@ public class ResidenceServiceImpl implements ResidenceService {
 
     }
 
-    public static ResidenceServiceImpl getService()
-    {
-        if(service ==null) service =new ResidenceServiceImpl();
-        return service;
-    }
+
 
     @Override
     public Set<Residence> getAll() {

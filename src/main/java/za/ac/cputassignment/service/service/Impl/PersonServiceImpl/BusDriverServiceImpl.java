@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.PersonServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusDriverRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
@@ -10,8 +12,8 @@ import java.util.Set;
 
 @Service
 public class BusDriverServiceImpl implements BusDriverService {
-
-    private static  BusDriverServiceImpl service=null;
+    @Autowired
+    @Qualifier
     private BusDriverRepository repository;
 
     private BusDriverServiceImpl()
@@ -20,11 +22,7 @@ public class BusDriverServiceImpl implements BusDriverService {
     }
 
 
-    public static BusDriverServiceImpl getService()
-    {
-        if(service ==null) service =new BusDriverServiceImpl();
-        return service;
-    }
+
 
     @Override
     public Set<BusDriver> getAll() {

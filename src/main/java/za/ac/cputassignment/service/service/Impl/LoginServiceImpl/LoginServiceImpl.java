@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LoginResitoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.LoginRepository;
@@ -8,10 +10,12 @@ import za.ac.cputassignment.service.service.LoginService.LoginService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class LoginServiceImpl implements LoginService {
 
-    private static LoginServiceImpl service=null;
+    @Autowired
+    @Qualifier
+
     private LoginRepository repository;
 
     private LoginServiceImpl()
@@ -19,11 +23,6 @@ public class LoginServiceImpl implements LoginService {
         this.repository = LoginResitoryImpl.getRepository();
     }
 
-    public static LoginServiceImpl getService()
-    {
-        if(service ==null) service =new LoginServiceImpl();
-        return service;
-    }
 
     @Override
     public Set<Login> getAll() {

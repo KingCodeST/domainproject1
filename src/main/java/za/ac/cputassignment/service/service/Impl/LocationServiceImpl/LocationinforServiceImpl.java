@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.LocationRepository.LocationInforRepository;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.LocationInforRepositoryImpl;
@@ -8,10 +10,12 @@ import za.ac.cputassignment.service.service.LocationService.LocationInforService
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class LocationinforServiceImpl implements LocationInforService {
 
-    private static LocationinforServiceImpl service =null;
+
+    @Autowired
+    @Qualifier
     private LocationInforRepository repository;
 
     private LocationinforServiceImpl()
@@ -19,11 +23,7 @@ public class LocationinforServiceImpl implements LocationInforService {
         this.repository = LocationInforRepositoryImpl.getRepository();
     }
 
-    public static  LocationinforServiceImpl getService()
-    {
-        if(service ==null) service =LocationinforServiceImpl.getService();
-        return service;
-    }
+
 
     @Override
     public Set<LocationInfor> getAll() {

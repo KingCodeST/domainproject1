@@ -1,11 +1,12 @@
 package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.LocationRepository.SportFieldRepository;
 import za.ac.cputassignment.domain.location.SportField;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class SportFieldRepositoryImpl implements SportFieldRepository {
 
    private static  SportFieldRepositoryImpl repository =null;

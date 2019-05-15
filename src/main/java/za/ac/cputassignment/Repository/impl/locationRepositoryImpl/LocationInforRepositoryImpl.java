@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.LocationRepository.LocationInforRepository;
 import za.ac.cputassignment.domain.location.LocationInfor;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     private static LocationInforRepositoryImpl repository=null;

@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.DisplayErrorRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.DisplayErrorRepository;
@@ -9,10 +11,11 @@ import za.ac.cputassignment.service.service.LoginService.DisplayErrorService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class DisplayErrorServiceImpl implements DisplayErrorService {
 
-    private static DisplayErrorServiceImpl service=null;
+    @Autowired
+    @Qualifier
     private DisplayErrorRepository repository;
 
     private DisplayErrorServiceImpl()
@@ -20,11 +23,7 @@ public class DisplayErrorServiceImpl implements DisplayErrorService {
         this.repository = DisplayErrorRepositoryImpl.getRepository();
     }
 
-    public static DisplayErrorServiceImpl getService()
-    {
-        if(service == null) service =new DisplayErrorServiceImpl();
-        return service;
-    }
+
 
     @Override
     public Set<DisplayError> getAll() {

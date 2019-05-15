@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.LocationRepository.ResidenceRepository;
 import za.ac.cputassignment.domain.location.Residence;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class ResidenceRepositoryImpl implements ResidenceRepository {
 
     private static ResidenceRepositoryImpl repository =null;

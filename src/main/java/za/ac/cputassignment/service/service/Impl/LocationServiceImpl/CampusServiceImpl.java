@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.CampusRepositoryImpl;
@@ -8,10 +10,12 @@ import za.ac.cputassignment.service.service.LocationService.CampusService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class CampusServiceImpl implements CampusService {
 
-    private static CampusServiceImpl service=null;
+
+    @Autowired
+    @Qualifier
     private CampusRepository campusRepository;
 
     private CampusServiceImpl()
@@ -19,11 +23,7 @@ public class CampusServiceImpl implements CampusService {
         this.campusRepository = CampusRepositoryImpl.getRepository();
     }
 
-    public static CampusServiceImpl getService()
-    {
-        if(service==null) service=new CampusServiceImpl();
-        return service;
-    }
+
 
     @Override
     public Set<Campus> getAll() {

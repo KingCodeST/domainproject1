@@ -1,12 +1,13 @@
 package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.domain.location.Campus;
 import za.ac.cputassignment.factory.locationFactory.CampusFactory;
 
 import java.util.*;
 
-
+@Repository("InMemory")
 public class CampusRepositoryImpl implements CampusRepository {
 
     private static CampusRepositoryImpl repository=null;

@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.eventTriggerServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.eventTriggerRepository.ArletInforRepository;
 import za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl.ArletInforRepositoryImpl;
@@ -8,22 +10,19 @@ import za.ac.cputassignment.service.service.eventTriggerService.ArletInforServic
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class ArletInforServiceImpl implements ArletInforService {
 
-    private static  ArletInforServiceImpl service=null;
+
+    @Autowired
+    @Qualifier
     private ArletInforRepository repository;
 
     private ArletInforServiceImpl() {
         this.repository = ArletInforRepositoryImpl.getRepository();
     }
 
-    public static ArletInforServiceImpl getService()
-    {
-        if(service ==null) service =new ArletInforServiceImpl();
-        return service;
-    }
-
+   
     @Override
     public Set<ArletInfor> getAll() {
         return this.repository.getAll();

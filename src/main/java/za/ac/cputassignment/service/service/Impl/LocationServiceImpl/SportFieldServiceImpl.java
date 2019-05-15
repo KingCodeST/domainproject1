@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.LocationRepository.SportFieldRepository;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.SportFieldRepositoryImpl;
@@ -8,21 +10,16 @@ import za.ac.cputassignment.service.service.LocationService.SportFieldService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class SportFieldServiceImpl implements SportFieldService {
 
-    private static SportFieldServiceImpl service =null;
+   @Autowired
+   @Qualifier
     private SportFieldRepository repository;
 
     private SportFieldServiceImpl()
     {
         this.repository =SportFieldRepositoryImpl.getRepository();
-    }
-
-    public static SportFieldServiceImpl getService()
-    {
-        if(service ==null) service =new SportFieldServiceImpl();
-        return  service;
     }
 
 

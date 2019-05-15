@@ -1,11 +1,12 @@
 package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.RideStatusRepository;
 import za.ac.cputassignment.domain.eventTrigger.Ride;
 import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class RideStatusRepositoryImpl implements RideStatusRepository {
 
     private static RideStatusRepositoryImpl repository=null;

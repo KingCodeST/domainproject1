@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.loginRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.loginRepository.DisplayWelcomRepository;
 import za.ac.cputassignment.domain.login.DisplayWelcom;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class DisplayWelcomRepositoryImpl implements DisplayWelcomRepository {
 
    private static DisplayWelcomRepositoryImpl repository =null;

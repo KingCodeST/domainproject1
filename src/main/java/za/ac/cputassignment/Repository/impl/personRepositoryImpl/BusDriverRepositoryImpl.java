@@ -1,11 +1,12 @@
 package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
 import za.ac.cputassignment.domain.person.BusDriver;
 
 import java.util.HashSet;
 import java.util.Set;
-
+@Repository("InMemory")
 public class BusDriverRepositoryImpl implements BusDriverRepository {
 
     private static BusDriverRepositoryImpl repository=null;

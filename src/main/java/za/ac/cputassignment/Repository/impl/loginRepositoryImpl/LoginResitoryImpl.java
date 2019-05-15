@@ -1,10 +1,11 @@
 package za.ac.cputassignment.Repository.impl.loginRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.loginRepository.LoginRepository;
 import za.ac.cputassignment.domain.login.Login;
 
 import java.util.*;
-
+@Repository("InMemory")
 public class LoginResitoryImpl implements LoginRepository {
 
     private static LoginResitoryImpl resitory=null;

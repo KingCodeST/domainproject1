@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LogoutRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.LogoutRepository;
@@ -8,10 +10,12 @@ import za.ac.cputassignment.service.service.LoginService.LogoutService;
 
 import java.util.Set;
 
-@Service
+@Service("ServiceImpl")
 public class LogoutServiceImpl implements LogoutService {
 
-    private static LogoutServiceImpl service=null;
+    @Autowired
+    @Qualifier
+
     private LogoutRepository repository;
 
     private LogoutServiceImpl()
@@ -19,11 +23,6 @@ public class LogoutServiceImpl implements LogoutService {
         this.repository = LogoutRepositoryImpl.getRepository();
     }
 
-    public static LogoutServiceImpl getService()
-    {
-        if(service ==null) service =new LogoutServiceImpl();
-        return  service;
-    }
 
     @Override
     public Set<Logout> getAll() {
