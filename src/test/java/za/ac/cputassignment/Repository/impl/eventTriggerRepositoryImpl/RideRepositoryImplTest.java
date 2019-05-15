@@ -4,7 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cputassignment.Repository.eventTriggerRepository.RideRepository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.RideStatusRepository;
 import za.ac.cputassignment.domain.eventTrigger.Ride;
@@ -14,7 +17,8 @@ import za.ac.cputassignment.factory.eventTriggerFactory.RideFactory;
 import java.util.Set;
 
 import static org.junit.Assert.*;
-
+@SpringBootTest
+@RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RideRepositoryImplTest {
 
@@ -58,7 +62,7 @@ public class RideRepositoryImplTest {
     public void c_update() {
        String ids ="423";
        String colord="";
-       Ride ride1=new Ride.Builder().id(ids).color(colord).build();
+       Ride ride1=new Ride.Builder().Rideid(ids).color(colord).build();
        System.out.println("In update, about_to_updated ="+ride1);
        Ride updated =this.repository.update(ride1);
 

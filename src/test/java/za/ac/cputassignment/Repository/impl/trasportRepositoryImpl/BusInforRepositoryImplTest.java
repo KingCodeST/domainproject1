@@ -3,7 +3,10 @@ package za.ac.cputassignment.Repository.impl.trasportRepositoryImpl;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cputassignment.Repository.trasportRepository.BusInforRepository;
 import za.ac.cputassignment.domain.transport.BusInfor;
 import za.ac.cputassignment.factory.transportFactory.BusInforFactory;
@@ -11,7 +14,9 @@ import za.ac.cputassignment.factory.transportFactory.BusInforFactory;
 import java.util.Set;
 
 import static org.junit.Assert.*;
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@SpringBootTest
+@RunWith(SpringRunner.class)
+@FixMethodOrder(MethodSorters.JVM)
 public class BusInforRepositoryImplTest {
 
     private BusInforRepository repository;

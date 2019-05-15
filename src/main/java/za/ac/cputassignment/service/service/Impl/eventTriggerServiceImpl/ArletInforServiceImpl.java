@@ -22,7 +22,7 @@ public class ArletInforServiceImpl implements ArletInforService {
         this.repository = ArletInforRepositoryImpl.getRepository();
     }
 
-   
+
     @Override
     public Set<ArletInfor> getAll() {
         return this.repository.getAll();
