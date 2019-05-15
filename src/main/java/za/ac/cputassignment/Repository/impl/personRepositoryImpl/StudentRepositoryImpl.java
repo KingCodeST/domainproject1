@@ -3,27 +3,18 @@ package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.StudentRepository;
 import za.ac.cputassignment.domain.person.Student;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class StudentRepositoryImpl implements StudentRepository {
 
     private static StudentRepositoryImpl repository=null;
-    private  Set<Student> students;
+    private Map<String,Student> students;
 
     private StudentRepositoryImpl()
     {
-        this.students =new HashSet<>();
+        this.students =new HashMap<>();
     }
 
-    private Student findStudent(String sId)
-    {
-        return this.students.stream()
-                            .filter(student -> student.getId().trim().equals(sId))
-                            .findAny()
-                            .orElse(null);
-    }
 
     public static StudentRepository getRepository()
     {
@@ -36,38 +27,33 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public Student create(Student student) {
-        this.students.add(student);
+        this.students.put(student.getId(),student);
         return student;
     }
     @Override
     public Student read(String s) {
-        Student student =findStudent(s);
-        return student;
+        return this.students.get(s);
     }
 
     @Override
     public Student update(Student student) {
+        this.students.replace(student.getId(),student);
+        return this.students.get(student.getId());
 
-        Student student1 =findStudent(student.getId());
-        if(student1 !=null)
-        {
-            this.students.remove(student1);
-            return create(student);
-        }
-
-        return  null;
     }
 
     @Override
     public void delete(String studentId) {
-        Student student =findStudent(studentId);
-        if(student !=null )this.students.remove(student);
-
+       this.students.remove(studentId);
     }
 
     @Override
     public Set<Student> getAll() {
-        return this.students;
+        Collection<Student> students=this.students.values();
+        Set<Student> set=new HashSet<>();
+        set.addAll(students);
+        return set;
+
     }
 
 

@@ -2,9 +2,7 @@ package za.ac.cputassignment.service.service.Impl.PersonServiceImpl;
 
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusBusDriverInforRepositoryImpl;
-import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusDriverRepositoryImpl;
-import za.ac.cputassignment.Repository.personRepository.BusDriverInforRepository;
-import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
+import za.ac.cputassignment.Repository.personRepository.DriverInforRepository;
 import za.ac.cputassignment.domain.person.DriverInfor;
 import za.ac.cputassignment.service.service.PersonService.BusDriverInforService;
 
@@ -14,7 +12,7 @@ import java.util.Set;
 public class BusDriverInforServiceImpl implements BusDriverInforService {
 
     private static BusDriverInforServiceImpl service=null;
-    private BusDriverInforRepository repository;
+    private DriverInforRepository repository;
 
     public BusDriverInforServiceImpl()
     {

@@ -3,26 +3,21 @@ package za.ac.cputassignment.Repository.impl.trasportRepositoryImpl;
 import za.ac.cputassignment.Repository.trasportRepository.VanRepository;
 import za.ac.cputassignment.domain.transport.Van;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class VanRepositoryImpl implements VanRepository {
 
     private  static VanRepositoryImpl repository=null;
-    private Set<Van> vans;
+    private Map<String,Van> vans;
 
     private VanRepositoryImpl()
     {
-        this.vans =new HashSet<>();
+        this.vans =new HashMap<>();
     }
 
 
-    private Van findVan(String vanId)
-    {
-        return this.vans.stream()
-                .filter(van -> van.getVanId().trim().equals(vanId)).findAny().orElse(null);
-    }
+
 
     public static VanRepository getRepository()
     {
@@ -33,31 +28,31 @@ public class VanRepositoryImpl implements VanRepository {
 
     @Override
     public Set<Van> getAll() {
-        return this.vans;
+        Collection<Van> vans =this.vans.values();
+        Set<Van> set=new HashSet<>();
+        set.addAll(vans);
+        return set;
     }
 
     @Override
     public Van create(Van van) {
-        this.vans.add(van);
+        this.vans.put(van.getVanId(),van);
         return van;
     }
 
     @Override
     public Van update(Van van) {
-        return null;
+        this.vans.replace(van.getVanId(),van);
+        return this.vans.get(van.getVanId());
     }
 
     @Override
     public void delete(String vanId) {
-       Van van=findVan(vanId);
-        if(van !=null) this.vans.remove(van);
-
-
+       this.vans.remove(vanId);
     }
 
     @Override
     public Van read( String vanId) {
-        Van van= findVan(vanId);
-        return van;
+        return this.vans.get(vanId);
     }
 }

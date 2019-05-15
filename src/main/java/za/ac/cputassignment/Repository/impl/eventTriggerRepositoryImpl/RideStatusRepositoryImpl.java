@@ -4,17 +4,16 @@ import za.ac.cputassignment.Repository.eventTriggerRepository.RideStatusReposito
 import za.ac.cputassignment.domain.eventTrigger.Ride;
 import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class RideStatusRepositoryImpl implements RideStatusRepository {
 
     private static RideStatusRepositoryImpl repository=null;
-    private Set<RideStatus> rideStatuses;
+    private Map<String,RideStatus> rideStatuses;
 
     private RideStatusRepositoryImpl()
     {
-        this.rideStatuses =new HashSet<>();
+        this.rideStatuses =new HashMap<>();
     }
 
 
@@ -23,47 +22,37 @@ public class RideStatusRepositoryImpl implements RideStatusRepository {
         return repository;
     }
 
-    private RideStatus findRide(String rideStatusId)
-    {
-        return this.rideStatuses.stream().filter(rideStatus -> rideStatus.getId().trim().equals(rideStatusId))
-                                .findAny()
-                                .orElse(null);
-    }
+
 
 
 
     @Override
     public RideStatus create(RideStatus rideStatus) {
-        this.rideStatuses.add(rideStatus);
-        return rideStatus;
+       this.rideStatuses.put(rideStatus.getId(),rideStatus);
+       return rideStatus;
     }
     @Override
     public RideStatus read(String rideStatusId) {
-       RideStatus rideStatus=findRide(rideStatusId);
-        return rideStatus;
+       return this.rideStatuses.get(rideStatusId);
     }
 
     @Override
     public RideStatus update(RideStatus rideStatus) {
-        RideStatus rideStatus1 =findRide(rideStatus.getId());
-        if(rideStatus1 !=null)
-        {
-            this.rideStatuses.remove(rideStatus);
-            return create(rideStatus);
-        }
-
-        return null;
+        this.rideStatuses.replace(rideStatus.getId(),rideStatus);
+        return this.rideStatuses.get(rideStatus.getId());
     }
 
     @Override
     public void delete(String rideStaId) {
-        RideStatus rideStatus=findRide(rideStaId);
-        if(rideStatus !=null) this.rideStatuses.remove(rideStatus);
+      this.rideStatuses.remove(rideStaId);
     }
 
     @Override
     public Set<RideStatus> getAll() {
-        return this.rideStatuses;
+        Collection<RideStatus> rideStatuses=this.rideStatuses.values();
+        Set<RideStatus> set =new HashSet<>();
+        set.addAll(rideStatuses);
+        return set;
 
     }
 

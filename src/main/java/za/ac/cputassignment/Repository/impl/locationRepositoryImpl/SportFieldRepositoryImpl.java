@@ -4,19 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import za.ac.cputassignment.Repository.LocationRepository.SportFieldRepository;
 import za.ac.cputassignment.domain.location.SportField;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class SportFieldRepositoryImpl implements SportFieldRepository {
 
    private static  SportFieldRepositoryImpl repository =null;
-   private Set<SportField> sportFieldSet;
+   private Map<String,SportField> sportFieldSet;
 
 
    private SportFieldRepositoryImpl()
    {
-       this.sportFieldSet =new HashSet<>();
+       this.sportFieldSet =new HashMap<>();
    }
 
 
@@ -26,39 +24,35 @@ public class SportFieldRepositoryImpl implements SportFieldRepository {
        return repository;
    }
 
-   private SportField findSportfield(String sId)
-   {
-       return this.sportFieldSet.stream()
-                                .filter(sportField -> sportField.getId().trim().equals(sId))
-                                .findAny()
-                                .orElse(null);
-   }
-
-
 
 
     @Override
     public SportField create(SportField sportField) {
-        return null;
+      this.sportFieldSet.put(sportField.getId(),sportField);
+      return sportField;
     }
 
     @Override
     public SportField read(String s) {
-        return null;
+        return this.sportFieldSet.get(s);
     }
 
     @Override
     public void delete(String s) {
-
+        this.sportFieldSet.remove(s);
     }
 
     @Override
     public SportField update(SportField sportField) {
-        return null;
+        this.sportFieldSet.replace(sportField.getId(),sportField);
+        return this.sportFieldSet.get(sportField.getId());
     }
 
     @Override
     public Set<SportField> getAll() {
-        return null;
+        Collection<SportField> sportFields=this.sportFieldSet.values();
+        Set<SportField> set=new HashSet<>();
+        set.addAll(sportFields);
+        return set;
     }
 }

@@ -4,16 +4,15 @@ import za.ac.cputassignment.Repository.trasportRepository.BusRepository;
 import za.ac.cputassignment.domain.transport.Bus;
 import za.ac.cputassignment.domain.transport.Bus;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class BusRepositoryImpl implements BusRepository {
 
     private static BusRepositoryImpl repository = null;
-    private Set<Bus> buses;
+    private Map<String,Bus> buses;
 
     private BusRepositoryImpl() {
-        this.buses = new HashSet<>();
+        this.buses = new HashMap<>();
     }
 
     public static BusRepository getRepository() {
@@ -21,42 +20,36 @@ public class BusRepositoryImpl implements BusRepository {
         return repository;
     }
 
-    private Bus findBus(String busId)
-    {
-        return (Bus) this.buses.stream().filter(bus -> bus.getId().trim().equals(busId))
-                .findAny().orElse(null);
-    }
+
 
     @Override
     public Set<Bus> getAll() {
-        return this.buses;
+        Collection<Bus> buses=this.buses.values();
+        Set<Bus> set=new HashSet<>();
+        set.addAll(buses);
+        return set;
     }
 
     @Override
     public Bus create(Bus bus) {
-        this.buses.add(bus);
+        this.buses.put(bus.getId(),bus);
         return bus;
     }
 
     @Override
     public Bus update(Bus bus) {
-        Bus toDelete =findBus(bus.getId());
-        if(toDelete !=null){
-            this.buses.remove(toDelete);
-        return create(bus);}
-        return null;
+       this.buses.replace(bus.getId(),bus);
+       return this.buses.get(bus.getId());
     }
 
     @Override
     public void delete(String busId) {
-        Bus bus =findBus(busId);
-        if(bus !=null) this.buses.remove(bus);
+       this.buses.remove(busId);
 
     }
 
     @Override
     public Bus read(String busId) {
-        Bus bus=findBus(busId);
-        return bus;
+       return this.buses.get(busId);
     }
 }

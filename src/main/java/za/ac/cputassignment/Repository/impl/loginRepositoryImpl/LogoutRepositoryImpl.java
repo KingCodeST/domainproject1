@@ -3,25 +3,19 @@ package za.ac.cputassignment.Repository.impl.loginRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.LogoutRepository;
 import za.ac.cputassignment.domain.login.Logout;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class LogoutRepositoryImpl implements LogoutRepository {
 
    private static LogoutRepositoryImpl repository =null;
-   private Set<Logout> logouts;
+   private Map<String,Logout> logouts;
 
    private LogoutRepositoryImpl()
    {
-       this.logouts = new HashSet<>();
+       this.logouts = new HashMap<>();
    }
 
-   private Logout findLogout(String ouId)
-   {
-       return this.logouts.stream().filter(logout -> logout.getId().trim().equals(ouId))
-                                    .findAny()
-                                    .orElse(null);
-   }
+
 
    public static LogoutRepository getRepository()
    {
@@ -32,36 +26,32 @@ public class LogoutRepositoryImpl implements LogoutRepository {
 
     @Override
     public Logout create(Logout logout) {
-        this.logouts.add(logout);
+        this.logouts.put(logout.getId(),logout);
         return logout;
     }
 
     @Override
     public Logout update(Logout logout) {
-       Logout logout1 =findLogout(logout.getId());
-       if(logout1 !=null)
-       {
-           this.logouts.remove(logout1);
-           return create(logout);
-       }
-       return null;
+       this.logouts.replace(logout.getId(),logout);
+       return this.logouts.get(logout.getId());
     }
 
     @Override
     public void delete(String s) {
-        Logout logout =findLogout(s);
-        if(logout !=null) this.logouts.remove(logout);
+        this.logouts.remove(s);
     }
 
     @Override
     public Logout read(String s) {
-       Logout logout=findLogout(s);
-       return logout;
+       return  this.logouts.get(s);
     }
 
     @Override
     public Set<Logout> getAll() {
-        return this.logouts;
+        Collection<Logout> logouts=this.logouts.values();
+        Set<Logout> set=new HashSet<>();
+        set.addAll(logouts);
+        return set;
     }
 
 }

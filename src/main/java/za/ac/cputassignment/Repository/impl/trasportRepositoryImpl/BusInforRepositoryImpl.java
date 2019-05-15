@@ -6,28 +6,20 @@ import za.ac.cputassignment.Repository.trasportRepository.BusInforRepository;
 import za.ac.cputassignment.domain.person.BusDriver;
 import za.ac.cputassignment.domain.transport.BusInfor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class BusInforRepositoryImpl implements BusInforRepository {
 
 
 
     private static BusInforRepositoryImpl repository=null;
-    private Set<BusInfor> busSetRepo;
+    private Map<String,BusInfor> busSetRepo;
 
     private BusInforRepositoryImpl()
     {
-        this.busSetRepo =new HashSet<>();
+        this.busSetRepo =new HashMap<>();
     }
 
-    private BusInfor findBusinfor(String businfId)
-    {
-        return this.busSetRepo.stream().filter(busInfor -> busInfor.getId().trim().equals(businfId))
-                                .findAny()
-                                .orElse(null);
-
-    }
 
     public static BusInforRepositoryImpl getRepository()
     {
@@ -39,39 +31,35 @@ public class BusInforRepositoryImpl implements BusInforRepository {
 
     @Override
     public BusInfor create(BusInfor busInfor) {
-        this.busSetRepo.add(busInfor);
+        this.busSetRepo.put(busInfor.getId(),busInfor);
         return busInfor;
     }
 
     @Override
     public BusInfor read(String busInforId) {
-        BusInfor busInfor=findBusinfor(busInforId);
-        return busInfor;
+        return this.busSetRepo.get(busInforId);
     }
 
 
     @Override
     public BusInfor update(BusInfor busInfor) {
-        BusInfor busInfor1=findBusinfor(busInfor.getId());
-        if(busInfor1 !=null)
-        {
-            this.busSetRepo.remove(busInfor);
-            return create(busInfor);
-        }
-        return null;
+        this.busSetRepo.replace(busInfor.getId(),busInfor);
+        return this.busSetRepo.get(busInfor.getId());
     }
 
     @Override
     public void delete(String busInforId) {
-        BusInfor busInfor=findBusinfor(busInforId);
-        if(busInfor ==null) this.busSetRepo.remove(busInfor);
+        this.busSetRepo.remove(busInforId);
     }
 
 
 
     @Override
     public Set<BusInfor> getAll() {
-        return this.busSetRepo;
+        Collection<BusInfor> busInfors =busSetRepo.values();
+        Set<BusInfor> set=new HashSet<>();
+        set.addAll(busInfors);
+        return set;
     }
 
 }

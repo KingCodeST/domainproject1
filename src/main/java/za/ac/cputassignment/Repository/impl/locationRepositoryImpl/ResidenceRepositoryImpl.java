@@ -3,27 +3,20 @@ package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 import za.ac.cputassignment.Repository.LocationRepository.ResidenceRepository;
 import za.ac.cputassignment.domain.location.Residence;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class ResidenceRepositoryImpl implements ResidenceRepository {
 
     private static ResidenceRepositoryImpl repository =null;
-    private Set<Residence> residences;
+    private Map<String,Residence> residences;
 
 
     private ResidenceRepositoryImpl()
     {
-        this.residences =new HashSet<>();
+        this.residences =new HashMap<>();
     }
 
-    private Residence findResidence(String rezId)
-    {
-        return this.residences.stream()
-                              .filter(residence -> residence.getId().trim().equals(rezId))
-                                .findAny()
-                                .orElse(null);
-    }
+
 
     public static ResidenceRepositoryImpl getRepository()
     {
@@ -35,39 +28,34 @@ public class ResidenceRepositoryImpl implements ResidenceRepository {
 
     @Override
     public Residence create(Residence residence) {
-        this.residences.add(residence);
-
+        this.residences.put(residence.getId(),residence);
         return residence;
     }
 
     @Override
-    public Residence read(String s) {
-        Residence residence=findResidence(s);
-        return residence;
+    public Residence read(String residenceId) {
+        return  this.residences.get(residenceId);
     }
 
     @Override
     public Residence update(Residence residence) {
-        Residence residence1 =findResidence(residence.getId());
-        if(residence1 !=null)
-        {
-            this.residences.remove(residence1);
-            return create(residence);
-        }
-        return null;
+       this.residences.replace(residence.getId(),residence);
+       return this.residences.get(residence.getId());
     }
 
     @Override
-    public void delete(String s) {
-        Residence residence =findResidence(s);
-        if(residence !=null) this.residences.remove(residence);
+    public void delete(String residenceId) {
+        this.residences.remove(residenceId);
     }
 
 
 
     @Override
     public Set<Residence> getAll() {
-        return this.residences;
+        Collection<Residence> residences1=this.residences.values();
+        Set<Residence> set =new HashSet<>();
+        return set;
+
     }
 
 

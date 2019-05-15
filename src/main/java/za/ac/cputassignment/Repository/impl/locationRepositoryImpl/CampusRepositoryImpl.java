@@ -4,29 +4,20 @@ import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.domain.location.Campus;
 import za.ac.cputassignment.factory.locationFactory.CampusFactory;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 
 public class CampusRepositoryImpl implements CampusRepository {
 
     private static CampusRepositoryImpl repository=null;
-    private Set<Campus> campusSet;
-    Campus campuss;
-    CampusFactory campusFactory;
+    private Map<String,Campus> campusSet;
 
     private CampusRepositoryImpl()
     {
-        this.campusSet =new HashSet<>();
+        this.campusSet =new HashMap<>();
     }
 
-    private Campus findCampus(String campusId)
-    {
-        return this.campusSet.stream()
-                             .filter(campus -> campus.getCampusId().trim().equals(campusId))
-                             .findAny()
-                             .orElse(null);
-    }
+
 
     public static CampusRepositoryImpl getRepository()
     {
@@ -36,37 +27,32 @@ public class CampusRepositoryImpl implements CampusRepository {
 
     public Campus create(Campus campus)
     {
-        this.campusSet.add(campus);
+        this.campusSet.put(campus.getCampusId(),campus);
         return campus;
     }
 
     public Campus read(String campusId)
     {
-        Campus campus =findCampus(campusId);
-        return campus;
+       return this.campusSet.get(campusId);
     }
 
     public void delete(String campusId)
     {
-        Campus deleteCamp=findCampus(campusId);
-        if(deleteCamp !=null)this.campusSet.remove(deleteCamp);
-
+        this.campusSet.remove(campusId);
     }
 
     public Campus update(Campus campus)
     {
-        Campus campus1 =findCampus(campus.getCampusId());
-        if(campus1 !=null)
-        {
-            this.campusSet.remove(campus1);
-            return this.create(campus1);
-        }
-        return null;
+        this.campusSet.replace(campus.getCampusId(),campus);
+        return this.campusSet.get(campus.getCampusId());
     }
 
     public Set<Campus> getAll()
     {
-        return this.campusSet;
+        Collection<Campus> campuses=this.campusSet.values();
+        Set<Campus> set =new HashSet<>();
+        set.addAll(campuses);
+        return set;
     }
 
 

@@ -3,19 +3,18 @@ package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 import za.ac.cputassignment.Repository.LocationRepository.SpecialLocationRepository;
 import za.ac.cputassignment.domain.location.SpecialLocation;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SpecialLocationRepositoryImpl implements SpecialLocationRepository {
 
 
     private static SpecialLocationRepositoryImpl repository = null;
-    private Set<SpecialLocation> specialLocations;
+    private Map<String,SpecialLocation> specialLocations;
 
 
     private SpecialLocationRepositoryImpl()
     {
-        this.specialLocations =new HashSet<>();
+        this.specialLocations =new HashMap<>();
     }
 
     public static SpecialLocationRepositoryImpl getRepository()
@@ -28,49 +27,37 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
 
 
 
-    private SpecialLocation findSpecialLocation(String lId)
-    {
-        return this.specialLocations.stream()
-                .filter(specialLocation -> specialLocation.getId().trim().equals(lId))
-                .findAny()
-                .orElse(null);
-    }
-
-
     @Override
     public SpecialLocation create(SpecialLocation specialLocation) {
-        this.specialLocations.add(specialLocation);
+        this.specialLocations.put(specialLocation.getId(),specialLocation);
         return specialLocation;
     }
 
     @Override
     public SpecialLocation read(String s) {
-        SpecialLocation specialLocation =findSpecialLocation(s);
-        return specialLocation;
+       return this.specialLocations.get(s);
+
     }
 
     @Override
     public SpecialLocation update(SpecialLocation specialLocation) {
-        SpecialLocation specialLocation1 =findSpecialLocation(specialLocation.getId());
-        if(specialLocation1 !=null)
-        {
-            this.specialLocations.remove(specialLocation1);
-            return create(specialLocation);
-        }
-        return null;
+       this.specialLocations.replace(specialLocation.getId(),specialLocation);
+       return this.specialLocations.get(specialLocation.getId());
     }
 
     @Override
-    public void delete(String s) {
-        SpecialLocation specialLocation =findSpecialLocation(s);
-        if(specialLocation !=null) this.specialLocations.remove(specialLocation);
+    public void delete(String specialloId) {
+        this.specialLocations.remove(specialloId);
     }
 
 
 
     @Override
     public Set<SpecialLocation> getAll() {
-        return this.specialLocations;
+        Collection<SpecialLocation> specialLocations1 =this.specialLocations.values();
+        Set<SpecialLocation> set =new HashSet<>();
+        set.addAll(specialLocations1);
+        return set;
     }
 
 }

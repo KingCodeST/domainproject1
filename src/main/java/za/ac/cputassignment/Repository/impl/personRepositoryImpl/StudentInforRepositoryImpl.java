@@ -3,17 +3,16 @@ package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.StudentInforRepository;
 import za.ac.cputassignment.domain.person.StudentInfo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class StudentInforRepositoryImpl implements StudentInforRepository {
 
     private static StudentInforRepositoryImpl repository=null;
-    private Set<StudentInfo> studentInfos;
+    private Map<String,StudentInfo> studentInfos;
 
     private StudentInforRepositoryImpl()
     {
-        this.studentInfos =new HashSet<>();
+        this.studentInfos =new HashMap<>();
     }
 
     public static StudentInforRepository getRepository()
@@ -22,48 +21,39 @@ public class StudentInforRepositoryImpl implements StudentInforRepository {
         return repository;
     }
 
-    private StudentInfo findstunt(String stId)
-    {
-        return this.studentInfos.stream().filter(studentInfo -> studentInfo.getId().trim().equals(stId))
-                                        .findAny()
-                                        .orElse(null);
-    }
 
 
     @Override
     public StudentInfo create(StudentInfo studentInfo) {
-        this.studentInfos.add(studentInfo);
+        this.studentInfos.put(studentInfo.getId(),studentInfo);
         return studentInfo;
     }
 
     @Override
     public StudentInfo read(String s) {
-        StudentInfo studentInfo =findstunt(s);
-        return studentInfo;
+        return this.studentInfos.get(s);
     }
 
 
     @Override
     public StudentInfo update(StudentInfo studentInfo) {
-        StudentInfo studentInfo1 =findstunt(studentInfo.getId());
-        if(studentInfo1 !=null)
-        {
-            this.studentInfos.remove(studentInfo1);
-            return create(studentInfo);
-        }
-        return null;
+
+        this.studentInfos.replace(studentInfo.getId(),studentInfo);
+        return this.studentInfos.get(studentInfo.getId());
     }
 
     @Override
     public void delete(String s) {
-        StudentInfo studentInfo =findstunt(s);
-        if(studentInfo !=null) this.studentInfos.remove(studentInfo);
+        this.studentInfos.remove(s);
     }
 
 
     @Override
     public Set<StudentInfo> getAll() {
-        return this.studentInfos;
+        Collection<StudentInfo>studentInfos=this.studentInfos.values();
+        Set<StudentInfo> set =new HashSet<>();
+        set.addAll(studentInfos);
+        return set;
     }
 
 }

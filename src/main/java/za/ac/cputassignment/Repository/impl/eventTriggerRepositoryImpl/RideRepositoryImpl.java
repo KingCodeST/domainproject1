@@ -1,28 +1,23 @@
 package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
+import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.LocationRepository.ResidenceRepository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.RideRepository;
 import za.ac.cputassignment.domain.eventTrigger.Ride;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
+@Repository("InMemory")
 public class RideRepositoryImpl implements RideRepository {
 
     private static RideRepositoryImpl repository=null;
-    private Set<Ride> rides;
+    private Map<String,Ride> rides;
 
     private RideRepositoryImpl()
     {
-        this.rides =new HashSet<>();
+        this.rides =new HashMap<>();
     }
 
-    private Ride findRide(String Rideid){
-        return this.rides.stream()
-                         .filter(ride -> ride.getId().trim().equals(Rideid))
-                        .findAny()
-                        .orElse(null);
-    }
 
     public static RideRepositoryImpl getRepository()
     {
@@ -33,37 +28,34 @@ public class RideRepositoryImpl implements RideRepository {
 
     @Override
     public Ride create(Ride ride) {
-        this.rides.add(ride);
+        this.rides.put(ride.getId(),ride);
         return ride;
     }
 
     @Override
     public Ride read(String RideId) {
-        Ride ride=findRide(RideId);
-        return ride;
+        return this.rides.get(RideId);
+
     }
 
     @Override
     public Ride update(Ride ride) {
-        Ride toDelete =findRide(ride.getId());
-        if(toDelete !=null)
-        {
-            this.rides.remove(toDelete);
-            return create(ride);
-        }
-        return null;
+        this.rides.replace(ride.getId(),ride);
+        return this.rides.get(ride.getId());
     }
 
     @Override
     public void delete(String RideId) {
-        Ride ride =findRide(RideId);
-        if(ride !=null) this.rides.remove(ride);
+        this.rides.remove(RideId);
 
     }
 
 
     @Override
     public Set<Ride> getAll() {
-        return this.rides;
+        Collection<Ride> rides=this.rides.values();
+        Set<Ride> set =new HashSet<>();
+        set.addAll(rides);
+        return set;
     }
 }

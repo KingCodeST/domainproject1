@@ -3,27 +3,20 @@ package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 import za.ac.cputassignment.Repository.LocationRepository.LocationInforRepository;
 import za.ac.cputassignment.domain.location.LocationInfor;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     private static LocationInforRepositoryImpl repository=null;
-    private Set<LocationInfor> locationInforSet;
+    private Map<String,LocationInfor> locationInforSet;
 
     private LocationInforRepositoryImpl()
     {
-        this.locationInforSet =new HashSet<>();
+        this.locationInforSet =new HashMap<>();
     }
 
 
-    private LocationInfor findLocationInfor(String locationInforId)
-    {
-        return locationInforSet.stream()
-                                .filter(locationInfor -> locationInfor.getId().trim().equals(locationInforId))
-                                .findAny()
-                                .orElse(null);
-    }
+
 
     public static LocationInforRepositoryImpl getRepository()
     {
@@ -35,39 +28,34 @@ public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     @Override
     public LocationInfor create(LocationInfor locationInfor) {
-        this.locationInforSet.add(locationInfor);
+        this.locationInforSet.put(locationInfor.getId(),locationInfor);
         return locationInfor;
     }
 
     @Override
     public LocationInfor read(String locainforId) {
-        LocationInfor local=findLocationInfor(locainforId);
-
-        return local;
+        return this.locationInforSet.get(locainforId);
     }
 
     @Override
     public LocationInfor update(LocationInfor locationInfor) {
-        LocationInfor locationInfor1=findLocationInfor(locationInfor.getId());
-        if(locationInfor1 !=null)
-        {
-            this.locationInforSet.remove(locationInfor1);
-            return create(locationInfor);
-        }
-        return null;
+       this.locationInforSet.replace(locationInfor.getId(),locationInfor);
+       return this.locationInforSet.get(locationInfor.getId());
     }
 
     @Override
     public void delete(String locaId) {
-        LocationInfor locationInfor=findLocationInfor(locaId);
-        if(locationInfor !=null)this.locationInforSet.remove(locationInfor);
+       this.locationInforSet.remove(locaId);
     }
 
 
 
     @Override
     public Set<LocationInfor> getAll() {
-        return this.locationInforSet;
+        Collection<LocationInfor> locationInfors =this.locationInforSet.values();
+        Set<LocationInfor> set =new HashSet<>();
+        set.addAll(locationInfors);
+        return set;
     }
 
 
