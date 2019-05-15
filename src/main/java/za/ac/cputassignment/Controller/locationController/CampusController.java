@@ -11,7 +11,7 @@ public class CampusController {
 
     @Autowired
     private CampusService service;
-   
+
 
 
 }
