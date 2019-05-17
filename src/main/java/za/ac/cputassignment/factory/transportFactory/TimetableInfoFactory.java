@@ -5,12 +5,12 @@ import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 public class TimetableInfoFactory {
 
 
-    public static TimetableInfo getTimetableInfo()
+    public static TimetableInfo getTimetableInfo(String Tid)
     {
 
 
         return  new TimetableInfo.Builder()
-                                .Id("343")
+                                .Id(Tid)
                                 .build();
 
 

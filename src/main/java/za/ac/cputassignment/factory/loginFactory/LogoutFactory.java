@@ -5,9 +5,11 @@ import za.ac.cputassignment.domain.login.Logout;
 public class LogoutFactory {
 
 
-    public static Logout getLogout()
+    public static Logout getLogout(String LouId)
     {
-        return new Logout.Builder().id("765").build();
+        return new Logout.Builder()
+                        .id(LouId)
+                        .build();
     }
 
 

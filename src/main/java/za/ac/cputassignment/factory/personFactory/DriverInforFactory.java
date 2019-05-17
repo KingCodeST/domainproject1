@@ -7,7 +7,7 @@ public class DriverInforFactory {
     public static DriverInfor getDriverInfor(String id)
     {
         return new DriverInfor.Builder()
-                              .id("1")
+                              .id(id)
                                 .build();
     }
 

@@ -6,6 +6,9 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
@@ -17,12 +20,14 @@ import java.util.Set;
 
 import static org.junit.Assert.*;
 @SpringBootTest
+@AutoConfigurationPackage
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CampusRepositoryImplTest {
 
+    @Autowired
     private CampusRepository repository;
-   private   Campus campus;
+    private String  campusId=null;
 
     private Campus getSavedCampus()
     {
@@ -30,24 +35,14 @@ public class CampusRepositoryImplTest {
         return savedCampus.iterator().next();
     }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =CampusRepositoryImpl.getRepository();
-        this.campus = CampusFactory.getCampus("Test Campus");
 
-    }
 
     @Test
     public void create() {
-    try {
-        this.repository.create(campus);
-
-        assertEquals(campus, campus);
-
-    }catch (NullPointerException ex)
-    {
-        System.out.println(ex);
-    }
+        Campus campus=CampusFactory.getCampus("District Six");
+        Campus result= repository.create(campus);
+        campusId =result.getCampusId();
+        Assert.assertNotNull(campus);
 
     }
 

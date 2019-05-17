@@ -4,10 +4,12 @@ import za.ac.cputassignment.domain.location.LocationInfor;
 
 public class LocationInforFactory {
 
-    public static LocationInfor getLocationInfor()
+    public static LocationInfor getLocationInfor(String LinfId)
     {
 
-        return  new LocationInfor.Builder().id("564H").build();
+        return  new LocationInfor.Builder()
+                                .id(LinfId)
+                                .build();
 
 
     }

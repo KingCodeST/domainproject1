@@ -4,10 +4,10 @@ import za.ac.cputassignment.domain.login.DisplayError;
 
 public class DisplayErrorFactory {
 
-    public static DisplayError getDisplayError()
+    public static DisplayError getDisplayError(String Did)
     {
         return  new DisplayError.Builder()
-                                .id("32#")
+                                .id(Did)
                                 .buid();
     }
 

@@ -10,10 +10,10 @@ public class VanFactory {
     {
 
         return  new Van.Builder()
-                .vanId("")
-                .brand("BMW")
-                .numPlate("CEM87930")
-                .patrol(90.9)
+                .vanId(id)
+                .brand(brand)
+                .numPlate(numPlate)
+                .patrol(patrol)
                 .build();
 
 

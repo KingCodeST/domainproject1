@@ -4,11 +4,11 @@ import za.ac.cputassignment.domain.transport.BusInfor;
 
 public class BusInforFactory {
 
-    public static BusInfor getBusInfor()
+    public static BusInfor getBusInfor(String busId,int year)
     {
         return  new BusInfor.Builder()
-                            .id("231")
-                            .yearsofservice(1)
+                            .id(busId)
+                            .yearsofservice(year)
                             .buid();
 
     }

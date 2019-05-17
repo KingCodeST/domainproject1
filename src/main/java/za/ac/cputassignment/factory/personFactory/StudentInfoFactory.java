@@ -4,11 +4,11 @@ import za.ac.cputassignment.domain.person.StudentInfo;
 
 public class StudentInfoFactory {
 
-    public  static StudentInfo getStudentInfo()
+    public  static StudentInfo getStudentInfo(String StidId,String addr)
     {
         return  new StudentInfo.Builder()
-                                .id("145")
-                                .address("1836 tambo hermanus")
+                                .id(StidId)
+                                .address(addr)
                                 .build();
     }
 
