@@ -29,12 +29,7 @@ public class StudentInforRepositoryImplTest {
     }
 
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =StudentInforRepositoryImpl.getRepository();
-        this.studentInfo = StudentInfoFactory.getStudentInfo();
 
-    }
 
     @Test
     public void getRepository() {

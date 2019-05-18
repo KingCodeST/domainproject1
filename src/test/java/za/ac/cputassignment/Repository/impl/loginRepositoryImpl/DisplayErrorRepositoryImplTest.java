@@ -28,11 +28,7 @@ public class DisplayErrorRepositoryImplTest {
         return savedDisplayError.iterator().next();
     }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =DisplayErrorRepositoryImpl.getRepository();
-        this.displayError = DisplayErrorFactory.getDisplayError();
-    }
+
 
     @Test
     public void getAll() {

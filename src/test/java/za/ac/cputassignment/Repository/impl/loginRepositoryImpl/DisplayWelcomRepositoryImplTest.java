@@ -28,11 +28,7 @@ public class DisplayWelcomRepositoryImplTest {
         return savedDisplaywell.iterator().next();
     }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =DisplayWelcomRepositoryImpl.getRepository();
-        this.displayWelcom = DisplayWelcomFactory.getDisplayeWelcom();
-    }
+
 
     @Test
     public void getRepository() {

@@ -28,12 +28,7 @@ public class TimetableInforRepositoryImplTest {
         return savedTimetableinfor.iterator().next();
     }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =TimetableInforRepositoryImpl.getRepository();
-        this.timetableInfo = TimetableInfoFactory.getTimetableInfo();
 
-    }
 
     @Test
     public void getAll() {

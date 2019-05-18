@@ -29,11 +29,7 @@ public class LogoutRepositoryImplTest {
     }
 
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =LogoutRepositoryImpl.getRepository();
-        this.logout = LogoutFactory.getLogout();
-    }
+
 
     @Test
     public void getRepository() {

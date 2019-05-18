@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.client.RestTemplate;
 import za.ac.cputassignment.Repository.LocationRepository.CampusRepository;
 import za.ac.cputassignment.domain.location.Campus;
 import za.ac.cputassignment.factory.locationFactory.CampusFactory;
@@ -24,6 +26,12 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CampusRepositoryImplTest {
+
+    @Bean
+     public RestTemplate restTemplate()
+    {
+        return new RestTemplate();
+    }
 
     @Autowired
     private CampusRepository repository;

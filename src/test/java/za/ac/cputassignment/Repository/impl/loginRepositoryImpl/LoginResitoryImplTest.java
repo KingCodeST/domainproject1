@@ -28,12 +28,7 @@ public class LoginResitoryImplTest {
         return savedLogin.iterator().next();
     }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =LoginResitoryImpl.getRepository();
-        this.login = LoginFactory.getLogin();
 
-    }
 
     @Test
     public void getAll() {

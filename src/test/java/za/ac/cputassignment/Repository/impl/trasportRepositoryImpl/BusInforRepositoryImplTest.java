@@ -28,13 +28,7 @@ public class BusInforRepositoryImplTest {
         return savedBusInfor.iterator().next();
     }
 
-    @Before
-           public void setup()throws Exception
-    {
-        this.repository =BusInforRepositoryImpl.getRepository();
-        this.busInfor = BusInforFactory.getBusInfor();
 
-    }
 
     @Test
     public void getAll() {

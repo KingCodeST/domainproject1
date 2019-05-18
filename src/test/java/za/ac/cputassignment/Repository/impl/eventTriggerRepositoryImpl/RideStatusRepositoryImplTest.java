@@ -30,13 +30,6 @@ public class RideStatusRepositoryImplTest {
         return savedRideStatus.iterator().next();
     }
 
-    @Before
-    public void setUp() throws Exception {
-
-        this.repository =RideStatusRepositoryImpl.getRepository();
-        this.rideStatus = RideStatusFactory.getRideStatus();
-    }
-
 
 
 

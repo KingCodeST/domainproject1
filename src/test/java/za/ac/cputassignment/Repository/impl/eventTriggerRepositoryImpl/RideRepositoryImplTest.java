@@ -33,14 +33,6 @@ public class RideRepositoryImplTest {
    }
 
 
-    @Before
-    public void setUp() throws Exception {
-
-       this.repository = RideRepositoryImpl.getRepository();
-       this.ride = RideFactory.getRide();
-
-
-    }
 
     @Test
     public void d_getAll() {
