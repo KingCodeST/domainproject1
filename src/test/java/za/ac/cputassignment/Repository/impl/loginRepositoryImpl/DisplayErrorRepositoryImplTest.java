@@ -5,6 +5,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cputassignment.Repository.loginRepository.DisplayErrorRepository;
@@ -19,6 +20,7 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DisplayErrorRepositoryImplTest {
 
+    @Autowired
     private DisplayErrorRepository repository;
     private DisplayError displayError;
 

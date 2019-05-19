@@ -9,7 +9,7 @@ import java.util.Objects;
 public class DisplayError {
 
     @Id
-    private String id;
+    private String Displayeid;
 
     private DisplayError(){
 
@@ -17,21 +17,21 @@ public class DisplayError {
 
     private DisplayError(Builder build)
     {
-        this.id =build.id;
+        this.Displayeid =build.Displayeid;
 
     }
 
     public String getId() {
-        return id;
+        return Displayeid;
     }
 
     public static class Builder{
 
-        private String id;
+        private String Displayeid;
 
-        public Builder id(String id)
+        public Builder id(String Displayeid)
         {
-            this.id =id;
+            this.Displayeid =Displayeid;
             return this;
         }
 
@@ -47,18 +47,18 @@ public class DisplayError {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DisplayError that = (DisplayError) o;
-        return id.equals(that.id);
+        return Displayeid.equals(that.Displayeid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(Displayeid);
     }
 
     @Override
     public String toString() {
         return "DisplayError{" +
-                "id='" + id + '\'' +
+                "id='" + Displayeid + '\'' +
                 '}';
     }
 }
