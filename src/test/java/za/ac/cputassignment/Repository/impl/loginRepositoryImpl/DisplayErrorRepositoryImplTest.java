@@ -17,18 +17,14 @@ import java.util.Set;
 import static org.junit.Assert.*;
 @SpringBootTest
 @RunWith(SpringRunner.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.JVM)
 public class DisplayErrorRepositoryImplTest {
 
-    @Autowired
-    private DisplayErrorRepository repository;
-    private DisplayError displayError;
 
-    private DisplayError getSavedDisplayError()
-    {
-        Set<DisplayError> savedDisplayError=this.repository.getAll();
-        return savedDisplayError.iterator().next();
-    }
+    private DisplayErrorRepository repository;
+    private String Displayeid=null;
+
+
 
 
 
@@ -37,7 +33,9 @@ public class DisplayErrorRepositoryImplTest {
     }
 
     @Test
-    public void create() {
+    public void DisplayScreencreate() {
+
+
     }
 
     @Test
