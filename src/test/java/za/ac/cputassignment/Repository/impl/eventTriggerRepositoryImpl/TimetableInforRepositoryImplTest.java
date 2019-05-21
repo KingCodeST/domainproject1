@@ -1,16 +1,19 @@
 package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cputassignment.Repository.eventTriggerRepository.TimetableInforRepository;
 import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 import za.ac.cputassignment.factory.transportFactory.TimetableInfoFactory;
 
+import java.io.IOException;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -19,16 +22,20 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TimetableInforRepositoryImplTest {
 
+    //@Autowired
     private TimetableInforRepository repository;
-    private TimetableInfo timetableInfo;
+    private String TimetableInfoID=null;
 
-    private TimetableInfo getTimetableInfoSaved()
+    @Test
+    public void TimetableInforCreateTest() throws IOException
     {
-        Set<TimetableInfo> savedTimetableinfor =this.repository.getAll();
-        return savedTimetableinfor.iterator().next();
+        TimetableInfo timetableInfo=TimetableInfoFactory.getTimetableInfo("");
+        TimetableInfo result= repository.create(timetableInfo);
+        TimetableInfoID =result.getId();
+        Assert.assertNotNull(timetableInfo);
     }
 
-
+    
 
     @Test
     public void getAll() {

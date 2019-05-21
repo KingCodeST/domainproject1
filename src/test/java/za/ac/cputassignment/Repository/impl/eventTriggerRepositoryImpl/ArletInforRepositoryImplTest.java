@@ -33,7 +33,7 @@ public class ArletInforRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository =ArletInforRepositoryImpl.getRepository();
-        //this.arletInfor = ArletInforFactory
+    //    this.arletInfor = ArletInforFactory.
     }
 
 
