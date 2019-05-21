@@ -27,7 +27,7 @@ public class SportFieldRepositoryImplTest {
     @Test
     public void SportFieldTest() throws IOException
     {
-        SportField sportField =SportFieldFactory.getSportField("#FA","1856 Dollar ","UWC");
+        SportField sportField =SportFieldFactory.getSportField(4,"1856 Dollar ","1883 May 43","UWC");
         SportField result =repository.create(sportField);
         sportFieldId =result.getId();
         Assert.assertNotNull(sportField);

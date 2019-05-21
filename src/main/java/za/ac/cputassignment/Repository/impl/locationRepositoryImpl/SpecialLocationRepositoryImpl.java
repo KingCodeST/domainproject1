@@ -10,12 +10,12 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
 
 
     private static SpecialLocationRepositoryImpl repository = null;
-    private Map<SpecialLocation, SpecialLocation> specialLocations;
+    private Map<String, SpecialLocation> specialLocations;
 
 
     private SpecialLocationRepositoryImpl()
     {
-        this.specialLocations =new HashMap<SpecialLocation, SpecialLocation>();
+        this.specialLocations =new HashMap<String, SpecialLocation>();
     }
 
     public static SpecialLocationRepositoryImpl getRepository()

@@ -27,7 +27,7 @@ public class SpecialLocation implements Location {
 
     }
 
-    public String getId() {
+    public String  getId() {
         return id;
     }
 
