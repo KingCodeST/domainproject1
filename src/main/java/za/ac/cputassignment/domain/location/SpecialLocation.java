@@ -8,7 +8,7 @@ import java.util.Objects;
 @EntityScan
 public class SpecialLocation implements Location {
     @Id
-    private SpecialLocation id;
+    private String id;
     private int SLocalId;
     private String name;
     private String address;
@@ -27,7 +27,7 @@ public class SpecialLocation implements Location {
 
     }
 
-    public SpecialLocation getId() {
+    public String getId() {
         return id;
     }
 
@@ -61,12 +61,12 @@ public class SpecialLocation implements Location {
 
     public static class Builder
     {
-        private SpecialLocation id;
+        private String id;
         private int SLocalId;
         private String name;
         private String address;
 
-        public Builder id(SpecialLocation id)
+        public Builder id(String id)
         {
             this.id =id;
             return this;
