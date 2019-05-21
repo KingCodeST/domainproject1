@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.JVM)
 public class DisplayErrorRepositoryImplTest {
 
-
+    @Autowired
     private DisplayErrorRepository repository;
     private String Displayeid=null;
 

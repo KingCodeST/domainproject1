@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TimetableInforRepositoryImplTest {
 
-    //@Autowired
+    @Autowired
     private TimetableInforRepository repository;
     private String TimetableInfoID=null;
 

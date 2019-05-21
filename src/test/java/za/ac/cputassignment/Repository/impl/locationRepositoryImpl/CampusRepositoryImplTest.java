@@ -27,13 +27,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.JVM)
 public class CampusRepositoryImplTest {
 
-    @Bean
-     public RestTemplate restTemplate()
-    {
-        return new RestTemplate();
-    }
 
-
+    @Autowired
     private CampusRepository repository;
     private String  campusId=null;
 

@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BusRepositoryImplTest {
 
-
+    @Autowired
     private BusRepository repository;
     private String busId=null;
 
