@@ -20,45 +20,8 @@ import static org.junit.Assert.*;
 public class ResidenceRepositoryImplTest {
 
     private ResidenceRepository repository;
-    private Residence residence;
-
-
-    private Residence getSavedResidence()
-    {
-        Set<Residence> savedResidence=this.repository.getAll();
-        return savedResidence.iterator().next();
-    }
+    private String residenceId;
 
 
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =ResidenceRepositoryImpl.getRepository();
-        this.residence = ResidenceFactory.getResidence("");
-
-    }
-
-    @Test
-    public void getRepository() {
-    }
-
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

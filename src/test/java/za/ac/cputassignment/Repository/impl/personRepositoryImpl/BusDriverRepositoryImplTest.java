@@ -20,41 +20,7 @@ import static org.junit.Assert.*;
 public class BusDriverRepositoryImplTest {
 
     private BusDriverRepository repository;
-    private BusDriver busDriver;
+    private String busDriverId;
 
-    private BusDriver getSavedBusDriver()
-    {
-        Set<BusDriver> savedBusDriver=this.repository.getAll();
-        return savedBusDriver.iterator().next();
-    }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =BusDriverRepositoryImpl.getRepository();
-        this.busDriver = BusDriverFactory.getBusDriver("Vuyo","Mogen","C2090",5);
-    }
-
-    @Test
-    public void getRepository() {
-    }
-
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

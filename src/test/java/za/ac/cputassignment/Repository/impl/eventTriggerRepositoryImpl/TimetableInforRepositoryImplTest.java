@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.cputassignment.Repository.eventTriggerRepository.TimetableInforRepository;
+import za.ac.cputassignment.domain.eventTrigger.Timetable;
 import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 import za.ac.cputassignment.factory.transportFactory.TimetableInfoFactory;
 
@@ -35,25 +36,13 @@ public class TimetableInforRepositoryImplTest {
         Assert.assertNotNull(timetableInfo);
     }
 
-    
-
     @Test
-    public void getAll() {
+    public  void SiteTimetableInfoTest() throws  IOException
+    {
+        TimetableInfo timetableInfo =repository.read(TimetableInfoID);
+        Assert.assertNotNull(timetableInfo);
     }
 
-    @Test
-    public void create() {
-    }
 
-    @Test
-    public void update() {
-    }
 
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

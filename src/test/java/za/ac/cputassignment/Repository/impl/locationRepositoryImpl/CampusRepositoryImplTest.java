@@ -33,16 +33,11 @@ public class CampusRepositoryImplTest {
         return new RestTemplate();
     }
 
-    @Autowired
+
     private CampusRepository repository;
     private String  campusId=null;
 
-    private Campus getSavedCampus()
-    {
-        Set<Campus> savedCampus=this.repository.getAll();
-        return savedCampus.iterator().next();
-    }
-
+   
 
 
     @Test
@@ -51,25 +46,6 @@ public class CampusRepositoryImplTest {
         Campus result= repository.create(campus);
         campusId =result.getCampusId();
         Assert.assertNotNull(campus);
-
-    }
-
-    @Test
-    public void read() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void d_getAll() {
-
-
 
     }
 

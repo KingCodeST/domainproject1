@@ -20,38 +20,7 @@ import static org.junit.Assert.*;
 public class StudentInforRepositoryImplTest {
 
     private StudentInforRepository repository;
-    private StudentInfo studentInfo;
-
-    private StudentInfo getSavedStudentinfo()
-    {
-        Set<StudentInfo> savedStudentInfor=this.repository.getAll();
-        return savedStudentInfor.iterator().next();
-    }
+    private String studentInfoId;
 
 
-
-
-    @Test
-    public void getRepository() {
-    }
-
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

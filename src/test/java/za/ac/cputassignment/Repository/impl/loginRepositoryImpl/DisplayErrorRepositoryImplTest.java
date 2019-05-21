@@ -28,25 +28,5 @@ public class DisplayErrorRepositoryImplTest {
 
 
 
-    @Test
-    public void getAll() {
-    }
 
-    @Test
-    public void DisplayScreencreate() {
-
-
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

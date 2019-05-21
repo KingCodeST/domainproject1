@@ -19,37 +19,8 @@ import java.util.Set;
 public class BusDriverInforRepositoryImplTest {
 
     private DriverInforRepository repository;
-    private DriverInfor driverInfor;
+    private String driverInfor=null;
 
-    private DriverInfor getSavedDriverInfor()
-    {
-        Set<DriverInfor> savedDriverInfor=this.repository.getAll();
-        return savedDriverInfor.iterator().next();
-    }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository = DriverInforRepositoryImpl.getRepository();
-        this.driverInfor = DriverInforFactory.getDriverInfor("#C12");
-    }
 
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

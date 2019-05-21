@@ -20,38 +20,7 @@ import static org.junit.Assert.*;
 public class StudentRepositoryImplTest {
 
     private StudentRepository repository;
-    private Student student;
+    private String studentId=null;
 
-    private Student getSavedStudent()
-    {
-        Set<Student> savedStudent =this.repository.getAll();
-        return savedStudent.iterator().next();
-    }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =StudentRepositoryImpl.getRepository();
-        this.student = StudentFactory.getStudent("Michael","Valphin",5);
-
-    }
-
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

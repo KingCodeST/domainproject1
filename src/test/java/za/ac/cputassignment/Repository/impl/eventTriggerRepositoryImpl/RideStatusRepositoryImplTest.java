@@ -31,9 +31,6 @@ public class RideStatusRepositoryImplTest {
     }
 
 
-
-
-
     @Test
     public void d_getAll() {
         Set<RideStatus> all =this.repository.getAll();

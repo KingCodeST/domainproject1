@@ -22,35 +22,5 @@ public class SportFieldRepositoryImplTest {
     private SportFieldRepository repository;
     private SportField sportField;
 
-    private SportField getSavedSportField()
-    {
-        Set<SportField> savedSportField=this.repository.getAll();
-        return savedSportField.iterator().next();
-    }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =SportFieldRepositoryImpl.getRepository();
-        this.sportField = SportFieldFactory.getSportField(4,"123","Song");
-    }
-
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

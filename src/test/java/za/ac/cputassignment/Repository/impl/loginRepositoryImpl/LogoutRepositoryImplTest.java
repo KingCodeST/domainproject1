@@ -20,38 +20,10 @@ import static org.junit.Assert.*;
 public class LogoutRepositoryImplTest {
 
     private LogoutRepository repository;
-    private Logout logout;
-
-    private Logout getSavedLogout()
-    {
-        Set<Logout> savedLogout =this.repository.getAll();
-        return savedLogout.iterator().next();
-    }
+    private String logoutId=null;
 
 
 
 
-    @Test
-    public void getRepository() {
-    }
 
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

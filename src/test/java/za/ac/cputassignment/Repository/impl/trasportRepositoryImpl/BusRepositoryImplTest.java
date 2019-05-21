@@ -22,41 +22,8 @@ public class BusRepositoryImplTest {
 
 
     private BusRepository repository;
-    private Bus bus;
+    private String busId;
 
-    private  Bus getSavedBus()
-    {
-        Set<Bus> savedBus =this.repository.getAll();
-        return savedBus.iterator().next();
-    }
 
-    @Before
-    public void setUp() throws Exception {
-        this.repository =BusRepositoryImpl.getRepository();
-        this.bus = BusFactory.getBus("Toyota",980293,"",54,"GF464");
-    }
 
-    @Test
-    public void getRepository() {
-    }
-
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

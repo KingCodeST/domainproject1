@@ -20,33 +20,10 @@ import static org.junit.Assert.*;
 public class LoginResitoryImplTest {
 
     private LoginRepository repository;
-    private Login login;
-
-    private Login getSavedLogin()
-    {
-        Set<Login> savedLogin =this.repository.getAll();
-        return savedLogin.iterator().next();
-    }
+    private String loginId=null;
 
 
 
-    @Test
-    public void getAll() {
-    }
 
-    @Test
-    public void create() {
-    }
 
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }

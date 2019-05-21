@@ -20,37 +20,9 @@ import static org.junit.Assert.*;
 public class DisplayWelcomRepositoryImplTest {
 
     private DisplayWelcomRepository repository;
-    private DisplayWelcom displayWelcom;
-
-    private DisplayWelcom getSavedDisplayWelcom()
-    {
-        Set<DisplayWelcom> savedDisplaywell=this.repository.getAll();
-        return savedDisplaywell.iterator().next();
-    }
+    private String displayWelcomId=null;
 
 
 
-    @Test
-    public void getRepository() {
-    }
 
-    @Test
-    public void getAll() {
-    }
-
-    @Test
-    public void create() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void read() {
-    }
 }
