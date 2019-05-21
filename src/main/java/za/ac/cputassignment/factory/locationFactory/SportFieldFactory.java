@@ -5,7 +5,7 @@ import za.ac.cputassignment.domain.location.SportField;
 public class SportFieldFactory {
 
 
-    public  static SportField getSportField(int id,String addrss,String name)
+    public  static SportField getSportField(String id, String addrss, String name)
     {
 
         return  new SportField.Builder()

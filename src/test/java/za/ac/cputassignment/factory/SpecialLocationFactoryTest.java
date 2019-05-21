@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.junit.Test;
 import za.ac.cputassignment.domain.location.SpecialLocation;
 
-import static org.junit.Assert.*;
-
 public class SpecialLocationFactoryTest {
         SpecialLocation sp;
 

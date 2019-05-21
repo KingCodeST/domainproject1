@@ -1,5 +1,6 @@
 package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -11,6 +12,7 @@ import za.ac.cputassignment.Repository.LocationRepository.SportFieldRepository;
 import za.ac.cputassignment.domain.location.SportField;
 import za.ac.cputassignment.factory.locationFactory.SportFieldFactory;
 
+import java.io.IOException;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -20,7 +22,23 @@ import static org.junit.Assert.*;
 public class SportFieldRepositoryImplTest {
 
     private SportFieldRepository repository;
-    private SportField sportField;
+    private String sportFieldId =null;
+
+    @Test
+    public void SportFieldTest() throws IOException
+    {
+        SportField sportField =SportFieldFactory.getSportField("#FA","1856 Dollar ","UWC");
+        SportField result =repository.create(sportField);
+        sportFieldId =result.getId();
+        Assert.assertNotNull(sportField);
+    }
+
+    @Test
+    public  void SiteSportfieldTest() throws IOException
+    {
+        SportField sportField =repository.read(sportFieldId);
+        Assert.assertNotNull(sportField);
+    }
 
 
 }

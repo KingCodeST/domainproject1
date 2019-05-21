@@ -1,5 +1,6 @@
 package za.ac.cputassignment.Repository.impl.loginRepositoryImpl;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -11,6 +12,7 @@ import za.ac.cputassignment.Repository.loginRepository.LogoutRepository;
 import za.ac.cputassignment.domain.login.Logout;
 import za.ac.cputassignment.factory.loginFactory.LogoutFactory;
 
+import java.io.IOException;
 import java.util.Set;
 
 import static org.junit.Assert.*;
@@ -23,7 +25,21 @@ public class LogoutRepositoryImplTest {
     private String logoutId=null;
 
 
+    @Test
+    public void LogoutCreate() throws IOException
+    {
+        Logout logout=LogoutFactory.getLogout("#432");
+        Logout result =repository.create(logout);
+        logoutId =result.getId();
+        Assert.assertNotNull(logout);
+    }
 
+    @Test
+    public void SiteLogoutTest() throws  IOException
+    {
+        Logout logout =repository.read(logoutId);
+        Assert.assertNotNull(logout);
+    }
 
 
 }

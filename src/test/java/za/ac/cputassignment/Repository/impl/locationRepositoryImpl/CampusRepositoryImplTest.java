@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 @SpringBootTest
 @AutoConfigurationPackage
 @RunWith(SpringRunner.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder(MethodSorters.JVM)
 public class CampusRepositoryImplTest {
 
     @Bean
@@ -37,7 +37,7 @@ public class CampusRepositoryImplTest {
     private CampusRepository repository;
     private String  campusId=null;
 
-   
+
 
 
     @Test
