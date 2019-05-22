@@ -2,10 +2,20 @@ package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
 import org.junit.Before;
 import org.junit.Test;
+import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.DisplayWelcomRepositoryImpl;
+import za.ac.cputassignment.domain.login.DisplayWelcom;
 
 import static org.junit.Assert.*;
 
 public class DisplayWelcomServiceImplTest {
+
+    private DisplayWelcomRepositoryImpl repository;
+    private DisplayWelcom displayWelcom;
+
+    private DisplayWelcom getSaved()
+    {
+        return this.repository.getAll().iterator().next();
+    }
 
     @Before
     public void setUp() throws Exception {

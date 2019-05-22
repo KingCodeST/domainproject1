@@ -37,7 +37,7 @@ public class CampusRepositoryImplTest {
 
     @Test
     public void create() {
-        Campus campus=CampusFactory.getCampus("District Six");
+        Campus campus=CampusFactory.getCampus("District Six","Cymp");
         Campus result= repository.create(campus);
         campusId =result.getCampusId();
         Assert.assertNotNull(campus);

@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Campus {
 
     @Id
-    private String id;
+    private String campusid;
     private String campusname;
 
     private Campus (){}
@@ -20,7 +20,7 @@ public class Campus {
     public Campus(Builder builder)
     {
         this.campusname =builder.campusname;
-        this.id =builder.id;
+        this.campusid =builder.campusid;
 
     }
 
@@ -29,19 +29,19 @@ public class Campus {
     }
 
     public String getCampusId() {
-        return id;
+        return campusid;
     }
 
     public static class Builder
     {
-        public String id;
+        public String campusid;
 
         private String campusname;
 
 
-        public Builder id(String Id)
+        public Builder campusid(String campusid)
         {
-            this.id =Id;
+            this.campusid =campusid;
             return this;
         }
 
@@ -58,6 +58,7 @@ public class Campus {
             return new Campus(this);
         }
 
+
     }
 
     @Override
@@ -65,19 +66,19 @@ public class Campus {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Campus campus = (Campus) o;
-        return id == campus.id;
+        return campusid == campus.campusid;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(campusid);
     }
 
     @Override
     public String toString() {
         return "Campus{" +
                 "campusname='" + campusname + '\'' +
-                ", campusId=" + id +
+                ", campusId=" + campusid +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
- package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
+package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
 import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.ArletInforRepository;
@@ -6,7 +6,7 @@ import za.ac.cputassignment.domain.eventTrigger.ArletInfor;
 
 import java.util.*;
 
-@Repository("InMemory")
+@Repository()
 public class ArletInforRepositoryImpl implements ArletInforRepository {
 
     private static ArletInforRepositoryImpl repository=null;

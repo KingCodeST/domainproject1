@@ -3,7 +3,7 @@ package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LoginResitoryImpl;
+import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LoginRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.LoginRepository;
 import za.ac.cputassignment.domain.login.Login;
 import za.ac.cputassignment.service.service.LoginService.LoginService;
@@ -20,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
 
     private LoginServiceImpl()
     {
-        this.repository = LoginResitoryImpl.getRepository();
+        this.repository = LoginRepositoryImpl.getRepository();
     }
 
 

@@ -2,10 +2,19 @@ package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LoginRepositoryImpl;
+import za.ac.cputassignment.domain.login.Login;
 
 public class LoginServiceImplTest {
+
+    private LoginRepositoryImpl repository;
+    private Login login;
+
+    private Login getSaved()
+    {
+        return this.repository.getAll().iterator().next();
+    }
+
 
     @Before
     public void setUp() throws Exception {

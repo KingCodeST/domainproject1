@@ -6,12 +6,12 @@ import za.ac.cputassignment.domain.login.Login;
 
 import java.util.*;
 @Repository("InMemory")
-public class LoginResitoryImpl implements LoginRepository {
+public class LoginRepositoryImpl implements LoginRepository {
 
-    private static LoginResitoryImpl resitory=null;
+    private static LoginRepositoryImpl resitory=null;
     private Map<String,Login> logins;
 
-    private LoginResitoryImpl()
+    private LoginRepositoryImpl()
     {
         this.logins =new HashMap<>();
     }
@@ -20,7 +20,7 @@ public class LoginResitoryImpl implements LoginRepository {
 
     public static LoginRepository getRepository()
     {
-        if(resitory ==null)resitory =new LoginResitoryImpl();
+        if(resitory ==null)resitory =new LoginRepositoryImpl();
         return resitory;
     }
 

@@ -1,4 +1,4 @@
-package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
+ package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -87,3 +87,5 @@ public class ArletInforRepositoryImplTest {
 
     }
 }
+
+

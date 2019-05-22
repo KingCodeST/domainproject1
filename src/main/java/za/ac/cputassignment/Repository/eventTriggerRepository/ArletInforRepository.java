@@ -1,4 +1,4 @@
-package za.ac.cputassignment.Repository.eventTriggerRepository;
+ package za.ac.cputassignment.Repository.eventTriggerRepository;
 
 import za.ac.cputassignment.Repository.MainInterface.IRepository;
 import za.ac.cputassignment.domain.eventTrigger.ArletInfor;

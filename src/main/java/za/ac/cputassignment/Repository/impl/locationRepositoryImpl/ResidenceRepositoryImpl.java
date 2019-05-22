@@ -5,7 +5,7 @@ import za.ac.cputassignment.Repository.LocationRepository.ResidenceRepository;
 import za.ac.cputassignment.domain.location.Residence;
 
 import java.util.*;
-@Repository("InMemory")
+@Repository()
 public class ResidenceRepositoryImpl implements ResidenceRepository {
 
     private static ResidenceRepositoryImpl repository =null;

@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginResitoryImplTest {
+public class LoginRepositoryImplTest {
 
     @Autowired
     private LoginRepository repository;

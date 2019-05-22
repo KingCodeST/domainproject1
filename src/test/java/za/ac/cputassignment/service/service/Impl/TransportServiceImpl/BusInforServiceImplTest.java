@@ -2,10 +2,20 @@ package za.ac.cputassignment.service.service.Impl.TransportServiceImpl;
 
 import org.junit.Before;
 import org.junit.Test;
+import za.ac.cputassignment.Repository.impl.trasportRepositoryImpl.BusInforRepositoryImpl;
+import za.ac.cputassignment.domain.transport.BusInfor;
 
 import static org.junit.Assert.*;
 
 public class BusInforServiceImplTest {
+
+    private BusInforRepositoryImpl repository;
+    private BusInfor busInfor;
+
+    private BusInfor getSaved()
+    {
+        return this.repository.getAll().iterator().next();
+    }
 
     @Before
     public void setUp() throws Exception {

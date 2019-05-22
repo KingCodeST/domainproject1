@@ -1,4 +1,4 @@
-package za.ac.cputassignment.service.service.Impl.eventTriggerServiceImpl;
+ package za.ac.cputassignment.service.service.Impl.eventTriggerServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -51,3 +51,6 @@ public class RideServiceImpl implements RideService {
 
     }
 }
+
+
+
