@@ -7,7 +7,7 @@ import za.ac.cputassignment.factory.locationFactory.CampusFactory;
 
 import java.util.*;
 
-@Repository()
+@Repository("InMemory")
 public class CampusRepositoryImpl implements CampusRepository {
 
     private static CampusRepositoryImpl repository=null;

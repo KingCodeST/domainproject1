@@ -5,7 +5,7 @@ import za.ac.cputassignment.Repository.LocationRepository.LocationInforRepositor
 import za.ac.cputassignment.domain.location.LocationInfor;
 
 import java.util.*;
-@Repository()
+@Repository("InMemory")
 public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     private static LocationInforRepositoryImpl repository=null;
