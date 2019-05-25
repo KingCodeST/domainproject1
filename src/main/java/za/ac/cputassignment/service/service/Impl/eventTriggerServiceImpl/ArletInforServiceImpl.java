@@ -15,7 +15,7 @@ public class ArletInforServiceImpl implements ArletInforService {
 
 
     @Autowired
-    @Qualifier
+  //  @Qualifier
     private ArletInforRepository repository;
 
     private ArletInforServiceImpl() {

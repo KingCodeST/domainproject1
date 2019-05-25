@@ -15,7 +15,7 @@ public class CampusServiceImpl implements CampusService {
 
 
     @Autowired
-    @Qualifier
+   // @Qualifier
     private CampusRepository campusRepository;
 
     private CampusServiceImpl()
