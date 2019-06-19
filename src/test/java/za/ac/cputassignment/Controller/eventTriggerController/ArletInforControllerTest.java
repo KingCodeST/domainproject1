@@ -28,7 +28,7 @@ public class ArletInforControllerTest {
     private TestRestTemplate restTemplate;
     private String baseURL ="http://local:8080/ArletInfor";
 
-
+//4435ggfh
     @Test
     public void testGetAllArletInfors()
     {
