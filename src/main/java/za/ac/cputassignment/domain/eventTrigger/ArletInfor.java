@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class ArletInfor {
 
-    private String id;
+
 
     private String blue,red,green;
     private String simpledate;
@@ -17,7 +17,7 @@ public class ArletInfor {
 
     private ArletInfor(Builder builder)
     {
-        this.id =builder.id;
+
         this.blue =builder.blue;
         this.green =builder.green;
         this.red =builder.red;
@@ -26,9 +26,7 @@ public class ArletInfor {
     }
 
 
-    public String getId() {
-        return id;
-    }
+
 
     public String getBlue() {
         return blue;
@@ -48,16 +46,11 @@ public class ArletInfor {
 
     public static class Builder
     {
-        private String id;
+
 
         private String blue,red,green;
         private String simpledate;
 
-        public Builder id(String id)
-        {
-            this.id =id;
-            return this;
-        }
 
         public Builder blue(String blue)
         {
@@ -91,23 +84,11 @@ public class ArletInfor {
 
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ArletInfor that = (ArletInfor) o;
-        return id.equals(that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
     @Override
     public String toString() {
         return "ArletInfor{" +
-                "id='" + id + '\'' +
+
                 ", blue='" + blue + '\'' +
                 ", red='" + red + '\'' +
                 ", green='" + green + '\'' +

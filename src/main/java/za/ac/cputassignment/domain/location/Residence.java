@@ -8,7 +8,6 @@ public class Residence  {
 
 
     private String residenceName;
-    private int redisenceId;
     private String Address;
 
     private Residence (){}
@@ -18,7 +17,6 @@ public class Residence  {
     {
 
         this.residenceName=builder.residenceName;
-        this.redisenceId =builder.redisenceId;
         this.Address  =builder.address;
 
 
@@ -30,15 +28,9 @@ public class Residence  {
         return residenceName;
     }
 
-    public int getResidenceId() {
-        return redisenceId;
-    }
-
     public String getAddress() {
         return Address;
     }
-
-
 
 
     public static class Builder
@@ -76,26 +68,16 @@ public class Residence  {
 
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Residence residence = (Residence) o;
-        return redisenceId == residence.redisenceId;
+        return Address.equals(residence.Address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(redisenceId);
-    }
-
-    @Override
-    public String toString() {
-        return "Residence{" +
-                "residenceName='" + residenceName + '\'' +
-                ", redisenceId=" + redisenceId +
-                ", Address='" + Address + '\'' +
-                '}';
+        return Objects.hash(Address);
     }
 }
