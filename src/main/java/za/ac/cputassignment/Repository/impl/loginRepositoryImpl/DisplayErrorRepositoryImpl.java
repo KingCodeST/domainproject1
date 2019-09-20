@@ -2,7 +2,6 @@ package za.ac.cputassignment.Repository.impl.loginRepositoryImpl;
 
 import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.loginRepository.DisplayErrorRepository;
-import za.ac.cputassignment.domain.login.DisplayError;
 
 import java.util.*;
 @Repository("InMemory")

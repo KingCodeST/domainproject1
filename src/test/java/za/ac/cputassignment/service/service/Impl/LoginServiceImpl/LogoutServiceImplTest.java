@@ -3,9 +3,6 @@ package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LogoutRepositoryImpl;
-import za.ac.cputassignment.domain.login.Logout;
-
-import static org.junit.Assert.*;
 
 public class LogoutServiceImplTest {
 

@@ -1,7 +1,5 @@
 package za.ac.cputassignment.factory.loginFactory;
 
-import za.ac.cputassignment.domain.login.DisplayWelcom;
-
 public class DisplayWelcomFactory {
 
 

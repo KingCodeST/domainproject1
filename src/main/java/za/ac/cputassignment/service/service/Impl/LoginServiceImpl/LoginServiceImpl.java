@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LoginRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.LoginRepository;
-import za.ac.cputassignment.domain.login.Login;
 import za.ac.cputassignment.service.service.LoginService.LoginService;
 
 import java.util.Set;

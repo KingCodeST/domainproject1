@@ -3,7 +3,6 @@ package za.ac.cputassignment.service.service.Impl.LoginServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.LoginRepositoryImpl;
-import za.ac.cputassignment.domain.login.Login;
 
 public class LoginServiceImplTest {
 

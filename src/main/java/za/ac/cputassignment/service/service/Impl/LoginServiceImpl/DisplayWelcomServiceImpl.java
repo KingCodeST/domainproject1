@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.DisplayWelcomRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.DisplayWelcomRepository;
-import za.ac.cputassignment.domain.login.DisplayWelcom;
 import za.ac.cputassignment.service.service.LoginService.DisplayWelcomService;
 
 import java.util.Set;

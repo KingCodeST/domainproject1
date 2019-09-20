@@ -2,12 +2,11 @@ package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
-import za.ac.cputassignment.domain.login.User;
 
 import java.util.Objects;
 
 @EntityScan
-public class Student implements User {
+public class Student {
 
         @Id
         private String id;

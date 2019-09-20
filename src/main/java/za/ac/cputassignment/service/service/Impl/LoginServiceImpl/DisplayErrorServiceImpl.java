@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.loginRepositoryImpl.DisplayErrorRepositoryImpl;
 import za.ac.cputassignment.Repository.loginRepository.DisplayErrorRepository;
-import za.ac.cputassignment.Repository.loginRepository.DisplayWelcomRepository;
-import za.ac.cputassignment.domain.login.DisplayError;
 import za.ac.cputassignment.service.service.LoginService.DisplayErrorService;
 
 import java.util.Set;

@@ -3,7 +3,6 @@ package za.ac.cputassignment.factory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cputassignment.domain.login.Login;
 
 public class LoginFactoryTest {
     Login log;
