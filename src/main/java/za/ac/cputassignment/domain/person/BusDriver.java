@@ -78,6 +78,17 @@ public class BusDriver {
             return this;
         }
 
+        public Builder copy(BusDriver busDriver){
+            this.age =busDriver.age;
+            this.driverID =busDriver.driverID;
+            this.driverName =busDriver.driverName;
+            this.driverLastName =busDriver.driverLastName;
+            this.licanseCode =busDriver.licanseCode;
+
+            return this;
+        }
+
+
         public BusDriver build()
         {
             return new BusDriver();

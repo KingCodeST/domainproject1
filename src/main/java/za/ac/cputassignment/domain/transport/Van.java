@@ -76,17 +76,20 @@ public class Van  {
             return this;
         }
 
+        public Builder copy(Van van){
+            this.brand =van.brand;
+            this.numPlate= van.numPlate;
+            this.patrol =van.patrol;
+            this.vanId =van.vanId;
+
+            return this;
+        }
+
         public Van build()
         {
             return new Van();
         }
-
-
     }
-
-
-
-
 
 
     @Override

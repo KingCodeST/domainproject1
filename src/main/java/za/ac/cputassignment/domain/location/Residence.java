@@ -59,12 +59,22 @@ public class Residence  {
             return  this;
         }
 
+        public Builder copy(Residence residence){
+            this.address =address;
+            this.redisenceId =redisenceId;
+            this.residenceName =residenceName;
+
+            return this;
+        }
+
 
 
         public  Residence build()
         {
             return new Residence(this);
         }
+
+
 
     }
 

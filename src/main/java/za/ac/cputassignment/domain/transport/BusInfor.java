@@ -6,44 +6,37 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class BusInfor {
 
 
-    private int yearsofservice;
-
-
+    private String vehicleBus;
+    
     private BusInfor(){}
-
-    private  BusInfor(Builder build)
-    {
-       // super();
-
-        this.yearsofservice=build.yearsofservice;
+    
+    private BusInfor(Builder builder){
+        this.vehicleBus =builder.vehicleBus;
     }
 
-
-
-    public int getYearsofservice() {
-        return yearsofservice;
+    public String getVihicleBus() {
+        return vehicleBus;
     }
-
-    public static class Builder
-    {
-
-        private int yearsofservice;
-
-
-
-        public Builder yearsofservice(int yearsofservice)
-        {
-            this.yearsofservice =yearsofservice;
+    
+    private static class Builder{
+        
+        private String vehicleBus;
+        
+        public Builder VehicleBus(String vehicleBus){
+            this.vehicleBus =vehicleBus;
             return this;
         }
-
-
-        public BusInfor buid()
-        {
+        
+        public Builder copy(BusInfor busInfor){
+            this.vehicleBus =busInfor.vehicleBus;
+            return this;
+        }
+        
+        private BusInfor buid(){
             return new BusInfor(this);
         }
-
+        
+        
     }
-
-
+    
 }

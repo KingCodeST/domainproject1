@@ -10,6 +10,7 @@ import java.util.Objects;
 @EntityScan
 public class DriverInfor   {
 
+        private String BusDriver;
 
 
 

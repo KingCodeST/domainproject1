@@ -51,7 +51,11 @@ public class Campus {
             return this;
         }
 
-
+        public Builder copy(Campus campus){
+            this.campusid =campus.campusid;
+            this.campusname =campus.campusname;
+            return this;
+        }
 
         public  Campus build()
         {

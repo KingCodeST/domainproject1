@@ -34,6 +34,14 @@ public class LocationInfor {
                 return this;
             }
 
+
+            public Builder copy(LocationInfor locationInfor){
+                this.id =locationInfor.id;
+
+                return this;
+            }
+
+
             public LocationInfor build()
             {
                 return new LocationInfor(this);
