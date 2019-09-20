@@ -93,6 +93,16 @@ public class Bus   {
             return  this;
         }
 
+        public Builder copy(Bus bus){
+            this.brandName =bus.brandName;
+            this.engineNumber =bus.engineNumber;
+            this.modelNo =bus.modelNo;
+            this.quantity =bus.quantity;
+            this.roadWorthy =bus.roadWorthy;
+
+            return this;
+        }
+
         public Bus build()
         {
             return new Bus(this);

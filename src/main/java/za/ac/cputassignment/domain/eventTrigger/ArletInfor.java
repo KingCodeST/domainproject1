@@ -76,6 +76,14 @@ public class ArletInfor {
             return this;
         }
 
+        public Builder copy(ArletInfor arletInfor){
+            this.blue =arletInfor.blue;
+            this.green =arletInfor.green;
+            this.red =arletInfor.red;
+            this.simpledate =arletInfor.simpledate;
+            return this;
+        }
+
         public ArletInfor build()
         {
             return  new ArletInfor(this);

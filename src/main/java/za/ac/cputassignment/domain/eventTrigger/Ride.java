@@ -12,5 +12,35 @@ public class Ride {
 
     private String rideNumber;
 
+    private Ride(){}
+
+    private Ride(Builder builder){
+        this.rideNumber =builder.rideNumber;
+    }
+
+
+    public String getRideNumber() {
+        return rideNumber;
+    }
+
+    public static class Builder{
+
+        private String rideNumber;
+
+        public Builder setRideNumber(String rideNumber){
+            this.rideNumber =rideNumber;
+            return this;
+        }
+
+        public Builder copy(Ride ride){
+            this.rideNumber =ride.rideNumber;
+            return this;
+        }
+
+        public Ride build(){
+            return new Ride(this);
+        }
+
+    }
 
 }

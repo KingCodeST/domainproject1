@@ -8,64 +8,59 @@ import java.util.Objects;
 @EntityScan
 public class LocationInfor {
 
-        private String id;
 
+    private String campusLocation;
 
-        private LocationInfor(){}
+    private LocationInfor(){}
 
+    private LocationInfor(Builder builder){
+        this.campusLocation =builder.campusLocation;
+    }
 
-        private LocationInfor(Builder build)
-        {
-            this.id =build.id;
-
-        }
-
-    public String getId() {
-        return id;
+    public String getCampusLocation() {
+        return campusLocation;
     }
 
     public static class Builder{
-            private String id;
+        private String campusLocation;
 
-
-            public Builder id(String id)
-            {
-                this.id =id;
-                return this;
-            }
-
-
-            public Builder copy(LocationInfor locationInfor){
-                this.id =locationInfor.id;
-
-                return this;
-            }
-
-
-            public LocationInfor build()
-            {
-                return new LocationInfor(this);
-            }
-
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Builder builder = (Builder) o;
-            return id.equals(builder.id);
+        public Builder getCampusLocation(String campusLocation)
+        {
+            this.campusLocation =campusLocation;
+            return this;
         }
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(id);
+        public Builder copy(LocationInfor locationInfor)
+        {
+            this.campusLocation=locationInfor.campusLocation;
+            return this;
         }
+
+        public LocationInfor build()
+        {
+            return new LocationInfor(this);
+        }
+
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LocationInfor that = (LocationInfor) o;
+        return campusLocation.equals(that.campusLocation);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(campusLocation);
     }
 
     @Override
     public String toString() {
         return "LocationInfor{" +
-                "id='" + id + '\'' +
+                "campusLocation='" + campusLocation + '\'' +
                 '}';
     }
 }
