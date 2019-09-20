@@ -1,7 +1,6 @@
 package za.ac.cputassignment.domain.eventTrigger;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
 import za.ac.cputassignment.domain.location.Location;
 
 import java.util.ArrayList;
@@ -10,7 +9,7 @@ import java.util.Objects;
 
 @EntityScan
 public class Ride {
-    @Id
+
     private String Rideid;
         private String color;
       private  List<Location>  local=new ArrayList<Location>();

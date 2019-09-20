@@ -1,14 +1,13 @@
 package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @EntityScan
-public class Van implements Vehicle {
+public class Van  {
 
-    @Id
+
     private String numPlate;
     private String brand;
     private double patrol;
@@ -87,20 +86,7 @@ public class Van implements Vehicle {
 
 
 
-    @Override
-    public void VehicleType() {
 
-    }
-
-    @Override
-    public void LicenseDisk() {
-
-    }
-
-    @Override
-    public void Service() {
-
-    }
 
 
     @Override

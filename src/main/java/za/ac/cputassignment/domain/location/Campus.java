@@ -1,7 +1,7 @@
 package za.ac.cputassignment.domain.location;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+
 
 import java.util.Objects;
 
@@ -10,7 +10,7 @@ import java.util.Objects;
 @EntityScan
 public class Campus {
 
-    @Id
+
     private String campusid;
     private String campusname;
 

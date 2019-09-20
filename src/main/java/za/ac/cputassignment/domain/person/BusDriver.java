@@ -1,12 +1,12 @@
 package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+
 
 @EntityScan
 public class BusDriver {
 
-    @Id
+
     private String driverID, driverName,driverLastName,licanseCode;
     private int age;
 
@@ -41,25 +41,7 @@ public class BusDriver {
         return  age;
     }
 
-    @Override
-    public void profile() {
-        
-    }
 
-    @Override
-    public void editProfile() {
-
-    }
-
-    @Override
-    public void userName() {
-
-    }
-
-    @Override
-    public void passWord() {
-
-    }
 
     public static class Builder{
 

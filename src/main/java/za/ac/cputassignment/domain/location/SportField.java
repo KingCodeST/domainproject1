@@ -1,14 +1,14 @@
 package za.ac.cputassignment.domain.location;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+
 
 import java.util.Objects;
 
 @EntityScan
-public class SportField implements Location {
-    @Id
-    private String id;
+public class SportField  {
+
+
     private int sFieldID;
     private String fname;
     private String address;
@@ -19,15 +19,12 @@ public class SportField implements Location {
 
     public SportField(Builder builder)
     {
-        this.id =builder.id;
+
         this.sFieldID =builder.sFieldID;
         this.fname =builder.fname;
         this.address =builder.address;
     }
 
-    public String getId() {
-        return id;
-    }
 
     public int getsFieldID() {
         return sFieldID;
@@ -41,32 +38,15 @@ public class SportField implements Location {
         return address;
     }
 
-    @Override
-    public void LocationName() {
 
-    }
-
-    @Override
-    public void numberStudents() {
-
-    }
-
-    @Override
-    public void RideInfor() {
-
-    }
 
     public static class Builder{
-        private String id;
+
         private int sFieldID;
         private String fname;
         private String address;
 
-        public Builder id(String id)
-        {
-            this.id =id;
-            return  this;
-        }
+
 
         public Builder sFieldID(int sFieldID)
         {

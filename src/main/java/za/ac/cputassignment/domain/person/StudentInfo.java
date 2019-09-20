@@ -1,15 +1,14 @@
 package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+
 
 import java.util.Objects;
 
 @EntityScan
 public class StudentInfo  {
 
-    @Id
-    private String id;
+
     private String address;
     private int infid;
 
@@ -18,15 +17,12 @@ public class StudentInfo  {
 
     private StudentInfo(Builder builder)
     {
-        this.id =builder.id;
+
         this.infid =builder.infid;
         this.address =builder.address;
 
     }
 
-    public String getId() {
-        return id;
-    }
 
     public String getAddress() {
         return address;
@@ -38,15 +34,11 @@ public class StudentInfo  {
 
     public static class Builder{
 
-        private String id;
+
         private String address;
         private int infid;
 
-        public Builder id(String id)
-        {
-            this.id =id;
-            return  this;
-        }
+
 
         public  Builder infid(int infid)
         {

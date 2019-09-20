@@ -1,6 +1,5 @@
 package za.ac.cputassignment.service.service.TransportService;
 
-import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 import za.ac.cputassignment.service.IService;
 
 import java.util.Set;

@@ -1,14 +1,14 @@
 package za.ac.cputassignment.domain.location;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+
 
 import java.util.Objects;
 
 @EntityScan
-public class SpecialLocation implements Location {
-    @Id
-    private String id;
+public class SpecialLocation  {
+
+
     private int SLocalId;
     private String name;
     private String address;
@@ -20,15 +20,11 @@ public class SpecialLocation implements Location {
 
     public SpecialLocation(Builder builder)
     {
-        this.id =builder.id;
+
         this.SLocalId =builder.SLocalId;
         this.name    =builder.name;
         this.address =builder.address;
 
-    }
-
-    public String  getId() {
-        return id;
     }
 
     public int getSLocalId() {
@@ -43,20 +39,6 @@ public class SpecialLocation implements Location {
         return address;
     }
 
-    @Override
-    public void LocationName() {
-
-    }
-
-    @Override
-    public void numberStudents() {
-
-    }
-
-    @Override
-    public void RideInfor() {
-
-    }
 
 
     public static class Builder

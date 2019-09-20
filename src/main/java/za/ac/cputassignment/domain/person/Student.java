@@ -1,15 +1,14 @@
 package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+
 
 import java.util.Objects;
 
 @EntityScan
 public class Student {
 
-        @Id
-        private String id;
+
         private String studentNum;
         private String firstname,lastname;
         private int age;
@@ -20,7 +19,7 @@ public class Student {
 
         private Student(Builder builder)
         {
-            this.id =builder.id;
+
             this.studentNum = builder.studentNum;
             this.firstname =builder.firstname;
             this.lastname =builder.lastname;
@@ -28,9 +27,7 @@ public class Student {
 
         }
 
-    public String getId() {
-        return id;
-    }
+
 
     public String getStudentNum() {
         return studentNum;
@@ -48,38 +45,15 @@ public class Student {
         return age;
     }
 
-    @Override
-    public void profile() {
 
-    }
-
-    @Override
-    public void editProfile() {
-
-    }
-
-    @Override
-    public void userName() {
-
-    }
-
-    @Override
-    public void passWord() {
-
-    }
 
     public static class Builder{
 
-        private String id;
+
         private String studentNum;
         private String firstname,lastname;
         private int age;
 
-        private Builder id(String id)
-        {
-            this.id =id;
-            return this;
-        }
 
       public Builder studentNum(String studentNum)
       {

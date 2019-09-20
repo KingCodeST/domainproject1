@@ -3,7 +3,6 @@ package za.ac.cputassignment.service.service.Impl.TransportServiceImpl;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.eventTriggerRepository.TimetableInforRepository;
 import za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl.TimetableInforRepositoryImpl;
-import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 import za.ac.cputassignment.service.service.TransportService.TimetableInfoService;
 
 import java.util.Set;

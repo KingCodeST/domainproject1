@@ -2,7 +2,6 @@ package za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl;
 
 import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.eventTriggerRepository.TimetableInforRepository;
-import za.ac.cputassignment.domain.eventTrigger.TimetableInfo;
 
 import java.util.*;
 @Repository("InMemory")
