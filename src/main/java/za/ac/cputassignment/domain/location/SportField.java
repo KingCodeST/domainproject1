@@ -10,7 +10,9 @@ public class SportField  {
 
 
     private int sFieldID;
+
     private String fname;
+
     private String address;
 
 
@@ -23,6 +25,7 @@ public class SportField  {
         this.sFieldID =builder.sFieldID;
         this.fname =builder.fname;
         this.address =builder.address;
+
     }
 
 

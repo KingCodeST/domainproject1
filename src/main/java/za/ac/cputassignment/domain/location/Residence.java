@@ -9,16 +9,16 @@ public class Residence  {
 
     private String residenceName;
     private String Address;
+    private String residenceId;
 
     private Residence (){}
 
 
     public Residence(Builder builder)
     {
-
         this.residenceName=builder.residenceName;
         this.Address  =builder.address;
-
+        this.residenceId=builder.redisenceId;
 
     }
 
@@ -32,16 +32,23 @@ public class Residence  {
         return Address;
     }
 
+    public String getResidenceName() {
+        return residenceName;
+    }
+
+    public String getResidenceID() {
+        return residenceId;
+    }
 
     public static class Builder
     {
 
-        private int redisenceId;
+        private String redisenceId;
         private String residenceName;
         private String address;
 
 
-        public Builder residenceId(int residenceId)
+        public Builder residenceId(String residenceId)
         {
             this.redisenceId =redisenceId;
             return this;
@@ -67,14 +74,10 @@ public class Residence  {
             return this;
         }
 
-
-
         public  Residence build()
         {
             return new Residence(this);
         }
-
-
 
     }
 
@@ -83,11 +86,13 @@ public class Residence  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Residence residence = (Residence) o;
-        return Address.equals(residence.Address);
+        return Objects.equals(residenceName, residence.residenceName) &&
+                Objects.equals(Address, residence.Address) &&
+                residenceId.equals(residence.residenceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Address);
+        return Objects.hash(residenceId);
     }
 }
