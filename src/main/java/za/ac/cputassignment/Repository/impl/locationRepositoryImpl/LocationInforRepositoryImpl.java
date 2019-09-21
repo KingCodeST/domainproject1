@@ -2,14 +2,14 @@ package za.ac.cputassignment.Repository.impl.locationRepositoryImpl;
 
 import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.LocationRepository.LocationInforRepository;
-import za.ac.cputassignment.domain.location.LocationInfor;
+import za.ac.cputassignment.domain.location.CampusLocation;
 
 import java.util.*;
 @Repository("InMemory")
 public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     private static LocationInforRepositoryImpl repository=null;
-    private Map<String,LocationInfor> locationInforSet;
+    private Map<String, CampusLocation> locationInforSet;
 
     private LocationInforRepositoryImpl()
     {
@@ -28,20 +28,20 @@ public class LocationInforRepositoryImpl implements LocationInforRepository {
 
 
     @Override
-    public LocationInfor create(LocationInfor locationInfor) {
-        this.locationInforSet.put(locationInfor.getId(),locationInfor);
-        return locationInfor;
+    public CampusLocation create(CampusLocation campusLocation) {
+        this.locationInforSet.put(campusLocation.getId(), campusLocation);
+        return campusLocation;
     }
 
     @Override
-    public LocationInfor read(String locainforId) {
+    public CampusLocation read(String locainforId) {
         return this.locationInforSet.get(locainforId);
     }
 
     @Override
-    public LocationInfor update(LocationInfor locationInfor) {
-       this.locationInforSet.replace(locationInfor.getId(),locationInfor);
-       return this.locationInforSet.get(locationInfor.getId());
+    public CampusLocation update(CampusLocation campusLocation) {
+       this.locationInforSet.replace(campusLocation.getId(), campusLocation);
+       return this.locationInforSet.get(campusLocation.getId());
     }
 
     @Override
@@ -52,10 +52,10 @@ public class LocationInforRepositoryImpl implements LocationInforRepository {
 
 
     @Override
-    public Set<LocationInfor> getAll() {
-        Collection<LocationInfor> locationInfors =this.locationInforSet.values();
-        Set<LocationInfor> set =new HashSet<>();
-        set.addAll(locationInfors);
+    public Set<CampusLocation> getAll() {
+        Collection<CampusLocation> campusLocations =this.locationInforSet.values();
+        Set<CampusLocation> set =new HashSet<>();
+        set.addAll(campusLocations);
         return set;
     }
 

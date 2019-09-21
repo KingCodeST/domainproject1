@@ -1,12 +1,12 @@
 package za.ac.cputassignment.factory.personFactory;
 
-import za.ac.cputassignment.domain.person.DriverInfor;
+import za.ac.cputassignment.domain.person.DriverBus;
 
 public class DriverInforFactory {
 
-    public static DriverInfor getDriverInfor(String id)
+    public static DriverBus getDriverInfor(String id)
     {
-        return new DriverInfor.Builder()
+        return new DriverBus.Builder()
                               .id(id)
                                 .build();
     }

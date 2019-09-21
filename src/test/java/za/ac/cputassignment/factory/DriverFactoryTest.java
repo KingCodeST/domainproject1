@@ -3,11 +3,11 @@ package za.ac.cputassignment.factory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cputassignment.domain.person.BusDriver;
+import za.ac.cputassignment.domain.person.Driver;
 
-public class BusDriverFactoryTest {
+public class DriverFactoryTest {
 
-    BusDriver s;
+    Driver s;
 
     @Before
     public void setUp() throws Exception {
@@ -23,7 +23,7 @@ public class BusDriverFactoryTest {
         String license="code19";
         int     age=34;
 
-         s=new BusDriver.Builder()
+         s=new Driver.Builder()
                         .driverLastName(lname)
                         .driverName(dname)
                         .age(age)

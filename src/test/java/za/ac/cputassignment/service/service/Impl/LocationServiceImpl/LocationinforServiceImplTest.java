@@ -3,16 +3,14 @@ package za.ac.cputassignment.service.service.Impl.LocationServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.LocationInforRepositoryImpl;
-import za.ac.cputassignment.domain.location.LocationInfor;
-
-import static org.junit.Assert.*;
+import za.ac.cputassignment.domain.location.CampusLocation;
 
 public class LocationinforServiceImplTest {
 
     private LocationInforRepositoryImpl repository;
-    private LocationInfor locationInfor;
+    private CampusLocation campusLocation;
 
-    private LocationInfor getSaved()
+    private CampusLocation getSaved()
     {
         return this.repository.getAll().iterator().next();
     }

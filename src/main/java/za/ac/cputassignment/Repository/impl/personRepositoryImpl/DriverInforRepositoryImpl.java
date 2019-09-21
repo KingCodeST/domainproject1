@@ -2,14 +2,14 @@ package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
 import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.personRepository.DriverInforRepository;
-import za.ac.cputassignment.domain.person.DriverInfor;
+import za.ac.cputassignment.domain.person.DriverBus;
 
 import java.util.*;
 @Repository("InMemory")
 public class DriverInforRepositoryImpl implements DriverInforRepository {
 
     private static DriverInforRepositoryImpl repository=null;
-    private Map<String,DriverInfor> driverInfors;
+    private Map<String, DriverBus> driverInfors;
 
     private DriverInforRepositoryImpl()
     {
@@ -25,15 +25,15 @@ public class DriverInforRepositoryImpl implements DriverInforRepository {
 
 
     @Override
-    public DriverInfor create(DriverInfor driverInfor) {
-       this.driverInfors.put(driverInfor.getId(),driverInfor);
-       return this.driverInfors.get(driverInfor.getId());
+    public DriverBus create(DriverBus driverBus) {
+       this.driverInfors.put(driverBus.getId(), driverBus);
+       return this.driverInfors.get(driverBus.getId());
     }
 
     @Override
-    public DriverInfor update(DriverInfor driverInfor) {
-        this.driverInfors.replace(driverInfor.getId(),driverInfor);
-        return this.driverInfors.get(driverInfor.getId());
+    public DriverBus update(DriverBus driverBus) {
+        this.driverInfors.replace(driverBus.getId(), driverBus);
+        return this.driverInfors.get(driverBus.getId());
     }
 
     @Override
@@ -42,15 +42,15 @@ public class DriverInforRepositoryImpl implements DriverInforRepository {
     }
 
     @Override
-    public DriverInfor read(String driverId) {
+    public DriverBus read(String driverId) {
         return this.driverInfors.get(driverId);
     }
 
     @Override
-    public Set<DriverInfor> getAll() {
-       Collection<DriverInfor> driverInfors=this.driverInfors.values();
-       Set<DriverInfor> set =new HashSet<>();
-       set.addAll(driverInfors);
+    public Set<DriverBus> getAll() {
+       Collection<DriverBus> driverBuses =this.driverInfors.values();
+       Set<DriverBus> set =new HashSet<>();
+       set.addAll(driverBuses);
        return set;
     }
 }

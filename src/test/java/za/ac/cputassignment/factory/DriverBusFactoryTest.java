@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DriverInforFactoryTest {
+public class DriverBusFactoryTest {
 
     @Before
     public void setUp() throws Exception {

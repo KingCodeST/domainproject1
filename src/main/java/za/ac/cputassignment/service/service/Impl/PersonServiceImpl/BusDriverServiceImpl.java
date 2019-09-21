@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusDriverRepositoryImpl;
 import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
-import za.ac.cputassignment.domain.person.BusDriver;
+import za.ac.cputassignment.domain.person.Driver;
 import za.ac.cputassignment.service.service.PersonService.BusDriverService;
 
 import java.util.Set;
@@ -25,23 +25,23 @@ public class BusDriverServiceImpl implements BusDriverService {
 
 
     @Override
-    public Set<BusDriver> getAll() {
+    public Set<Driver> getAll() {
         return this.repository.getAll();
     }
 
     @Override
-    public BusDriver create(BusDriver busDriver) {
-        return this.repository.create(busDriver);
+    public Driver create(Driver driver) {
+        return this.repository.create(driver);
     }
 
     @Override
-    public BusDriver read(String s) {
+    public Driver read(String s) {
         return this.repository.read(s);
     }
 
     @Override
-    public BusDriver update(BusDriver busDriver) {
-        return this.repository.update(busDriver);
+    public Driver update(Driver driver) {
+        return this.repository.update(driver);
     }
 
     @Override

@@ -3,16 +3,14 @@ package za.ac.cputassignment.service.service.Impl.PersonServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.BusDriverRepositoryImpl;
-import za.ac.cputassignment.domain.person.BusDriver;
+import za.ac.cputassignment.domain.person.Driver;
 
-import static org.junit.Assert.*;
-
-public class BusDriverServiceImplTest {
+public class DriverServiceImplTest {
 
     private BusDriverRepositoryImpl repository;
-    private BusDriver busDriver;
+    private Driver driver;
 
-    private BusDriver getSaved()
+    private Driver getSaved()
     {
         return this.repository.getAll().iterator().next();
     }

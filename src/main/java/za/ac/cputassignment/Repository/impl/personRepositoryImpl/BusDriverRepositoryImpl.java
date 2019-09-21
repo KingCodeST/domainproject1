@@ -2,7 +2,7 @@ package za.ac.cputassignment.Repository.impl.personRepositoryImpl;
 
 import org.springframework.stereotype.Repository;
 import za.ac.cputassignment.Repository.personRepository.BusDriverRepository;
-import za.ac.cputassignment.domain.person.BusDriver;
+import za.ac.cputassignment.domain.person.Driver;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,17 +10,17 @@ import java.util.Set;
 public class BusDriverRepositoryImpl implements BusDriverRepository {
 
     private static BusDriverRepositoryImpl repository=null;
-    private Set<BusDriver> busDrivers;
+    private Set<Driver> drivers;
 
     public BusDriverRepositoryImpl()
     {
-        this.busDrivers =new HashSet<>();
+        this.drivers =new HashSet<>();
     }
 
 
-    private BusDriver findBusDriver(String BusDriverId)
+    private Driver findBusDriver(String BusDriverId)
     {
-        return this.busDrivers.stream()
+        return this.drivers.stream()
                                 .filter(busDriver -> busDriver.getDriverID().trim().equals(BusDriverId))
                                 .findAny()
                                 .orElse(null);
@@ -36,28 +36,28 @@ public class BusDriverRepositoryImpl implements BusDriverRepository {
 
 
     @Override
-    public BusDriver create(BusDriver busDriver) {
-        this.busDrivers.add(busDriver);
-        return busDriver;
+    public Driver create(Driver driver) {
+        this.drivers.add(driver);
+        return driver;
     }
     @Override
-    public BusDriver read(String BusDriverId) {
-       BusDriver busDriver= findBusDriver(BusDriverId);
-        return busDriver;
+    public Driver read(String BusDriverId) {
+       Driver driver = findBusDriver(BusDriverId);
+        return driver;
     }
 
     @Override
     public void delete(String busDriverId) {
-        BusDriver busDriver=findBusDriver(busDriverId);
-        if(busDriver !=null) this.busDrivers.remove(busDriver);
+        Driver driver =findBusDriver(busDriverId);
+        if(driver !=null) this.drivers.remove(driver);
     }
 
 
     @Override
-    public BusDriver update(BusDriver busDriver) {
-        BusDriver busDriver1=findBusDriver(busDriver.getDriverID());
-        if(busDriver1 !=null) {
-            this.busDrivers.remove(busDriver1);
+    public Driver update(Driver driver) {
+        Driver driver1 =findBusDriver(driver.getDriverID());
+        if(driver1 !=null) {
+            this.drivers.remove(driver1);
         }
         return null;
 
@@ -67,8 +67,8 @@ public class BusDriverRepositoryImpl implements BusDriverRepository {
 
 
     @Override
-    public Set<BusDriver> getAll() {
-        return this.busDrivers;
+    public Set<Driver> getAll() {
+        return this.drivers;
     }
 
 }

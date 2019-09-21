@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import za.ac.cputassignment.Repository.impl.personRepositoryImpl.DriverInforRepositoryImpl;
-import za.ac.cputassignment.domain.person.DriverInfor;
+import za.ac.cputassignment.domain.person.DriverBus;
 import za.ac.cputassignment.service.service.PersonService.DriverInforService;
 
 import java.util.Set;
@@ -25,23 +25,23 @@ public class DriverInforServiceImpl implements DriverInforService {
 
 
     @Override
-    public Set<DriverInfor> getAll() {
+    public Set<DriverBus> getAll() {
         return this.repository.getAll();
     }
 
     @Override
-    public DriverInfor create(DriverInfor driverInfor) {
-        return this.repository.create(driverInfor);
+    public DriverBus create(DriverBus driverBus) {
+        return this.repository.create(driverBus);
     }
 
     @Override
-    public DriverInfor read(String s) {
+    public DriverBus read(String s) {
         return this.repository.read(s);
     }
 
     @Override
-    public DriverInfor update(DriverInfor driverInfor) {
-        return this.repository.update(driverInfor);
+    public DriverBus update(DriverBus driverBus) {
+        return this.repository.update(driverBus);
     }
 
     @Override

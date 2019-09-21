@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.LocationRepository.LocationInforRepository;
 import za.ac.cputassignment.Repository.impl.locationRepositoryImpl.LocationInforRepositoryImpl;
-import za.ac.cputassignment.domain.location.LocationInfor;
+import za.ac.cputassignment.domain.location.CampusLocation;
 import za.ac.cputassignment.service.service.LocationService.LocationInforService;
 
 import java.util.Set;
@@ -26,23 +26,23 @@ public class LocationinforServiceImpl implements LocationInforService {
 
 
     @Override
-    public Set<LocationInfor> getAll() {
+    public Set<CampusLocation> getAll() {
         return this.repository.getAll();
     }
 
     @Override
-    public LocationInfor create(LocationInfor locationInfor) {
-        return this.repository.create(locationInfor);
+    public CampusLocation create(CampusLocation campusLocation) {
+        return this.repository.create(campusLocation);
     }
 
     @Override
-    public LocationInfor read(String s) {
+    public CampusLocation read(String s) {
         return this.repository.read(s);
     }
 
     @Override
-    public LocationInfor update(LocationInfor locationInfor) {
-        return this.repository.update(locationInfor);
+    public CampusLocation update(CampusLocation campusLocation) {
+        return this.repository.update(campusLocation);
     }
 
     @Override

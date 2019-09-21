@@ -4,16 +4,16 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 
 @EntityScan
-public class BusDriver {
+public class Driver {
 
 
     private String driverID, driverName,driverLastName,licanseCode;
     private int age;
 
 
-    private BusDriver(){}
+    private Driver(){}
 
-    private BusDriver(Builder builder)
+    private Driver(Builder builder)
     {
         this.driverID =builder.driverID;
         this.age =builder.age;
@@ -78,20 +78,20 @@ public class BusDriver {
             return this;
         }
 
-        public Builder copy(BusDriver busDriver){
-            this.age =busDriver.age;
-            this.driverID =busDriver.driverID;
-            this.driverName =busDriver.driverName;
-            this.driverLastName =busDriver.driverLastName;
-            this.licanseCode =busDriver.licanseCode;
+        public Builder copy(Driver driver){
+            this.age = driver.age;
+            this.driverID = driver.driverID;
+            this.driverName = driver.driverName;
+            this.driverLastName = driver.driverLastName;
+            this.licanseCode = driver.licanseCode;
 
             return this;
         }
 
 
-        public BusDriver build()
+        public Driver build()
         {
-            return new BusDriver();
+            return new Driver();
         }
 
 
@@ -99,7 +99,7 @@ public class BusDriver {
 
     @Override
     public String toString() {
-        return "BusDriver{" +
+        return "Driver{" +
                 "driverID='" + driverID + '\'' +
                 ", driverName='" + driverName + '\'' +
                 ", driverLastName='" + driverLastName + '\'' +

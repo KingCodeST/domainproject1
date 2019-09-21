@@ -1,13 +1,13 @@
 package za.ac.cputassignment.factory.locationFactory;
 
-import za.ac.cputassignment.domain.location.LocationInfor;
+import za.ac.cputassignment.domain.location.CampusLocation;
 
 public class LocationInforFactory {
 
-    public static LocationInfor getLocationInfor(String LinfId)
+    public static CampusLocation getLocationInfor(String LinfId)
     {
 
-        return  new LocationInfor.Builder()
+        return  new CampusLocation.Builder()
                                 .id(LinfId)
                                 .build();
 
