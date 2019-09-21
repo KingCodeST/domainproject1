@@ -72,6 +72,15 @@ public class SpecialLocation  {
             return this;
         }
 
+        public Builder copy(SpecialLocation specialLocation)
+        {
+           this.SLocalId =specialLocation.SLocalId;
+           this.address =specialLocation.address;
+           this.name =specialLocation.name;
+
+           return this;
+        }
+
         public SpecialLocation build()
         {
             return  new SpecialLocation(this);
