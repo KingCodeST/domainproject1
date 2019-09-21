@@ -33,14 +33,14 @@ public class BusRepositoryImpl implements BusRepository {
 
     @Override
     public Bus create(Bus bus) {
-        this.buses.put(bus.getId(),bus);
+        this.buses.put(bus.getModelNo(),bus);
         return bus;
     }
 
     @Override
     public Bus update(Bus bus) {
-       this.buses.replace(bus.getId(),bus);
-       return this.buses.get(bus.getId());
+       this.buses.replace(bus.getModelNo(),bus);
+       return this.buses.get(bus.getModelNo());
     }
 
     @Override

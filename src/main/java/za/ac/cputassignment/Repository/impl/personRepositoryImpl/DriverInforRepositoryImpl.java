@@ -26,14 +26,14 @@ public class DriverInforRepositoryImpl implements DriverInforRepository {
 
     @Override
     public DriverBus create(DriverBus driverBus) {
-       this.driverInfors.put(driverBus.getId(), driverBus);
-       return this.driverInfors.get(driverBus.getId());
+       this.driverInfors.put(driverBus.getDriverId(), driverBus);
+       return this.driverInfors.get(driverBus.getDriverId());
     }
 
     @Override
     public DriverBus update(DriverBus driverBus) {
-        this.driverInfors.replace(driverBus.getId(), driverBus);
-        return this.driverInfors.get(driverBus.getId());
+        this.driverInfors.replace(driverBus.getDriverId(), driverBus);
+        return this.driverInfors.get(driverBus.getDriverId());
     }
 
     @Override

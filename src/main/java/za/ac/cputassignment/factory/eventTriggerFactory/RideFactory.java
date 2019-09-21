@@ -7,8 +7,8 @@ public class RideFactory {
     public static Ride getRide(String RideId,String colo)
     {
         return  new Ride.Builder()
-                                .Rideid(RideId)
-                                .color(colo)
+                                .setRideNumber(RideId)
+
                                 .build();
     }
 

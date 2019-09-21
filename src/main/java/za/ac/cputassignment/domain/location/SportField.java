@@ -9,7 +9,7 @@ import java.util.Objects;
 public class SportField  {
 
 
-    private int sFieldID;
+    private String sFieldID;
 
     private String fname;
 
@@ -29,7 +29,7 @@ public class SportField  {
     }
 
 
-    public int getsFieldID() {
+    public String getsFieldID() {
         return sFieldID;
     }
 
@@ -45,13 +45,13 @@ public class SportField  {
 
     public static class Builder{
 
-        private int sFieldID;
+        private String sFieldID;
         private String fname;
         private String address;
 
 
 
-        public Builder sFieldID(int sFieldID)
+        public Builder sFieldID(String sFieldID)
         {
             this.sFieldID =sFieldID;
             return  this;

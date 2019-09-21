@@ -29,7 +29,7 @@ public class SportFieldRepositoryImpl implements SportFieldRepository {
 
     @Override
     public SportField create(SportField sportField) {
-      this.sportFieldSet.put(sportField.getId(),sportField);
+      this.sportFieldSet.put(sportField.getAddress(),sportField);
       return sportField;
     }
 
@@ -45,8 +45,8 @@ public class SportFieldRepositoryImpl implements SportFieldRepository {
 
     @Override
     public SportField update(SportField sportField) {
-        this.sportFieldSet.replace(sportField.getId(),sportField);
-        return this.sportFieldSet.get(sportField.getId());
+        this.sportFieldSet.replace(sportField.getAddress(),sportField);
+        return this.sportFieldSet.get(sportField.getAddress());
     }
 
     @Override

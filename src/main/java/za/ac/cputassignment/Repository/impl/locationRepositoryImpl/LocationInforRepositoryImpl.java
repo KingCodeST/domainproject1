@@ -29,7 +29,7 @@ public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     @Override
     public CampusLocation create(CampusLocation campusLocation) {
-        this.locationInforSet.put(campusLocation.getId(), campusLocation);
+        this.locationInforSet.put(campusLocation.getCampusLocationId(), campusLocation);
         return campusLocation;
     }
 
@@ -40,8 +40,8 @@ public class LocationInforRepositoryImpl implements LocationInforRepository {
 
     @Override
     public CampusLocation update(CampusLocation campusLocation) {
-       this.locationInforSet.replace(campusLocation.getId(), campusLocation);
-       return this.locationInforSet.get(campusLocation.getId());
+       this.locationInforSet.replace(campusLocation.getCampusLocationId(), campusLocation);
+       return this.locationInforSet.get(campusLocation.getCampusLocationId());
     }
 
     @Override

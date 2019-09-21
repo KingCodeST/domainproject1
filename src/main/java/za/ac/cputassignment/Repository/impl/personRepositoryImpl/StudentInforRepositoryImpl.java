@@ -26,7 +26,7 @@ public class StudentInforRepositoryImpl implements StudentInforRepository {
 
     @Override
     public StudentInfo create(StudentInfo studentInfo) {
-        this.studentInfos.put(studentInfo.getId(),studentInfo);
+        this.studentInfos.put(studentInfo.getStudentId(),studentInfo);
         return studentInfo;
     }
 
@@ -39,8 +39,8 @@ public class StudentInforRepositoryImpl implements StudentInforRepository {
     @Override
     public StudentInfo update(StudentInfo studentInfo) {
 
-        this.studentInfos.replace(studentInfo.getId(),studentInfo);
-        return this.studentInfos.get(studentInfo.getId());
+        this.studentInfos.replace(studentInfo.getStudentId(),studentInfo);
+        return this.studentInfos.get(studentInfo.getStudentId());
     }
 
     @Override

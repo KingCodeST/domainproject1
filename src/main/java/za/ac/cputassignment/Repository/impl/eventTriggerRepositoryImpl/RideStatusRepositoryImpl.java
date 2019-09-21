@@ -23,39 +23,61 @@ public class RideStatusRepositoryImpl implements RideStatusRepository {
         return repository;
     }
 
-
-
-
+    @Override
+    public Set<RideStatus> getAll() {
+        return null;
+    }
 
     @Override
     public RideStatus create(RideStatus rideStatus) {
-       this.rideStatuses.put(rideStatus.getId(),rideStatus);
-       return rideStatus;
+        return null;
     }
+
     @Override
-    public RideStatus read(String rideStatusId) {
-       return this.rideStatuses.get(rideStatusId);
+    public RideStatus read(String s) {
+        return null;
+    }
+
+    @Override
+    public void delete(String s) {
+
     }
 
     @Override
     public RideStatus update(RideStatus rideStatus) {
-        this.rideStatuses.replace(rideStatus.getId(),rideStatus);
-        return this.rideStatuses.get(rideStatus.getId());
+        return null;
     }
 
-    @Override
-    public void delete(String rideStaId) {
-      this.rideStatuses.remove(rideStaId);
-    }
 
-    @Override
-    public Set<RideStatus> getAll() {
-        Collection<RideStatus> rideStatuses=this.rideStatuses.values();
-        Set<RideStatus> set =new HashSet<>();
-        set.addAll(rideStatuses);
-        return set;
-
-    }
+//    @Override
+//    public RideStatus create(RideStatus rideStatus) {
+//       this.rideStatuses.put(rideStatus.,rideStatus);
+//       return rideStatus;
+//    }
+//    @Override
+//    public RideStatus read(String rideStatusId) {
+//       return this.rideStatuses.get(rideStatusId);
+//    }
+//
+//    @Override
+//    public RideStatus update(RideStatus rideStatus) {
+//        this.rideStatuses.replace(rideStatus.getId(),rideStatus);
+//        return this.rideStatuses.get(rideStatus.getId());
+//    }
+//
+//    @Override
+//    public void delete(String rideStaId) {
+//      this.rideStatuses.remove(rideStaId);
+//    }
+//
+//    @Override
+//    public Set<RideStatus> getAll() {
+//        Collection<RideStatus> rideStatuses=this.rideStatuses.values();
+//        Set<RideStatus> set =new HashSet<>();
+//        set.addAll(rideStatuses);
+//        return set;
+//
+//    }
 
 
 }

@@ -8,7 +8,6 @@ import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import za.ac.cputassignment.Repository.eventTriggerRepository.TimetableInforRepository;
 import za.ac.cputassignment.factory.transportFactory.TimetableInfoFactory;
 
 import java.io.IOException;

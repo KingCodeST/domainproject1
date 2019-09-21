@@ -5,12 +5,12 @@ import za.ac.cputassignment.domain.location.SportField;
 public class SportFieldFactory {
 
 
-    public  static SportField getSportField(int fid,String id, String addrss, String name)
+    public  static SportField getSportField(String fieldid,String id, String addrss, String name)
     {
 
         return  new SportField.Builder()
-                              .id(id)
-                              .sFieldID(fid)
+
+                              .sFieldID(fieldid)
                               .address(addrss)
                               .fname(name)
                               .build();

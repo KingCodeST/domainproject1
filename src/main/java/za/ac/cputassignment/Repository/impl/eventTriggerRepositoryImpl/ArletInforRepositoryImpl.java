@@ -26,38 +26,30 @@ public class ArletInforRepositoryImpl implements ArletInforRepository {
         return repository;
     }
 
-
+    @Override
+    public Set<ArletInfor> getAll() {
+        return null;
+    }
 
     @Override
     public ArletInfor create(ArletInfor arletInfor) {
-       this.arletInfors.put(arletInfor.getId(),arletInfor);
-        return arletInfor;
+        return null;
     }
 
     @Override
-    public ArletInfor read(String arlteId) {
-
-        return this.arletInfors.get(arlteId);
+    public ArletInfor read(String s) {
+        return null;
     }
 
+    @Override
+    public void delete(String s) {
+
+    }
 
     @Override
     public ArletInfor update(ArletInfor arletInfor) {
-       this.arletInfors.replace(arletInfor.getId(),arletInfor);
-       return this.arletInfors.get(arletInfor.getId());
-    }
-
-    @Override
-    public void delete(String arletId) {
-        this.arletInfors.remove(arletId);
+        return null;
     }
 
 
-    @Override
-    public Set<ArletInfor> getAll() {
-        Collection<ArletInfor> arletInfors =this.arletInfors.values();
-        Set<ArletInfor> set =new HashSet<>();
-        set.addAll(arletInfors);
-        return set;
-    }
 }

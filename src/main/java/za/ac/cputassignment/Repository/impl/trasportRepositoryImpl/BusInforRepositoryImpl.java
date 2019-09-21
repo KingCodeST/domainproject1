@@ -29,7 +29,7 @@ public class BusInforRepositoryImpl implements BusInforRepository {
 
     @Override
     public BusInfor create(BusInfor busInfor) {
-        this.busSetRepo.put(busInfor.getId(),busInfor);
+        this.busSetRepo.put(busInfor.getVihicleBus(),busInfor);
         return busInfor;
     }
 
@@ -41,8 +41,8 @@ public class BusInforRepositoryImpl implements BusInforRepository {
 
     @Override
     public BusInfor update(BusInfor busInfor) {
-        this.busSetRepo.replace(busInfor.getId(),busInfor);
-        return this.busSetRepo.get(busInfor.getId());
+        this.busSetRepo.replace(busInfor.getVihicleBus(),busInfor);
+        return this.busSetRepo.get(busInfor.getVihicleBus());
     }
 
     @Override

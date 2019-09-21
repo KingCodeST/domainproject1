@@ -9,7 +9,7 @@ import java.util.Objects;
 public class SpecialLocation  {
 
 
-    private int SLocalId;
+    private String SLocalId;
     private String name;
     private String address;
 
@@ -27,7 +27,7 @@ public class SpecialLocation  {
 
     }
 
-    public int getSLocalId() {
+    public String getSLocalId() {
         return SLocalId;
     }
 
@@ -43,18 +43,14 @@ public class SpecialLocation  {
 
     public static class Builder
     {
-        private String id;
-        private int SLocalId;
+
+        private String SLocalId;
         private String name;
         private String address;
 
-        public Builder id(String id)
-        {
-            this.id =id;
-            return this;
-        }
 
-        public Builder SLocalId(int SLocalId)
+
+        public Builder SLocalId(String SLocalId)
         {
             this.SLocalId =SLocalId;
             return  this;

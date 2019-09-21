@@ -28,7 +28,7 @@ public class RideRepositoryImpl implements RideRepository {
 
     @Override
     public Ride create(Ride ride) {
-        this.rides.put(ride.getId(),ride);
+        this.rides.put(ride.getRideNumber(),ride);
         return ride;
     }
 
@@ -40,8 +40,8 @@ public class RideRepositoryImpl implements RideRepository {
 
     @Override
     public Ride update(Ride ride) {
-        this.rides.replace(ride.getId(),ride);
-        return this.rides.get(ride.getId());
+        this.rides.replace(ride.getRideNumber(),ride);
+        return this.rides.get(ride.getRideNumber());
     }
 
     @Override

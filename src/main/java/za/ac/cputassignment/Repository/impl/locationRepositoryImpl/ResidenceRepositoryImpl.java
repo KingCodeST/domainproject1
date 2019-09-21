@@ -29,7 +29,7 @@ public class ResidenceRepositoryImpl implements ResidenceRepository {
 
     @Override
     public Residence create(Residence residence) {
-        this.residences.put(residence.getId(),residence);
+        this.residences.put(residence.getResidenceID(),residence);
         return residence;
     }
 
@@ -40,8 +40,8 @@ public class ResidenceRepositoryImpl implements ResidenceRepository {
 
     @Override
     public Residence update(Residence residence) {
-       this.residences.replace(residence.getId(),residence);
-       return this.residences.get(residence.getId());
+       this.residences.replace(residence.getResidenceID(),residence);
+       return this.residences.get(residence.getResidenceID());
     }
 
     @Override

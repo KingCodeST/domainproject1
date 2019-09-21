@@ -29,7 +29,7 @@ public class DriverBusRepositoryImplTest {
     {
         DriverBus busDriver = DriverInforFactory.getDriverInfor("#524");
         DriverBus result =repository.create(busDriver);
-        driverInfor =result.getId();
+        driverInfor =result.getDriverId();
         Assert.assertNotNull(busDriver);
     }
 

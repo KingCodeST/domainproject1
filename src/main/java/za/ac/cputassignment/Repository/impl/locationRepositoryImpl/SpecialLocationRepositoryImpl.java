@@ -30,7 +30,7 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
 
     @Override
     public SpecialLocation create(SpecialLocation specialLocation) {
-        this.specialLocations.put(specialLocation.getId(),specialLocation);
+        this.specialLocations.put(specialLocation.getSLocalId(),specialLocation);
         return specialLocation;
     }
 
@@ -42,8 +42,8 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
 
     @Override
     public SpecialLocation update(SpecialLocation specialLocation) {
-       this.specialLocations.replace(specialLocation.getId(),specialLocation);
-       return this.specialLocations.get(specialLocation.getId());
+       this.specialLocations.replace(specialLocation.getSLocalId(),specialLocation);
+       return this.specialLocations.get(specialLocation.getSLocalId());
     }
 
     @Override

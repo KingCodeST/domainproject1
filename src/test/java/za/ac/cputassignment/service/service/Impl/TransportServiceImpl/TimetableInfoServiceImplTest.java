@@ -2,7 +2,6 @@ package za.ac.cputassignment.service.service.Impl.TransportServiceImpl;
 
 import org.junit.Before;
 import org.junit.Test;
-import za.ac.cputassignment.Repository.impl.eventTriggerRepositoryImpl.TimetableInforRepositoryImpl;
 
 public class TimetableInfoServiceImplTest {
 

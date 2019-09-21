@@ -28,7 +28,7 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public Student create(Student student) {
-        this.students.put(student.getId(),student);
+        this.students.put(student.getStudentNum(),student);
         return student;
     }
     @Override
@@ -38,8 +38,8 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public Student update(Student student) {
-        this.students.replace(student.getId(),student);
-        return this.students.get(student.getId());
+        this.students.replace(student.getStudentNum(),student);
+        return this.students.get(student.getStudentNum());
 
     }
 
