@@ -4,74 +4,44 @@ import java.util.Objects;
 
 public class LogEvent {
 
-    private String email;
-    private String event;
+    private String responseCode, responseDescription;
+    private Object response;
 
-    private LogEvent(){}
-
-    private LogEvent(Builder builder)
-    {
-        this.email =builder.email;
-        this.event =builder.event;
+    public LogEvent(String responseCode, String responseDescription) {
+        this.responseCode = responseCode;
+        this.responseDescription = responseDescription;
     }
 
-    public String getEmail() {
-        return email;
+    public String getResponseCode() {
+        return responseCode;
     }
 
-    public String getEvent() {
-        return event;
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
     }
 
-    public static class Builder{
-        private String email;
-        private String event;
-
-        public Builder setEmail(String email)
-        {
-            this.email=email;
-            return this;
-        }
-
-        public Builder setEvent(String event)
-        {
-            this.event =event;
-            return this;
-        }
-
-        public Builder copy(LogEvent logEvent)
-        {
-            this.event =logEvent.event;
-            this.email =logEvent.email;
-            return this;
-        }
-
-        public LogEvent build()
-        {
-            return new LogEvent(this);
-        }
-
+    public String getResponseDescription() {
+        return responseDescription;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        LogEvent logEvent = (LogEvent) o;
-        return email.equals(logEvent.email) &&
-                Objects.equals(event, logEvent.event);
+    public void setResponseDescription(String responseDescription) {
+        this.responseDescription = responseDescription;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(email);
+    public Object getResponse() {
+        return response;
+    }
+
+    public void setResponse(Object response) {
+        this.response = response;
     }
 
     @Override
     public String toString() {
         return "LogEvent{" +
-                "email='" + email + '\'' +
-                ", event='" + event + '\'' +
+                "responseCode='" + responseCode + '\'' +
+                ", responseDescription='" + responseDescription + '\'' +
+                ", response=" + response +
                 '}';
     }
 }

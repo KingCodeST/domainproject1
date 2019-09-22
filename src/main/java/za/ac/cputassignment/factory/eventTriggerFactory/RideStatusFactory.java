@@ -5,10 +5,10 @@ import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 public class RideStatusFactory {
 
 
-    public static RideStatus getRideStatus(String RsId)
+    public static RideStatus getRideStatus(boolean status)
     {
         return  new RideStatus.Builder()
-                              .id(RsId)
+                              .setOn(status)
                               .build();
     }
 

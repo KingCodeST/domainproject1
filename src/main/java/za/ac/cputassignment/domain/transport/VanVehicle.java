@@ -52,7 +52,7 @@ public class VanVehicle {
 
     @Override
     public String toString() {
-        return "VanVehicle{" +
+        return "VanVehicleFactory{" +
                 "vehicleVan='" + vehicleVan + '\'' +
                 '}';
     }
