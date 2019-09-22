@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexController {
 
     @RequestMapping(value = {"/","/domainproject1"})
-    @ResponseBody
+ //   @ResponseBody
     public ResponseEntity<String> home(){
         return new ResponseEntity<>("welcome to HG app!", HttpStatus.OK);
     }
