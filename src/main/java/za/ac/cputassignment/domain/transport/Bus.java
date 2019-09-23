@@ -13,6 +13,7 @@ public class Bus   {
     private int quantity;
     private String roadWorthy;
     private int engineNumber;
+    private String busId;
 
     private Bus(){}
 
@@ -25,6 +26,7 @@ public class Bus   {
         this.modelNo = builder.modelNo;
         this.quantity =builder.quantity;
         this.roadWorthy =builder.roadWorthy;
+        this.busId =builder.busId;
     }
 
 
@@ -46,6 +48,10 @@ public class Bus   {
         return quantity;
     }
 
+    public String getBusId() {
+        return busId;
+    }
+
     public String getRoadWorthy() {
         return roadWorthy;
     }
@@ -60,6 +66,7 @@ public class Bus   {
         private String modelNo;
         private int quantity;
         private String roadWorthy;
+        private String busId;
 
 
 
@@ -67,6 +74,12 @@ public class Bus   {
         {
             this.brandName =brandName;
             return  this;
+        }
+
+        public Builder setBusId(String busId)
+        {
+            this.busId = busId;
+            return this;
         }
 
         public Builder engineNumber(int engineNumber)
@@ -94,11 +107,13 @@ public class Bus   {
         }
 
         public Builder copy(Bus bus){
+
             this.brandName =bus.brandName;
             this.engineNumber =bus.engineNumber;
             this.modelNo =bus.modelNo;
             this.quantity =bus.quantity;
             this.roadWorthy =bus.roadWorthy;
+            this.busId =bus.busId;
 
             return this;
         }
