@@ -1,13 +1,15 @@
 package za.ac.cputassignment.domain.eventTrigger;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.util.Date;
 import java.util.Objects;
 
-
+@EntityScan
 public class ArletInfor {
 
 
-
+    private String alertInforId;
     private String blue,red,green;
     private String simpledate;
 
@@ -22,6 +24,7 @@ public class ArletInfor {
         this.green =builder.green;
         this.red =builder.red;
         this.simpledate =builder.simpledate;
+        this.alertInforId=builder.alertInforId;
 
     }
 
@@ -44,13 +47,22 @@ public class ArletInfor {
         return simpledate;
     }
 
+    public String getAlertInforId() {
+        return alertInforId;
+    }
+
     public static class Builder
     {
 
-
+        private String alertInforId;
         private String blue,red,green;
         private String simpledate;
 
+        public Builder setAlertInforId(String alertInforId)
+        {
+            this.alertInforId =alertInforId;
+            return this;
+        }
 
         public Builder blue(String blue)
         {
@@ -77,6 +89,7 @@ public class ArletInfor {
         }
 
         public Builder copy(ArletInfor arletInfor){
+            this.alertInforId=arletInfor.alertInforId;
             this.blue =arletInfor.blue;
             this.green =arletInfor.green;
             this.red =arletInfor.red;

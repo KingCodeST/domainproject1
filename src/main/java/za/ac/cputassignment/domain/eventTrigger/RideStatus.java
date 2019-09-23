@@ -8,6 +8,7 @@ import java.util.Objects;
 @EntityScan
 public class RideStatus  {
 
+    private String rideStatusId;
     private boolean on=true;
 
 
@@ -17,13 +18,19 @@ public class RideStatus  {
     private RideStatus (Builder builder)
     {
         this.on =builder.on;
+        this.rideStatusId =builder.rideStatusId;
     }
 
     public boolean isOn() {
         return on;
     }
 
+    public String getRideStatusId() {
+        return rideStatusId;
+    }
+
     public static class Builder{
+        private String rideStatusId;
 
         private boolean on=true;
 
@@ -33,8 +40,15 @@ public class RideStatus  {
             return this;
         }
 
+        public Builder setRideStatusId(String rideStatusId)
+        {
+            this.rideStatusId =rideStatusId;
+            return this;
+        }
+
        public Builder copy(RideStatus rideStatus){
-            this.on =on;
+            this.on =rideStatus.on;
+            this.rideStatusId =rideStatus.rideStatusId;
             return this;
        }
 

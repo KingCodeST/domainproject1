@@ -10,29 +10,29 @@ import java.util.Objects;
 @EntityScan
 public class DriverBus {
 
-        private String BusDriverName,DriverId;
+        private String busDriverName,driverId;
 
         private DriverBus(){}
 
         public DriverBus(String busDriverName, String driverId) {
-                BusDriverName = busDriverName;
-                DriverId = driverId;
+                busDriverName = busDriverName;
+                driverId = driverId;
         }
 
         public String getBusDriverName() {
-                return BusDriverName;
+                return busDriverName;
         }
 
         public void setBusDriverName(String busDriverName) {
-                BusDriverName = busDriverName;
+                busDriverName = busDriverName;
         }
 
         public String getDriverId() {
-                return DriverId;
+                return driverId;
         }
 
         public void setDriverId(String driverId) {
-                DriverId = driverId;
+                driverId = driverId;
         }
 
         @Override
@@ -40,11 +40,11 @@ public class DriverBus {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
                 DriverBus driverBus = (DriverBus) o;
-                return DriverId.equals(driverBus.DriverId);
+                return driverId.equals(driverBus.driverId);
         }
 
         @Override
         public int hashCode() {
-                return Objects.hash(DriverId);
+                return Objects.hash(driverId);
         }
 }

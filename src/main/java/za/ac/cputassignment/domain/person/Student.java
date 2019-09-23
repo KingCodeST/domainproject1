@@ -12,6 +12,8 @@ public class Student {
         private String studentNum;
         private String firstname,lastname;
         private int age;
+        private String gender;
+        private String race;
 
 
         private Student(){}
@@ -24,10 +26,18 @@ public class Student {
             this.firstname =builder.firstname;
             this.lastname =builder.lastname;
             this.age =builder.age;
+            this.gender=builder.gender;
+            this.race =builder.race;
 
         }
 
+    public String getGender() {
+        return gender;
+    }
 
+    public String getRace() {
+        return race;
+    }
 
     public String getStudentNum() {
         return studentNum;
@@ -53,6 +63,8 @@ public class Student {
         private String studentNum;
         private String firstname,lastname;
         private int age;
+        private String gender;
+        private String race;
 
 
       public Builder studentNum(String studentNum)
@@ -60,6 +72,18 @@ public class Student {
           this.studentNum =studentNum;
           return  this;
       }
+
+        public Builder setGender(String gender)
+        {
+            this.gender =gender;
+            return  this;
+        }
+
+        public Builder setRace(String race)
+        {
+            this.race =race;
+            return  this;
+        }
 
       public  Builder firstname(String firstname)
       {
@@ -84,7 +108,8 @@ public class Student {
           this.lastname =student.lastname;
           this.age =student.age;
           this.studentNum =student.studentNum;
-
+          this.gender =student.gender;
+          this.race =student.race;
           return this;
       }
 

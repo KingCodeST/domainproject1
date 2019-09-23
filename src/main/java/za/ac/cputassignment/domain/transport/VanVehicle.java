@@ -1,7 +1,10 @@
 package za.ac.cputassignment.domain.transport;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.util.Objects;
 
+@EntityScan
 public class VanVehicle {
 
     private String vehicleVan;

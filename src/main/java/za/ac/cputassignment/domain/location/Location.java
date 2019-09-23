@@ -1,14 +1,17 @@
 package za.ac.cputassignment.domain.location;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.util.Objects;
 
+@EntityScan
 public class Location {
 
     private String  locationId,campusName,residenceName,specialLocationName,sportFieldName;
 
     private Location(){}
 
-    public Location(Builder builder){
+    private Location(Builder builder){
         this.campusName =builder.campusName;
         this.locationId =builder.locationId;
         this.residenceName =builder.residenceName;
@@ -74,6 +77,11 @@ public class Location {
             this.campusName =location.campusName;
             this.locationId =location.locationId;
             return this;
+        }
+
+        public Location build()
+        {
+            return new Location(this);
         }
     }
 

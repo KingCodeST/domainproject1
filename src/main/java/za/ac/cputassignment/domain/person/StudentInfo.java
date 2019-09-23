@@ -10,7 +10,7 @@ public class StudentInfo  {
 
         private String StudentNumber,studentId;
 
-        private StudentInfo(){}
+        public StudentInfo(){}
 
     public StudentInfo(String studentNumber, String studentId) {
         StudentNumber = studentNumber;

@@ -1,12 +1,15 @@
 package za.ac.cputassignment.domain.location;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import java.util.Objects;
 
+@EntityScan
 public class SpecialLocationL {
 
     private String address, specialLId;
 
-    private SpecialLocationL(){}
+    public SpecialLocationL(){}
 
     public SpecialLocationL(String address,String specialLId){
         this.address =address;

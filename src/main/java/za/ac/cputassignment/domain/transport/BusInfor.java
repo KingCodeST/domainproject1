@@ -20,7 +20,7 @@ public class BusInfor {
         return vehicleBus;
     }
     
-    private static class Builder{
+    public static class Builder{
         
         private String vehicleBus;
         
@@ -34,7 +34,7 @@ public class BusInfor {
             return this;
         }
         
-        private BusInfor buid(){
+        public BusInfor buid(){
             return new BusInfor(this);
         }
         
