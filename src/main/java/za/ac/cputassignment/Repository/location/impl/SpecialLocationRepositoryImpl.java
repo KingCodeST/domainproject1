@@ -20,7 +20,7 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
     private SpecialLocation findArletInfor(String specialLocationsId)
     {
         return this.specialLocationset.stream()
-                .filter(SpecialLocation -> SpecialLocation.getSLocalId().trim().equals(specialLocationsId))
+                .filter(specialLocation -> specialLocation.getSLocalId().trim().equals(specialLocationsId))
                 .findAny()
                 .orElse(null);
     }
@@ -42,8 +42,8 @@ public class SpecialLocationRepositoryImpl implements SpecialLocationRepository 
     }
 
     @Override
-    public SpecialLocation read(String residenceLocationID) {
-        SpecialLocation specialLocationsob=findArletInfor(residenceLocationID);
+    public SpecialLocation read(String specislLocationId) {
+        SpecialLocation specialLocationsob=findArletInfor(specislLocationId);
         return specialLocationsob;
     }
 

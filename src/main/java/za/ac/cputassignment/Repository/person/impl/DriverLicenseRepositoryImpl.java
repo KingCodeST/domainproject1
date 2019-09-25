@@ -22,7 +22,7 @@ public class DriverLicenseRepositoryImpl implements DriverLicenseRepository {
 
     private DriverLicense findArletInfor(String driverLicenseId) {
         return this.driverLicenseSet.stream()
-                .filter(driverBus -> driverBus.getCode().trim().equals(driverLicenseId))
+                .filter(driverlisence -> driverlisence.getCode().trim().equals(driverLicenseId))
                 .findAny()
                 .orElse(null);
     }
@@ -44,8 +44,8 @@ public class DriverLicenseRepositoryImpl implements DriverLicenseRepository {
     }
 
     @Override
-    public DriverLicense read(String residenceLocationID) {
-        DriverLicense driverLicenseOb = findArletInfor(residenceLocationID);
+    public DriverLicense read(String driverlisenceId) {
+        DriverLicense driverLicenseOb = findArletInfor(driverlisenceId);
         return driverLicenseOb;
     }
 

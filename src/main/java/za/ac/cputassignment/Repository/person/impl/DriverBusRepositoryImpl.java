@@ -18,7 +18,7 @@ public class DriverBusRepositoryImpl implements DriverBusRepository {
         this.DriverBusSet =new HashSet<>();
     }
 
-    private DriverBus findArletInfor(String driverBusId)
+    private DriverBus finddriverBus(String driverBusId)
     {
         return this.DriverBusSet.stream()
                 .filter(driverBus -> driverBus.getDriverId().trim().equals(driverBusId))
@@ -44,13 +44,13 @@ public class DriverBusRepositoryImpl implements DriverBusRepository {
 
     @Override
     public DriverBus read(String residenceLocationID) {
-        DriverBus driverBusOb=findArletInfor(residenceLocationID);
+        DriverBus driverBusOb=finddriverBus(residenceLocationID);
         return driverBusOb;
     }
 
     @Override
     public DriverBus update(DriverBus driverBusOb) {
-        DriverBus toDelete =findArletInfor(driverBusOb.getDriverId());
+        DriverBus toDelete =finddriverBus(driverBusOb.getDriverId());
         if(toDelete !=null)
         {
             this.DriverBusSet.remove(toDelete);
@@ -61,7 +61,7 @@ public class DriverBusRepositoryImpl implements DriverBusRepository {
 
     @Override
     public void delete(String driverBusId) {
-        DriverBus driverBusOb=findArletInfor(driverBusId);
+        DriverBus driverBusOb=finddriverBus(driverBusId);
         if (driverBusOb !=null) this.DriverBusSet.remove(driverBusOb);
 
     }

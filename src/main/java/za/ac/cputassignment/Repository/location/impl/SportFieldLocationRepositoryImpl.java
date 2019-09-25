@@ -17,10 +17,10 @@ public class SportFieldLocationRepositoryImpl implements SportFieldLocationRepos
         this.sportFieldLocationset =new HashSet<>();
     }
 
-    private SportFieldLocation findArletInfor(String sportFieldLocationId)
+    private SportFieldLocation findSportFieldLocation(String sportFieldLocationId)
     {
         return this.sportFieldLocationset.stream()
-                .filter(SportFieldLocation -> SportFieldLocation.getSportFiledId().trim().equals(sportFieldLocationId))
+                .filter(sportFieldLocation -> sportFieldLocation.getSportFiledId().trim().equals(sportFieldLocationId))
                 .findAny()
                 .orElse(null);
     }
@@ -43,13 +43,13 @@ public class SportFieldLocationRepositoryImpl implements SportFieldLocationRepos
 
     @Override
     public SportFieldLocation read(String residenceLocationID) {
-        SportFieldLocation sportFieldLocationOb=findArletInfor(residenceLocationID);
+        SportFieldLocation sportFieldLocationOb=findSportFieldLocation(residenceLocationID);
         return sportFieldLocationOb;
     }
 
     @Override
     public SportFieldLocation update(SportFieldLocation sportFieldLocationOb) {
-        SportFieldLocation toDelete =findArletInfor(sportFieldLocationOb.getSportFiledId());
+        SportFieldLocation toDelete =findSportFieldLocation(sportFieldLocationOb.getSportFiledId());
         if(toDelete !=null)
         {
             this.sportFieldLocationset.remove(toDelete);
@@ -60,7 +60,7 @@ public class SportFieldLocationRepositoryImpl implements SportFieldLocationRepos
 
     @Override
     public void delete(String sportFieldLocationId) {
-        SportFieldLocation sportFieldLocationOb=findArletInfor(sportFieldLocationId);
+        SportFieldLocation sportFieldLocationOb=findSportFieldLocation(sportFieldLocationId);
         if (sportFieldLocationOb !=null) this.sportFieldLocationset.remove(sportFieldLocationOb);
 
     }

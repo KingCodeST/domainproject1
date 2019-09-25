@@ -17,10 +17,10 @@ public class CampusRepositoryImpl implements CampusRepository {
         this.campuss =new HashSet<>();
     }
 
-    private Campus findArletInfor(String arletId)
+    private Campus findArletInfor(String campusId)
     {
         return this.campuss.stream()
-                .filter(campus -> campus.getCampusId().trim().equals(arletId))
+                .filter(campus -> campus.getCampusId().trim().equals(campusId))
                 .findAny()
                 .orElse(null);
     }

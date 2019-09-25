@@ -11,16 +11,16 @@ import java.util.Set;
 public class RideStatusRepositoryImpl implements RideStatusRepository {
 
     private static RideStatusRepositoryImpl repository =null;
-    private Set<RideStatus> arletInfors;
+    private Set<RideStatus> rideset;
 
     private RideStatusRepositoryImpl(){
-        this.arletInfors =new HashSet<>();
+        this.rideset =new HashSet<>();
     }
 
-    private RideStatus findArletInfor(String arletId)
+    private RideStatus findArletInfor(String rideId)
     {
-        return this.arletInfors.stream()
-                .filter(arletInfor -> arletInfor.getRideStatusId().trim().equals(arletId))
+        return this.rideset.stream()
+                .filter(ride -> ride.getRideStatusId().trim().equals(rideId))
                 .findAny()
                 .orElse(null);
     }
@@ -32,36 +32,36 @@ public class RideStatusRepositoryImpl implements RideStatusRepository {
 
     @Override
     public Set<RideStatus> getAll() {
-        return this.arletInfors;
+        return this.rideset;
     }
 
     @Override
-    public RideStatus create(RideStatus arletInfor) {
-        this.arletInfors.add(arletInfor);
-        return arletInfor;
+    public RideStatus create(RideStatus ride) {
+        this.rideset.add(ride);
+        return ride;
     }
 
     @Override
-    public RideStatus read(String alertInforId) {
-        RideStatus arletInfor=findArletInfor(alertInforId);
-        return arletInfor;
+    public RideStatus read(String ridestatusId) {
+        RideStatus ride=findArletInfor(ridestatusId);
+        return ride;
     }
 
     @Override
-    public RideStatus update(RideStatus arletInfor) {
-        RideStatus toDelete =findArletInfor(arletInfor.getRideStatusId());
+    public RideStatus update(RideStatus ride) {
+        RideStatus toDelete =findArletInfor(ride.getRideStatusId());
         if(toDelete !=null)
         {
-            this.arletInfors.remove(toDelete);
-            return create(arletInfor);
+            this.rideset.remove(toDelete);
+            return create(ride);
         }
         return null;
     }
 
     @Override
-    public void delete(String alertInforId) {
-        RideStatus arletInfor=findArletInfor(alertInforId);
-        if (arletInfor !=null) this.arletInfors.remove(arletInfor);
+    public void delete(String ridestatusId) {
+        RideStatus ride=findArletInfor(ridestatusId);
+        if (ride !=null) this.rideset.remove(ride);
 
     }
 }

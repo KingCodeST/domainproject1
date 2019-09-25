@@ -20,7 +20,7 @@ public class SportFieldRepositoryImpl implements SportFieldRepository {
     private SportField findArletInfor(String sportFieldId)
     {
         return this.sportFieldset.stream()
-                .filter(SportField -> SportField.getsFieldID().trim().equals(sportFieldId))
+                .filter(sportField -> sportField.getsFieldID().trim().equals(sportFieldId))
                 .findAny()
                 .orElse(null);
     }
@@ -42,8 +42,8 @@ public class SportFieldRepositoryImpl implements SportFieldRepository {
     }
 
     @Override
-    public SportField read(String residenceLocationID) {
-        SportField sportFieldOb=findArletInfor(residenceLocationID);
+    public SportField read(String sportFieldId) {
+        SportField sportFieldOb=findArletInfor(sportFieldId);
         return sportFieldOb;
     }
 

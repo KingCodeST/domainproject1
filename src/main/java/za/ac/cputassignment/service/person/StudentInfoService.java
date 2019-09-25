@@ -5,6 +5,6 @@ import za.ac.cputassignment.service.IService;
 
 import java.util.Set;
 
-public interface StudentInforService extends IService<StudentInfo,String> {
+public interface StudentInfoService extends IService<StudentInfo,String> {
     Set<StudentInfo>getAll();
 }

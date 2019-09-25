@@ -17,10 +17,10 @@ public class SpecialLocationLRepositoryImpl implements SpecialLocationLRepositor
         this.specialLocationLset =new HashSet<>();
     }
 
-    private SpecialLocationL findArletInfor(String specialLocationLId)
+    private SpecialLocationL FindSpecialLocationL(String specialLocationLId)
     {
         return this.specialLocationLset.stream()
-                .filter(SpecialLocationL -> SpecialLocationL.getSpecialLId().trim().equals(specialLocationLId))
+                .filter(specialLocationL -> specialLocationL.getSpecialLId().trim().equals(specialLocationLId))
                 .findAny()
                 .orElse(null);
     }
@@ -42,14 +42,14 @@ public class SpecialLocationLRepositoryImpl implements SpecialLocationLRepositor
     }
 
     @Override
-    public SpecialLocationL read(String residenceLocationID) {
-        SpecialLocationL specialLocationLOb=findArletInfor(residenceLocationID);
+    public SpecialLocationL read(String specialLId) {
+        SpecialLocationL specialLocationLOb=FindSpecialLocationL(specialLId);
         return specialLocationLOb;
     }
 
     @Override
     public SpecialLocationL update(SpecialLocationL specialLocationLOb) {
-        SpecialLocationL toDelete =findArletInfor(specialLocationLOb.getSpecialLId());
+        SpecialLocationL toDelete =FindSpecialLocationL(specialLocationLOb.getSpecialLId());
         if(toDelete !=null)
         {
             this.specialLocationLset.remove(toDelete);
@@ -60,7 +60,7 @@ public class SpecialLocationLRepositoryImpl implements SpecialLocationLRepositor
 
     @Override
     public void delete(String ResidenceLocationID) {
-        SpecialLocationL specialLocationLOb=findArletInfor(ResidenceLocationID);
+        SpecialLocationL specialLocationLOb=FindSpecialLocationL(ResidenceLocationID);
         if (specialLocationLOb !=null) this.specialLocationLset.remove(specialLocationLOb);
 
     }

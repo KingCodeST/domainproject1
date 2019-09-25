@@ -42,8 +42,8 @@ public class LocationRepositoryImpl implements LocationRepository {
     }
 
     @Override
-    public Location read(String campusId) {
-        Location Locationss=findArletInfor(campusId);
+    public Location read(String locationId) {
+        Location Locationss=findArletInfor(locationId);
         return Locationss;
     }
 
@@ -59,8 +59,8 @@ public class LocationRepositoryImpl implements LocationRepository {
     }
 
     @Override
-    public void delete(String campusId) {
-        Location Locationss=findArletInfor(campusId);
+    public void delete(String locationId) {
+        Location Locationss=findArletInfor(locationId);
         if (Locationss !=null) this.Locations.remove(Locationss);
 
     }

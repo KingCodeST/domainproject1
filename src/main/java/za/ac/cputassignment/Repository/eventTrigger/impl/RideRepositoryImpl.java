@@ -11,16 +11,16 @@ import java.util.Set;
 public class RideRepositoryImpl implements RideRepository {
     
     private static RideRepositoryImpl repository =null;
-    private Set<Ride> arletInfors;
+    private Set<Ride> rides;
 
     private RideRepositoryImpl(){
-        this.arletInfors =new HashSet<>();
+        this.rides =new HashSet<>();
     }
 
-    private Ride findArletInfor(String arletId)
+    private Ride findArletInfor(String rideId)
     {
-        return this.arletInfors.stream()
-                .filter(arletInfor -> arletInfor.getRideNumber().trim().equals(arletId))
+        return this.rides.stream()
+                .filter(ride -> ride.getRideNumber().trim().equals(rideId))
                 .findAny()
                 .orElse(null);
     }
@@ -32,36 +32,36 @@ public class RideRepositoryImpl implements RideRepository {
 
     @Override
     public Set<Ride> getAll() {
-        return this.arletInfors;
+        return this.rides;
     }
 
     @Override
-    public Ride create(Ride arletInfor) {
-        this.arletInfors.add(arletInfor);
-        return arletInfor;
+    public Ride create(Ride ride) {
+        this.rides.add(ride);
+        return ride;
     }
 
     @Override
     public Ride read(String alertInforId) {
-        Ride arletInfor=findArletInfor(alertInforId);
-        return arletInfor;
+        Ride ride=findArletInfor(alertInforId);
+        return ride;
     }
 
     @Override
-    public Ride update(Ride arletInfor) {
-        Ride toDelete =findArletInfor(arletInfor.getRideNumber());
+    public Ride update(Ride ride) {
+        Ride toDelete =findArletInfor(ride.getRideNumber());
         if(toDelete !=null)
         {
-            this.arletInfors.remove(toDelete);
-            return create(arletInfor);
+            this.rides.remove(toDelete);
+            return create(ride);
         }
         return null;
     }
 
     @Override
     public void delete(String alertInforId) {
-        Ride arletInfor=findArletInfor(alertInforId);
-        if (arletInfor !=null) this.arletInfors.remove(arletInfor);
+        Ride ride=findArletInfor(alertInforId);
+        if (ride !=null) this.rides.remove(ride);
 
     }
 }

@@ -11,16 +11,16 @@ import java.util.Set;
 public class CampusLocationRepositoryImpl implements CampusLocationRepository {
     
     private static CampusLocationRepositoryImpl repository =null;
-    private Set<CampusLocation> arletInfors;
+    private Set<CampusLocation> campusLocationSet;
 
     private CampusLocationRepositoryImpl(){
-        this.arletInfors =new HashSet<>();
+        this.campusLocationSet =new HashSet<>();
     }
 
-    private CampusLocation findArletInfor(String arletId)
+    private CampusLocation findArletInfor(String campusLocationId)
     {
-        return this.arletInfors.stream()
-                .filter(arletInfor -> arletInfor.getCampusLocationId().trim().equals(arletId))
+        return this.campusLocationSet.stream()
+                .filter(campusLocation -> campusLocation.getCampusLocationId().trim().equals(campusLocationId))
                 .findAny()
                 .orElse(null);
     }
@@ -32,36 +32,36 @@ public class CampusLocationRepositoryImpl implements CampusLocationRepository {
 
     @Override
     public Set<CampusLocation> getAll() {
-        return this.arletInfors;
+        return this.campusLocationSet;
     }
 
     @Override
-    public CampusLocation create(CampusLocation arletInfor) {
-        this.arletInfors.add(arletInfor);
-        return arletInfor;
+    public CampusLocation create(CampusLocation campusLocation) {
+        this.campusLocationSet.add(campusLocation);
+        return campusLocation;
     }
 
     @Override
-    public CampusLocation read(String alertInforId) {
-        CampusLocation arletInfor=findArletInfor(alertInforId);
-        return arletInfor;
+    public CampusLocation read(String campusLocationId) {
+        CampusLocation campusLocation=findArletInfor(campusLocationId);
+        return campusLocation;
     }
 
     @Override
-    public CampusLocation update(CampusLocation arletInfor) {
-        CampusLocation toDelete =findArletInfor(arletInfor.getCampusLocationId());
+    public CampusLocation update(CampusLocation campusLocation) {
+        CampusLocation toDelete =findArletInfor(campusLocation.getCampusLocationId());
         if(toDelete !=null)
         {
-            this.arletInfors.remove(toDelete);
-            return create(arletInfor);
+            this.campusLocationSet.remove(toDelete);
+            return create(campusLocation);
         }
         return null;
     }
 
     @Override
-    public void delete(String alertInforId) {
-        CampusLocation arletInfor=findArletInfor(alertInforId);
-        if (arletInfor !=null) this.arletInfors.remove(arletInfor);
+    public void delete(String campusLocationId) {
+        CampusLocation campusLocation=findArletInfor(campusLocationId);
+        if (campusLocation !=null) this.campusLocationSet.remove(campusLocation);
 
     }
 }

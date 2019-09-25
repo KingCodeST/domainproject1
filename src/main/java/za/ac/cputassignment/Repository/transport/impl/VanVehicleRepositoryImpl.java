@@ -10,56 +10,59 @@ import java.util.Set;
 @Repository("InMemory")
 public class VanVehicleRepositoryImpl implements VanVehicleService {
 
-    private static VanVehicleRepositoryImpl repository = null;
-    private Set<VanVehicle> vanVehicleSet;
+    private static VanVehicleRepositoryImpl repository =null;
+    private Set<VanVehicle> specialLocationLset;
 
-    private VanVehicleRepositoryImpl() {
-        this.vanVehicleSet = new HashSet<>();
+    private VanVehicleRepositoryImpl(){
+        this.specialLocationLset =new HashSet<>();
     }
 
-    private VanVehicle findVanVehicle(String busId) {
-        return this.vanVehicleSet.stream()
-                .filter(driverBus -> driverBus.getVehicleVan().trim().equals(busId))
+    private VanVehicle FindSpecialLocationL(String specialLocationLId)
+    {
+        return this.specialLocationLset.stream()
+                .filter(specialLocationL -> specialLocationL.getVehicleVan().trim().equals(specialLocationLId))
                 .findAny()
                 .orElse(null);
     }
 
-    public static VanVehicleRepositoryImpl getRepository() {
-        if (repository == null) repository = new VanVehicleRepositoryImpl();
+    public static VanVehicleRepositoryImpl getRepository(){
+        if(repository ==null) repository=new VanVehicleRepositoryImpl();
         return repository;
     }
 
     @Override
     public Set<VanVehicle> getAll() {
-        return this.vanVehicleSet;
+        return this.specialLocationLset;
     }
 
     @Override
-    public VanVehicle create(VanVehicle vanVehicleObj) {
-        this.vanVehicleSet.add(vanVehicleObj);
-        return vanVehicleObj;
+    public VanVehicle create(VanVehicle vanVehicle) {
+        this.specialLocationLset.add(vanVehicle);
+        return vanVehicle;
     }
 
     @Override
-    public VanVehicle read(String residenceLocationID) {
-        VanVehicle vanVehicleObj = findVanVehicle(residenceLocationID);
-        return vanVehicleObj;
+    public VanVehicle read(String specialLId) {
+        VanVehicle vanVehicle=FindSpecialLocationL(specialLId);
+        return vanVehicle;
     }
 
     @Override
-    public VanVehicle update(VanVehicle vanVehicleObj) {
-        VanVehicle toDelete = findVanVehicle(vanVehicleObj.getVehicleVan());
-        if (toDelete != null) {
-            this.vanVehicleSet.remove(toDelete);
-            return create(vanVehicleObj);
+    public VanVehicle update(VanVehicle vanVehicle) {
+        VanVehicle toDelete =FindSpecialLocationL(vanVehicle.getVehicleVan());
+        if(toDelete !=null)
+        {
+            this.specialLocationLset.remove(toDelete);
+            return create(vanVehicle);
         }
         return null;
     }
 
     @Override
-    public void delete(String busId) {
-        VanVehicle vanVehicleObj = findVanVehicle(busId);
-        if (vanVehicleObj != null) this.vanVehicleSet.remove(vanVehicleObj);
+    public void delete(String ResidenceLocationID) {
+        VanVehicle vanVehicle=FindSpecialLocationL(ResidenceLocationID);
+        if (vanVehicle !=null) this.specialLocationLset.remove(vanVehicle);
 
     }
 }
+
