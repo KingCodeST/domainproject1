@@ -1,6 +1,7 @@
 package za.ac.cputassignment.factory.person;
 
 import za.ac.cputassignment.domain.person.Driver;
+import za.ac.cputassignment.util.Misc;
 
 public class DriverFactory {
 
@@ -8,7 +9,7 @@ public class DriverFactory {
 
 
         return new Driver.Builder()
-                        .driverID(driverID)
+                        .driverID(Misc.generatedId())
                         .driverName(driverName)
                         .driverLastName(driverLastName)
                         .age(age)

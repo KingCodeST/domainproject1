@@ -1,6 +1,7 @@
 package za.ac.cputassignment.factory.location;
 
 import za.ac.cputassignment.domain.location.SportField;
+import za.ac.cputassignment.util.Misc;
 
 public class SportFieldFactory {
 
@@ -9,7 +10,7 @@ public class SportFieldFactory {
     {
 
         return  new SportField.Builder()
-                              .sFieldID(fieldid)
+                              .sFieldID(Misc.generatedId())
                               .address(addrss)
                               .fname(name)
                               .build();

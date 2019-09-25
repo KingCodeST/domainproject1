@@ -1,6 +1,7 @@
 package za.ac.cputassignment.factory.transport;
 
 import za.ac.cputassignment.domain.transport.Vehicle;
+import za.ac.cputassignment.util.Misc;
 
 public class VehicleFactory {
 
@@ -8,6 +9,7 @@ public class VehicleFactory {
     {
 
         return  new Vehicle.Builder()
+                .setVicleId(Misc.generatedId())
                 .setCapacity(capacity)
                 .setTypeVehicle(typeVehicle)
                 .setDisklicense(disklicense)

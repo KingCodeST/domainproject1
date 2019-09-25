@@ -1,6 +1,7 @@
 package za.ac.cputassignment.factory.transport;
 
 import za.ac.cputassignment.domain.transport.Van;
+import za.ac.cputassignment.util.Misc;
 
 public class VanFactory {
 
@@ -10,7 +11,7 @@ public class VanFactory {
     {
 
         return  new Van.Builder()
-                .vanId(id)
+                .vanId(Misc.generatedId())
                 .brand(brand)
                 .numPlate(numPlate)
                 .patrol(patrol)

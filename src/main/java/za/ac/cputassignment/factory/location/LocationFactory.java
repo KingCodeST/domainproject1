@@ -1,6 +1,7 @@
 package za.ac.cputassignment.factory.location;
 
 import za.ac.cputassignment.domain.location.Location;
+import za.ac.cputassignment.util.Misc;
 
 public class LocationFactory {
 
@@ -8,7 +9,7 @@ public class LocationFactory {
     )
     {
         return new Location.Builder()
-                            .setCampusName(locationId)
+                            .setCampusName(Misc.generatedId())
                             .setLocationId(campusName)
                             .setResidenceName(residenceName)
                             .setSpecialLocationName(specialLocationName)

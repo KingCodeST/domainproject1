@@ -8,6 +8,7 @@ public class VanVehicleFactory {
     {
 
         return  new VanVehicle.Builder()
+
                 .VehicleVan(van)
                 .build();
 
