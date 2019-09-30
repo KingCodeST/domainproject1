@@ -5,7 +5,8 @@ import za.ac.cputassignment.util.Misc;
 
 public class SpecialLocationLFactory {
 
-    public  static SpecialLocationL getSportField(String address,String specialLId)
+    private static String address, specialLId;
+    public  static SpecialLocationL getSportField(String s)
     {
 
         return  new SpecialLocationL(address, Misc.generatedId());

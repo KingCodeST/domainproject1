@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.transport.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.transport.DiskLicenseRepository;
 import za.ac.cputassignment.Repository.transport.impl.DiskLicenseRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.transport.DiskLicenseService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class DiskLicenseServiceImpl implements DiskLicenseService {
+
 
     private static DiskLicenseServiceImpl service=null;
     private DiskLicenseRepositoryImpl repository;
@@ -44,6 +47,14 @@ public class DiskLicenseServiceImpl implements DiskLicenseService {
     @Override
     public DiskLicense update(DiskLicense objectEntity) {
         return this.repository.update(objectEntity);
+    }
+
+    public DiskLicense retrieveByDesc(String colors) {
+        Set<DiskLicense> diskLicense = getAll();
+        for (DiskLicense diskLicenses : diskLicense) {
+            if (diskLicenses.getCode().equalsIgnoreCase(colors)) return diskLicenses;
+        }
+        return null;
     }
 
     @Override

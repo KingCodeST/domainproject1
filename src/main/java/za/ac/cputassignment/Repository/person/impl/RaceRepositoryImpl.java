@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.person.Race;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class RaceRepositoryImpl implements RaceRepository {
 
     private static RaceRepositoryImpl repository = null;

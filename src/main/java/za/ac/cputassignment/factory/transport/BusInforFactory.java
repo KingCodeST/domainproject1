@@ -5,17 +5,17 @@ import za.ac.cputassignment.util.Misc;
 
 public class BusInforFactory {
 
-    public static BusInfor BuilderGeneric(String busVehicle)
+    public static BusInfor BuilderGeneric(String busVehicle,String n)
     {
 
-        return  new BusInfor.Builder()
-                            .setVehicleBusId(Misc.generatedId())
-                            .VehicleBus(busVehicle)
-                            .buid();
+        return  new BusInfor(busVehicle);
 
 
 
     }
 
 
+    public static BusInfor BuilderGeneric(String busInfo) {
+        return  new BusInfor(busInfo);
+    }
 }

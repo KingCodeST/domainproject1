@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.eventTrigger.Ride;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class RideRepositoryImpl implements RideRepository {
     
     private static RideRepositoryImpl repository =null;

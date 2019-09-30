@@ -10,53 +10,21 @@ public class BusInfor {
 
     private String vehicleBus;
     private String vehicleBusId;
-    
-    private BusInfor(){}
-    
-    private BusInfor(Builder builder){
-        this.vehicleBus =builder.vehicleBus;
-        this.vehicleBusId =builder.vehicleBusId;
+
+    public BusInfor(String vehicleBus, String vehicleBusId) {
+        this.vehicleBus = vehicleBus;
+        this.vehicleBusId = vehicleBusId;
     }
 
-    public String getVihicleBus() {
+    public BusInfor(String busInfo) {
+    }
+
+    public String getVehicleBus() {
         return vehicleBus;
     }
 
-
-
     public String getVehicleBusId() {
         return vehicleBusId;
-    }
-
-    public static class Builder{
-        
-        private String vehicleBus;
-        private String vehicleBusId;
-        
-        public Builder VehicleBus(String vehicleBus){
-            this.vehicleBus =vehicleBus;
-            return this;
-        }
-
-        public Builder setVehicleBusId(String vehicleBusId)
-        {
-            this.vehicleBusId =vehicleBusId;
-            return this;
-        }
-        
-        public Builder copy(BusInfor busInfor){
-            this.vehicleBus =busInfor.vehicleBus;
-            this.vehicleBusId =busInfor.vehicleBusId;
-            return this;
-        }
-
-
-        
-        public BusInfor buid(){
-            return new BusInfor(this);
-        }
-        
-        
     }
 
     @Override

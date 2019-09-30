@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.eventTrigger.ArletInfor;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class ArletInforRepositoryImpl implements ArletInforRepository {
 
     private static ArletInforRepositoryImpl repository =null;

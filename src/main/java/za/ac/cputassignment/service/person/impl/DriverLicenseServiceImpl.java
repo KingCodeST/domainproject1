@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.person.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.person.DriverLicenseRepository;
 import za.ac.cputassignment.Repository.person.impl.DriverLicenseRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.person.DriverLicenseService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class DriverLicenseServiceImpl implements DriverLicenseService {
+
 
 
     private static DriverLicenseServiceImpl service=null;
@@ -45,6 +48,14 @@ public class DriverLicenseServiceImpl implements DriverLicenseService {
     @Override
     public DriverLicense update(DriverLicense objectEntity) {
         return this.repository.update(objectEntity);
+    }
+
+    public DriverLicense retrieveByDesc(String colors) {
+        Set<DriverLicense> driverLicense = getAll();
+        for (DriverLicense driverLicenses : driverLicense) {
+            if (driverLicenses.getCode().equalsIgnoreCase(colors)) return driverLicenses;
+        }
+        return null;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.person.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.person.DriverRepository;
 import za.ac.cputassignment.Repository.person.impl.DriverRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.person.DriverService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class DriverServiceImpl implements DriverService {
+
 
     private static DriverServiceImpl service=null;
     private DriverRepository repository;
@@ -44,6 +47,14 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public Driver update(Driver objectEntity) {
         return this.repository.update(objectEntity);
+    }
+    
+    public Driver retrieveByDesc(String colors) {
+        Set<Driver> drivers = getAll();
+        for (Driver driver : drivers) {
+            if (driver.getDriverLastName().equalsIgnoreCase(colors)) return driver;
+        }
+        return null;
     }
 
     @Override

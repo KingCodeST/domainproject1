@@ -6,8 +6,7 @@
 
 
 
-    <bean id="Displayeid" class="za.ac.cputassignment.domain.login.DisplayError" >
-    </bean>
+
 
 
 

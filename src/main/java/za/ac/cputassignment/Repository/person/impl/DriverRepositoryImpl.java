@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.person.Driver;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class DriverRepositoryImpl implements DriverRepository {
 
     private static DriverRepositoryImpl repository = null;

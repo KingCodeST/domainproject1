@@ -7,7 +7,7 @@ import za.ac.cputassignment.service.transport.DiskLicenseService;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class DiskLicenseRepositoryImpl implements DiskLicenseService {
 
     private static DiskLicenseRepositoryImpl repository = null;

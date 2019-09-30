@@ -7,7 +7,7 @@ import za.ac.cputassignment.service.transport.BusService;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class BusRepositoryImpl implements BusService {
 
     private static BusRepositoryImpl repository = null;

@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.person.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.person.GenderRepository;
 import za.ac.cputassignment.Repository.person.impl.GenderRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.person.GenderService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class GenderServiceImpl implements GenderService {
+
 
     private static GenderServiceImpl service=null;
     private GenderRepository repository;
@@ -44,6 +47,14 @@ public class GenderServiceImpl implements GenderService {
     @Override
     public Gender update(Gender objectEntity) {
         return this.repository.update(objectEntity);
+    }
+
+    public Gender retrieveByDesc(String colors) {
+        Set<Gender> genders = getAll();
+        for (Gender gender : genders) {
+            if (gender.getGenderGroup().equalsIgnoreCase(colors)) return gender;
+        }
+        return null;
     }
 
     @Override

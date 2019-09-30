@@ -5,8 +5,8 @@ import za.ac.cputassignment.util.Misc;
 
 public class SportFieldFactory {
 
-
-    public  static SportField getSportField(String fieldid,String id, String addrss, String name)
+    private static String fieldid, id, addrss, name;
+    public  static SportField getSportField(String sportField)
     {
 
         return  new SportField.Builder()

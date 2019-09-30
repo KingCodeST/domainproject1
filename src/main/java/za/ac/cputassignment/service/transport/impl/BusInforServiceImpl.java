@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.transport.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.transport.BusInforRepository;
 import za.ac.cputassignment.Repository.transport.impl.BusInforRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.transport.BusInforService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class BusInforServiceImpl implements BusInforService {
+
 
     private static BusInforServiceImpl service=null;
     private BusInforRepositoryImpl repository;
@@ -44,6 +47,14 @@ public class BusInforServiceImpl implements BusInforService {
     @Override
     public BusInfor update(BusInfor objectEntity) {
         return this.repository.update(objectEntity);
+    }
+
+    public BusInfor retrieveByDesc(String colors) {
+        Set<BusInfor> rideStatuss = getAll();
+        for (BusInfor rideStatus : rideStatuss) {
+            if (rideStatus.getVehicleBusId().equalsIgnoreCase(colors)) return rideStatus;
+        }
+        return null;
     }
 
     @Override

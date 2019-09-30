@@ -5,7 +5,9 @@ import za.ac.cputassignment.util.Misc;
 
 public class BusFactory {
 
-    public static Bus getBus(String brandname,int enginename,String modeln,int quantity,String roadWorty)
+    private static String brandname,modeln,roadWorty;
+    private static  int quantity,enginename;
+    public static Bus getBus(String bus)
     {
         return new Bus.Builder()
                       .setBusId(Misc.generatedId())

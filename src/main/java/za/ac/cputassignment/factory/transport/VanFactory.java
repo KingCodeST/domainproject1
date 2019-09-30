@@ -6,8 +6,9 @@ import za.ac.cputassignment.util.Misc;
 public class VanFactory {
 
 
-
-    public static Van getVan(String id,String brand,String numPlate,double patrol)
+        private static String id, brand, numPlate;
+        private static double patrol;
+    public static Van getVan(String van)
     {
 
         return  new Van.Builder()

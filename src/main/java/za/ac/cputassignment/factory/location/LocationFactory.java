@@ -5,8 +5,8 @@ import za.ac.cputassignment.util.Misc;
 
 public class LocationFactory {
 
-    public static Location GenericBuilder( String  locationId,String campusName,String residenceName,String specialLocationName,String sportFieldName
-    )
+    private static String  locationId, campusName, residenceName, specialLocationName, sportFieldName;
+    public static Location GenericBuilder( String  location)
     {
         return new Location.Builder()
                             .setCampusName(Misc.generatedId())

@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.person.Student;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class StudentRepositoryImpl implements StudentRepository {
 
     private static StudentRepositoryImpl repository = null;

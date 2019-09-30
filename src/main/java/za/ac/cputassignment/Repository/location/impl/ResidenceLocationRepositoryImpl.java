@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.location.ResidenceLocation;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class ResidenceLocationRepositoryImpl implements ResidenceLocationRepository {
 
 

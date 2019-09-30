@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.location.SpecialLocation;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class SpecialLocationRepositoryImpl implements SpecialLocationRepository {
 
     private static SpecialLocationRepositoryImpl repository =null;

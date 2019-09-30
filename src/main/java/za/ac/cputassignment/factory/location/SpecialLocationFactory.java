@@ -5,8 +5,8 @@ import za.ac.cputassignment.util.Misc;
 
 public class SpecialLocationFactory {
 
-
-    public static SpecialLocation getSpecialFactory(String nm, String addr,String id)
+        private static String nm,  addr, id;
+    public static SpecialLocation getSpecialFactory(String speciallocation)
     {
         return  new SpecialLocation.Builder()
 

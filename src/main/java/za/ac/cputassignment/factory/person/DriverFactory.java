@@ -5,7 +5,8 @@ import za.ac.cputassignment.util.Misc;
 
 public class DriverFactory {
 
-    public static Driver BuilderGeneric(String  driverID,String driverName,String driverLastName,String licanseCode,String race,String gender,int age) {
+    private static String  driverID, driverName, driverLastName, licanseCode, race, gender;private static int age;
+    public static Driver BuilderGeneric(String  driver) {
 
 
         return new Driver.Builder()

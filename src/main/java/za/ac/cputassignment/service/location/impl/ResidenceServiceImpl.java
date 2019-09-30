@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.location.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.location.ResidenceRepository;
 import za.ac.cputassignment.Repository.location.impl.ResidenceRepositoryImpl;
@@ -8,7 +10,7 @@ import za.ac.cputassignment.service.location.ResidenceService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class ResidenceServiceImpl implements ResidenceService {
 
 
@@ -45,6 +47,14 @@ public class ResidenceServiceImpl implements ResidenceService {
     @Override
     public Residence update(Residence rlocation) {
         return this.repository.update(rlocation);
+    }
+
+    public Residence retrieveByDesc(String colors) {
+        Set<Residence> residences = getAll();
+        for (Residence residence : residences) {
+            if (residence.getAddress().equalsIgnoreCase(colors)) return residence;
+        }
+        return null;
     }
 
     @Override

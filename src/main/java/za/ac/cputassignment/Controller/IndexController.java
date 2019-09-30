@@ -16,4 +16,15 @@ public class IndexController {
         return new ResponseEntity<>("welcome to HG app!", HttpStatus.OK);
     }
 
+    @GetMapping("/student")
+    public String student(){
+        return ("<h1> Welcome Student</h1>");
+    }
+
+    @GetMapping("/admin")
+    public  String admin()
+    {
+        return ("<h1> Welcome Admin </h1>");
+    }
+
 }

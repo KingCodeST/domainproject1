@@ -8,36 +8,23 @@ import java.util.Objects;
 public class VanVehicle {
 
     private String vehicleVan;
+    private String id;
 
-    private VanVehicle(){}
+    public VanVehicle(String vehicleVan, String id) {
+        this.vehicleVan = vehicleVan;
+        this.id = id;
+    }
 
-    private VanVehicle(Builder builder){
-        this.vehicleVan =builder.vehicleVan;
+    public VanVehicle(String vehicleVan) {
+        this.vehicleVan = vehicleVan;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getVehicleVan() {
         return vehicleVan;
-    }
-
-    public static class Builder{
-        private String vehicleVan;
-
-        public Builder VehicleVan(String vehicleVan)
-        {
-            this.vehicleVan =vehicleVan;
-            return this;
-        }
-
-        public Builder copy(VanVehicle vanVehicle)
-        {
-            this.vehicleVan =vanVehicle.vehicleVan;
-            return this;
-        }
-
-        public VanVehicle build(){
-            return new VanVehicle(this);
-        }
-
     }
 
     @Override

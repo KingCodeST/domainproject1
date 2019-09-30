@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.person.DriverBus;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class DriverBusRepositoryImpl implements DriverBusRepository {
 
 

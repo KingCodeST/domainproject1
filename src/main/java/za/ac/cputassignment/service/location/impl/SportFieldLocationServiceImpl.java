@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.location.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.location.SportFieldLocationRepository;
 import za.ac.cputassignment.Repository.location.impl.SportFieldLocationRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.location.SportFieldLocationService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class SportFieldLocationServiceImpl implements SportFieldLocationService {
+
 
 
     private static SportFieldLocationServiceImpl service=null;
@@ -45,6 +48,14 @@ public class SportFieldLocationServiceImpl implements SportFieldLocationService 
     @Override
     public SportFieldLocation update(SportFieldLocation sportFieldLocation) {
         return this.repository.update(sportFieldLocation);
+    }
+
+    public SportFieldLocation retrieveByDesc(String colors) {
+        Set<SportFieldLocation> splfs = getAll();
+        for (SportFieldLocation splf : splfs) {
+            if (splf.getAddress().equalsIgnoreCase(colors)) return splf;
+        }
+        return null;
     }
 
     @Override

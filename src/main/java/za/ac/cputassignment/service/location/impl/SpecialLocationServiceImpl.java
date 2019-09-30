@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.location.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.location.SpecialLocationRepository;
 import za.ac.cputassignment.Repository.location.impl.SpecialLocationRepositoryImpl;
@@ -8,8 +10,10 @@ import za.ac.cputassignment.service.location.SpecialLocationService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
+
 public class SpecialLocationServiceImpl implements SpecialLocationService {
+
 
     private static SpecialLocationServiceImpl service=null;
     private SpecialLocationRepository repository;
@@ -44,6 +48,14 @@ public class SpecialLocationServiceImpl implements SpecialLocationService {
     @Override
     public SpecialLocation update(SpecialLocation specialLocationL) {
         return this.repository.update(specialLocationL);
+    }
+
+    public SpecialLocation retrieveByDesc(String colors) {
+        Set<SpecialLocation> specialLocations = getAll();
+        for (SpecialLocation specialLocation : specialLocations) {
+            if (specialLocation.getAddress().equalsIgnoreCase(colors)) return specialLocation;
+        }
+        return null;
     }
 
     @Override

@@ -5,14 +5,20 @@ import za.ac.cputassignment.util.Misc;
 
 public class RideStatusFactory {
 
-
-    public static RideStatus GenericBuilder(boolean status)
+   private static boolean status;
+    public static RideStatus GenericBuilder(String ridestatus)
     {
+
         return  new RideStatus.Builder()
                               .setRideStatusId(Misc.generatedId())
+
                               .setOn(status)
                               .build();
+
     }
+
+
+
 
 
 }

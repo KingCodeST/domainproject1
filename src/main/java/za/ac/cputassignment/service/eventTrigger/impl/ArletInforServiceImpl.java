@@ -1,5 +1,6 @@
 package za.ac.cputassignment.service.eventTrigger.impl;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -10,8 +11,9 @@ import za.ac.cputassignment.service.eventTrigger.ArletInforService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class ArletInforServiceImpl implements ArletInforService {
+
 
     private static ArletInforServiceImpl service=null;
     private ArletInforRepository repository;
@@ -47,6 +49,16 @@ public class ArletInforServiceImpl implements ArletInforService {
     public ArletInfor update(ArletInfor arletInfor) {
         return this.repository.update(arletInfor);
     }
+
+
+    public ArletInfor retrieveByDesc(String colors) {
+        Set<ArletInfor> arletInfors = getAll();
+        for (ArletInfor arletInfor : arletInfors) {
+            if (arletInfor.getBlue().equalsIgnoreCase(colors)) return arletInfor;
+        }
+        return null;
+    }
+    
 
     @Override
     public void delete(String s) {

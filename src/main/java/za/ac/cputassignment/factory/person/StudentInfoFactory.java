@@ -4,8 +4,8 @@ import za.ac.cputassignment.domain.person.StudentInfo;
 import za.ac.cputassignment.util.Misc;
 
 public class StudentInfoFactory {
-
-    public static StudentInfo GenericBuilder(String studentNumber,String studentId)
+    private static String studentNumber, studentId;
+    public static StudentInfo GenericBuilder(String studentInfo)
     {
         return new StudentInfo(Misc.generatedId(),studentNumber);
 

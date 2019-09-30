@@ -5,8 +5,8 @@ import za.ac.cputassignment.util.Misc;
 
 public class CampusFactory {
 
-
-    public static Campus GenericBuilder(String campId,String cname)
+    private static String campId, cname;
+    public static Campus GenericBuilder(String campus)
     {
         return new Campus.Builder()
                         .campusid(Misc.generatedId())

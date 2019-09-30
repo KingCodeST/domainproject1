@@ -7,7 +7,7 @@ import za.ac.cputassignment.service.transport.VanVehicleService;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class VanVehicleRepositoryImpl implements VanVehicleService {
 
     private static VanVehicleRepositoryImpl repository =null;

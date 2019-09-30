@@ -5,8 +5,8 @@ import za.ac.cputassignment.domain.person.DriverBus;
 import za.ac.cputassignment.util.Misc;
 
 public class DriverBusFactory {
-
-    public static DriverBus GenericBuilder( String busDriverName,String driverId)
+    private static  String busDriverName, driverId;
+    public static DriverBus GenericBuilder(String driverBus)
     {
         return new DriverBus(busDriverName, Misc.generatedId());
     }

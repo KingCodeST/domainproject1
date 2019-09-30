@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.location.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.location.CampusRepository;
 import za.ac.cputassignment.Repository.location.impl.CampusRepositoryImpl;
@@ -8,8 +10,9 @@ import za.ac.cputassignment.service.location.CampusService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class CampusServiceImpl implements CampusService {
+
 
     private static CampusServiceImpl service=null;
     private CampusRepository repository;
@@ -44,6 +47,14 @@ public class CampusServiceImpl implements CampusService {
     @Override
     public Campus update(Campus campus) {
         return this.repository.update(campus);
+    }
+
+    public Campus retrieveByDesc(String colors) {
+        Set<Campus> campuss = getAll();
+        for (Campus campus : campuss) {
+            if (campus.getName().equalsIgnoreCase(colors)) return campus;
+        }
+        return null;
     }
 
     @Override

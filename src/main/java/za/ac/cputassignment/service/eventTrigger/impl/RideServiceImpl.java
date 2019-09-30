@@ -1,5 +1,7 @@
 package za.ac.cputassignment.service.eventTrigger.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.eventTrigger.RideRepository;
 import za.ac.cputassignment.Repository.eventTrigger.impl.RideRepositoryImpl;
@@ -10,8 +12,9 @@ import za.ac.cputassignment.service.eventTrigger.RideStatusService;
 
 import java.util.Set;
 
-@Service("serviceImpl")
+
 public class RideServiceImpl implements RideService {
+
 
     private static RideServiceImpl service=null;
     private RideRepository repository;
@@ -46,6 +49,14 @@ public class RideServiceImpl implements RideService {
     @Override
     public Ride update(Ride ride) {
         return this.repository.update(ride);
+    }
+
+    public Ride retrieveByDesc(String colors) {
+        Set<Ride> rides = getAll();
+        for (Ride ride : rides) {
+            if (ride.getRideNumber().equalsIgnoreCase(colors)) return ride;
+        }
+        return null;
     }
 
     @Override

@@ -6,8 +6,9 @@ import za.ac.cputassignment.util.Misc;
 import java.util.Date;
 
 public class DriverLicenseFactory {
-
-    public static DriverLicense GenericBuilder(String code, Date expirationDate)
+        private static String code;
+   private static Date expirationDate;
+    public static DriverLicense GenericBuilder(String driverLicense)
     {
         return new DriverLicense.Builder()
 

@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.person.Gender;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class GenderRepositoryImpl implements GenderRepository {
 
     private static GenderRepositoryImpl repository = null;

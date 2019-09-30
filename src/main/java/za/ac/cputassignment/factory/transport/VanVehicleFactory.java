@@ -4,14 +4,15 @@ import za.ac.cputassignment.domain.transport.VanVehicle;
 
 public class VanVehicleFactory {
 
-    public static VanVehicle BuilderGeneric(String van)
+    public static VanVehicle BuilderGeneric(String van,String id)
     {
 
-        return  new VanVehicle.Builder()
-
-                .VehicleVan(van)
-                .build();
+        return  new VanVehicle(id);
 
 
+    }
+
+    public static VanVehicle BuilderGeneric(String vanVehicle) {
+        return  new VanVehicle(vanVehicle);
     }
 }

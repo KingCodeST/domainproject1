@@ -7,7 +7,7 @@ import za.ac.cputassignment.domain.location.SportField;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class SportFieldRepositoryImpl implements SportFieldRepository {
 
     private static SportFieldRepositoryImpl repository =null;

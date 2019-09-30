@@ -3,8 +3,9 @@ package za.ac.cputassignment.factory.person;
 import za.ac.cputassignment.domain.person.Student;
 
 public class StudentFactory {
-
-    public  static Student getStudent(String studnum,String firstname,String lastname,int age)
+    private static String studnum, firstname, lastname;
+    private static  int age;
+    public  static Student getStudent(String student)
     {
                 return new Student.Builder()
                                    .studentNum(studnum)

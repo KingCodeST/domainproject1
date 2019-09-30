@@ -9,7 +9,7 @@ import za.ac.cputassignment.domain.transport.DiskLicense;
 import java.util.HashSet;
 import java.util.Set;
 
-@Repository("InMemory")
+
 public class DriverLicenseRepositoryImpl implements DriverLicenseRepository {
 
 
