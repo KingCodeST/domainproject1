@@ -45,8 +45,8 @@ public class HGSecurity extends WebSecurityConfigurerAdapter {
     protected  void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
                 .antMatchers("/admin").hasRole("ADMIN")
-                .antMatchers("/studet").hasAnyRole("USER","ADMIN")
-                .antMatchers("/").permitAll()
+                .antMatchers("/studet","/arlertinfor").hasAnyRole("USER","ADMIN")
+                .antMatchers("/","domainproject1").permitAll()
                 .and().formLogin();
 
 

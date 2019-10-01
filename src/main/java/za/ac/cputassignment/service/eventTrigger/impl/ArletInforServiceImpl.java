@@ -11,10 +11,11 @@ import za.ac.cputassignment.service.eventTrigger.ArletInforService;
 
 import java.util.Set;
 
-
+@Service("ServiceArletInforImpl")
 public class ArletInforServiceImpl implements ArletInforService {
 
-
+    @Autowired
+    @Qualifier("InMemory")
     private static ArletInforServiceImpl service=null;
     private ArletInforRepository repository;
 
