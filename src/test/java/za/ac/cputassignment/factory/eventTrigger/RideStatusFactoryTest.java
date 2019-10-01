@@ -19,9 +19,9 @@ public class RideStatusFactoryTest {
     }
 
     @Test
-    public void genericBuilder(boolean n) {
-   //   RideStatus mane = RideStatusFactory.GenericBuilder();
-   //   System.out.println(mane.getRideStatusId());
-
+    public void genericBuilder() {
+        RideStatus ride=RideStatusFactory.GenericBuilder(Misc.generatedId());
+        System.out.println(ride);
+        Assert.assertNotNull(ride);
     }
 }

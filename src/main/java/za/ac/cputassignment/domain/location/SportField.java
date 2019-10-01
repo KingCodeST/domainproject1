@@ -69,6 +69,16 @@ public class SportField  {
             return  this;
         }
 
+        public Builder copy(SportField sportField)
+        {
+            this.fname =sportField.fname;
+            this.address=sportField.address;
+            this.sFieldID=sportField.sFieldID;
+            return this;
+
+        }
+
+
         public SportField build()
         {
             return  new SportField(this);

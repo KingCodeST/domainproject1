@@ -6,7 +6,7 @@ import za.ac.cputassignment.util.Misc;
 public class VanFactory {
 
 
-        private static String id, brand, numPlate;
+        private static String  brand, numPlate;
         private static double patrol;
     public static Van getVan(String van)
     {

@@ -4,7 +4,7 @@ import za.ac.cputassignment.domain.location.CampusLocation;
 import za.ac.cputassignment.util.Misc;
 
 public class CampusLocationFactory {
-        private static String address, campusLocationId;
+        private static String address;
     public static CampusLocation GenericBuilder(String campusLocation )
     {
         return new CampusLocation(address, Misc.generatedId());

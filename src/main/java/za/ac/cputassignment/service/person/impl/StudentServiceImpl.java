@@ -1,6 +1,5 @@
 package za.ac.cputassignment.service.person.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.person.StudentRepository;
@@ -10,10 +9,10 @@ import za.ac.cputassignment.service.person.StudentService;
 
 import java.util.Set;
 
-
+@Service
 public class StudentServiceImpl implements StudentService {
 
-
+    @Qualifier("InMemory")
     private static StudentServiceImpl service=null;
     private StudentRepository repository;
 
@@ -49,10 +48,10 @@ public class StudentServiceImpl implements StudentService {
         return this.repository.update(objectEntity);
     }
 
-    public Student retrieveByDesc(String colors) {
+    public String retrieveByDesc(String colors) {
         Set<Student> students = getAll();
         for (Student student : students) {
-            if (student.getFirstname().equalsIgnoreCase(colors)) return student;
+            if (student.getFirstname().equalsIgnoreCase(colors)){}
         }
         return null;
     }

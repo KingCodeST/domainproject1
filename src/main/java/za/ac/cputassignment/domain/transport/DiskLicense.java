@@ -2,12 +2,13 @@ package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.util.Date;
 import java.util.Objects;
 
 @EntityScan
 public class DiskLicense {
 
-    private String experationDate;
+    private Date experationDate;
     private String code;
 
 
@@ -19,7 +20,7 @@ public class DiskLicense {
         this.code = builder.code;
     }
 
-    public String getExperationDate() {
+    public Date getExperationDate() {
         return experationDate;
     }
 
@@ -29,10 +30,10 @@ public class DiskLicense {
 
     public  static class Builder{
 
-        private String experationDate;
+        private Date experationDate;
         private String code;
 
-        public Builder experationDate(String experationDate)
+        public Builder experationDate(Date experationDate)
         {
             this.experationDate =experationDate;
             return this;

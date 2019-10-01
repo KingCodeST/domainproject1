@@ -13,7 +13,7 @@ public class VehicleRepositoryImpl implements VehicleService {
     private static VehicleRepositoryImpl repository = null;
     private Set<Vehicle> vehicleSet;
 
-    private VehicleRepositoryImpl() {
+    private  VehicleRepositoryImpl() {
         this.vehicleSet = new HashSet<>();
     }
 

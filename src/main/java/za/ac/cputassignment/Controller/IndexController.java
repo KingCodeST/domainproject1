@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-    @RequestMapping(value = {"/","/domainproject1"})
+    @GetMapping(value = {"/"})
  //   @ResponseBody
     public ResponseEntity<String> home(){
         return new ResponseEntity<>("welcome to HG app!", HttpStatus.OK);

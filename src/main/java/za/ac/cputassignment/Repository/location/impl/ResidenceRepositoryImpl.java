@@ -1,6 +1,6 @@
 package za.ac.cputassignment.Repository.location.impl;
 
-import org.springframework.stereotype.Repository;
+
 import za.ac.cputassignment.Repository.location.ResidenceRepository;
 import za.ac.cputassignment.domain.location.Residence;
 

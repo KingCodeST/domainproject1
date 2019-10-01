@@ -1,10 +1,13 @@
 package za.ac.cputassignment.Repository.location.impl;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.*;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SpecialLocationLRepositoryImplTest {
 
     @Before

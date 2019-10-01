@@ -1,6 +1,6 @@
 package za.ac.cputassignment.Repository.eventTrigger.impl;
 
-import org.springframework.stereotype.Repository;
+
 import za.ac.cputassignment.Repository.eventTrigger.RideStatusRepository;
 import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 

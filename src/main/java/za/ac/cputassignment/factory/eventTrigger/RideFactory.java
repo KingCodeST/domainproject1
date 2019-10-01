@@ -5,11 +5,12 @@ import za.ac.cputassignment.util.Misc;
 
 public class RideFactory {
 
+
     public static Ride GenericBuilder(String rides)
     {
         return  new Ride.Builder()
-                                .setRideNumber(Misc.generatedId())
-
+                                .setRideNumber(rides)
+                              .setNameTrip(rides)
 
                                 .build();
     }
