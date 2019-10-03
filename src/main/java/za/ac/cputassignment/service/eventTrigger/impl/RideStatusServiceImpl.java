@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.eventTrigger.RideStatusRepository;
-import za.ac.cputassignment.Repository.eventTrigger.impl.RideStatusRepositoryImpl;
+
 import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 import za.ac.cputassignment.service.eventTrigger.RideService;
 import za.ac.cputassignment.service.eventTrigger.RideStatusService;
@@ -12,55 +12,9 @@ import za.ac.cputassignment.service.eventTrigger.RideStatusService;
 import java.util.Set;
 
 
-public class RideStatusServiceImpl implements RideStatusService {
-
-
-    private static RideStatusServiceImpl service=null;
-    private RideStatusRepository repository;
-
-    private RideStatusServiceImpl(){
-        this.repository = RideStatusRepositoryImpl.getRepository();
-    }
-
-    public static RideStatusServiceImpl getService(){
-        if(service ==null) service =new RideStatusServiceImpl();
-        return service;
-    }
+public class RideStatusServiceImpl {
 
 
 
-    @Override
-    public Set<RideStatus> getAll() {
-        return this.repository.getAll();
-    }
 
-    @Override
-    public RideStatus create(RideStatus rideStatus) {
-
-        return this.repository.create(rideStatus);
-    }
-
-    @Override
-    public RideStatus read(String s) {
-        return this.repository.read(s);
-    }
-
-    @Override
-    public RideStatus update(RideStatus rideStatus) {
-        return this.repository.update(rideStatus);
-    }
-
-    public RideStatus retrieveByDesc(String colors) {
-        Set<RideStatus> rideStatuss = getAll();
-        for (RideStatus rideStatus : rideStatuss) {
-            if (rideStatus.getRideStatusId().equalsIgnoreCase(colors)) return rideStatus;
-        }
-        return null;
-    }
-
-    @Override
-    public void delete(String s) {
-        this.repository.delete(s);
-
-    }
 }
