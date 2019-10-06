@@ -19,7 +19,7 @@ public class ArletInforControllerTest {
 
     @Test
     public void create() {
-        ArletInfor arletInfor = ArletInforFactory.GenericBuilder("Green");
+        ArletInfor arletInfor = ArletInforFactory.GenericBuilder("Green","Gray","Brown");
 
         ResponseEntity<ArletInfor> responseEntity = restTemplate.postForEntity(baseURL + "/create", arletInfor, ArletInfor.class);
         assertNotNull(responseEntity);

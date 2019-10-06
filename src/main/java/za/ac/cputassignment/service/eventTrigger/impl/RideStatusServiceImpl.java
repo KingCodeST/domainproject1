@@ -9,12 +9,40 @@ import za.ac.cputassignment.domain.eventTrigger.RideStatus;
 import za.ac.cputassignment.service.eventTrigger.RideService;
 import za.ac.cputassignment.service.eventTrigger.RideStatusService;
 
+import java.util.List;
 import java.util.Set;
 
 
-public class RideStatusServiceImpl {
+public class RideStatusServiceImpl implements RideStatusService {
 
 
+    @Override
+    public RideStatus retrieveByDesc(String rideStatusDesc) {
+        return null;
+    }
 
+    @Override
+    public List<RideStatus> getAll() {
+        return null;
+    }
 
+    @Override
+    public RideStatus create(RideStatus rideStatus) {
+        return null;
+    }
+
+    @Override
+    public RideStatus read(String s) {
+        return null;
+    }
+
+    @Override
+    public RideStatus update(RideStatus rideStatus) {
+        return null;
+    }
+
+    @Override
+    public void delete(String s) {
+
+    }
 }

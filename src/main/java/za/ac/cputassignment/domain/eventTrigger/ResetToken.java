@@ -2,9 +2,13 @@ package za.ac.cputassignment.domain.eventTrigger;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Id;
+
 @EntityScan
 public class ResetToken {
 
+    @Id
+    private String id;
     private String token;
 
     public ResetToken(String token) {

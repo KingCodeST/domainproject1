@@ -3,12 +3,15 @@ package za.ac.cputassignment.domain.person;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import za.ac.cputassignment.domain.transport.DiskLicense;
 
+import javax.persistence.Id;
 import java.text.DateFormat;
 import java.util.Date;
 
 @EntityScan
 public class DriverLicense {
-    
+
+    @Id
+    private String id;
     private String code;
     private Date expirationDate;
     

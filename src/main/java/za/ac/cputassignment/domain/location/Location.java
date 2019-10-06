@@ -2,11 +2,14 @@ package za.ac.cputassignment.domain.location;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Id;
 import java.util.Objects;
 
 @EntityScan
 public class Location {
 
+    @Id
+    private String id;
     private String  locationId,campusName,residenceName,specialLocationName,sportFieldName;
 
     private Location(){}

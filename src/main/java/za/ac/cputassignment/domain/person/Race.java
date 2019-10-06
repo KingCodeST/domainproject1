@@ -2,9 +2,12 @@ package za.ac.cputassignment.domain.person;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Id;
+
 @EntityScan
 public class Race {
 
+    @Id
     private String raceGroup, id;
 
     private Race(){}

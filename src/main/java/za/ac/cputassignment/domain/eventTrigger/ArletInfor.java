@@ -11,7 +11,7 @@ public class ArletInfor {
 
     private String alertInforId;
     private String blue,red,green;
-    private String simpledate;
+   // private Date simpledate;
 
 
     private ArletInfor(){}
@@ -23,7 +23,7 @@ public class ArletInfor {
         this.blue =builder.blue;
         this.green =builder.green;
         this.red =builder.red;
-        this.simpledate =builder.simpledate;
+     //   this.simpledate =builder.simpledate;
         this.alertInforId=builder.alertInforId;
 
     }
@@ -43,9 +43,9 @@ public class ArletInfor {
         return green;
     }
 
-    public String getSimpledate() {
-        return simpledate;
-    }
+//    public Date getSimpledate() {
+//        return simpledate;
+//    }
 
     public String getAlertInforId() {
         return alertInforId;
@@ -56,7 +56,7 @@ public class ArletInfor {
 
         private String alertInforId;
         private String blue,red,green;
-        private String simpledate;
+      //  private Date simpledate;
 
         public Builder setAlertInforId(String alertInforId)
         {
@@ -82,18 +82,18 @@ public class ArletInfor {
             return this;
         }
 
-        public Builder simpledate(String simpledate)
-        {
-            this.simpledate =simpledate;
-            return this;
-        }
+//        public Builder simpledate(Date simpledate)
+//        {
+//            this.simpledate =simpledate;
+//            return this;
+//        }
 
         public Builder copy(ArletInfor arletInfor){
             this.alertInforId=arletInfor.alertInforId;
             this.blue =arletInfor.blue;
             this.green =arletInfor.green;
             this.red =arletInfor.red;
-            this.simpledate =arletInfor.simpledate;
+        //    this.simpledate =arletInfor.simpledate;
             return this;
         }
 
@@ -113,7 +113,7 @@ public class ArletInfor {
                 ", blue='" + blue + '\'' +
                 ", red='" + red + '\'' +
                 ", green='" + green + '\'' +
-                ", simpledate='" + simpledate + '\'' +
+        //        ", simpledate='" + simpledate + '\'' +
                 '}';
     }
 }

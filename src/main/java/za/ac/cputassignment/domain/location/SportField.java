@@ -3,12 +3,14 @@ package za.ac.cputassignment.domain.location;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 
+import javax.persistence.Id;
 import java.util.Objects;
 
 @EntityScan
 public class SportField  {
 
-
+    @Id
+    private String id;
     private String sFieldID;
 
     private String fname;

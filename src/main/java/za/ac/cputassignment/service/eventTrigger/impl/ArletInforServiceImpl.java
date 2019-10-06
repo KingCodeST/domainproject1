@@ -9,10 +9,40 @@ import za.ac.cputassignment.Repository.eventTrigger.ArletInforRepository;
 import za.ac.cputassignment.domain.eventTrigger.ArletInfor;
 import za.ac.cputassignment.service.eventTrigger.ArletInforService;
 
+import java.util.List;
 import java.util.Set;
 
 @Service("ServiceArletInforImpl")
-public class ArletInforServiceImpl {
+public class ArletInforServiceImpl implements ArletInforService {
 
 
+    @Override
+    public ArletInfor retrieveByDesc(String arletDesc) {
+        return null;
+    }
+
+    @Override
+    public List<ArletInfor> getAll() {
+        return null;
+    }
+
+    @Override
+    public ArletInfor create(ArletInfor arletInfor) {
+        return null;
+    }
+
+    @Override
+    public ArletInfor read(String s) {
+        return null;
+    }
+
+    @Override
+    public ArletInfor update(ArletInfor arletInfor) {
+        return null;
+    }
+
+    @Override
+    public void delete(String s) {
+
+    }
 }

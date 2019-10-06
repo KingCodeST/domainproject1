@@ -20,40 +20,7 @@ import java.util.Set;
 @RequestMapping("/domainproject1/lookup/arletinfor")
 public class ArletInforController {
 
-    @Autowired
-    @Qualifier("ServiceArletInforImpl")
-    private ArletInforServiceImpl service;
 
-    @GetMapping("/create/{alertype}")
-    @ResponseBody
-    public ArletInfor create(@PathVariable  String alertype, double totalPrice){
-        ArletInfor booking = ArletInforFactory.GenericBuilder(alertype);
-        return service.create(booking);
-    }
-
-    @PostMapping("/update")
-    @ResponseBody
-    public ArletInfor update(ArletInfor booking){
-        return service.update(booking);
-    }
-
-    @PostMapping("/delete")
-    @ResponseBody
-    public void delete(String reservationID){
-        service.delete(reservationID);
-    }
-
-    @PostMapping("/read")
-    @ResponseBody
-    public ArletInfor read(String reservationID){
-        return service.read(reservationID);
-    }
-
-    @GetMapping("/getAll")
-    @ResponseBody
-    public Set<ArletInfor> getAll(){
-        return service.getAll();
-    }
 
 
 }

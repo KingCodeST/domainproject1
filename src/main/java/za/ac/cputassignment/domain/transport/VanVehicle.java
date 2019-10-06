@@ -2,13 +2,16 @@ package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Id;
 import java.util.Objects;
 
 @EntityScan
 public class VanVehicle {
 
-    private String vehicleVan;
+    @Id
     private String id;
+    private String vehicleVan;
+
 
     public VanVehicle(String vehicleVan, String id) {
         this.vehicleVan = vehicleVan;

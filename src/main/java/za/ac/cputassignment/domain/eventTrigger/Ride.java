@@ -3,6 +3,7 @@ package za.ac.cputassignment.domain.eventTrigger;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import za.ac.cputassignment.domain.location.Location;
 
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -10,6 +11,8 @@ import java.util.Objects;
 @EntityScan
 public class Ride {
 
+    @Id
+    private String id;
     private String rideNumber;
     private String nameTrip;
 

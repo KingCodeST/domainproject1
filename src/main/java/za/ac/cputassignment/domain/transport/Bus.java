@@ -2,11 +2,15 @@ package za.ac.cputassignment.domain.transport;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Id;
+
 
 @EntityScan
 public class Bus   {
 
 
+    @Id
+    private String id;
 
     private String brandName;
     private String modelNo;
