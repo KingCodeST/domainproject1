@@ -19,30 +19,6 @@ import za.ac.cputassignment.service.eventTrigger.impl.RideStatusServiceImpl;
 @RestController
 @RequestMapping("/domainproject1/ride")
 public class RideController {
-//
-//    @Autowired
-//    RideServiceImpl rideStatusService;
-//
-//    @PostMapping(value = "/create/{alertinfor}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity createArletInfor(@PathVariable String rides)
-//    {
-//        System.out.println("Entered Value: "+rides);
-//        LogEvent logEvent= LogEventFactory.BuildGenericResponseObj(HttpStatus.OK.toString(),"ArletInfor created!");
-//        Ride savedRide = null;
-//        if(rides == null|| rides.trim().isEmpty()||rides.equalsIgnoreCase("null")){
-//            logEvent.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-//            logEvent.setResponseDescription("Provide a Alertinfor!");
-//        }else{
-//            savedRide = rideStatusService.retrieveByDesc(rides);
-//        }if (savedRide !=null){
-//        logEvent.setResponseDescription("Arlet already exist");
-//    }else {
-//        savedRide = RideFactory.GenericBuilder(rides);
-//        savedRide =rideStatusService.create(savedRide);
-//    }
-//        logEvent.setResponse(savedRide);
-//
-//        return ResponseEntity.ok(logEvent);
-//    }
+
     
 }

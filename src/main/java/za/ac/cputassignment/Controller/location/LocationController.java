@@ -17,31 +17,6 @@ import za.ac.cputassignment.service.location.impl.LocationServiceImpl;
 @RestController
 @RequestMapping("/domainproject1/location")
 public class LocationController {
-//
-//    @Autowired
-//    LocationServiceImpl locationSevice;
-//
-//    @PostMapping(value = "/create/{location}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity createArletInfor(@PathVariable String campuslocation)
-//    {
-//        System.out.println("Entered Value: "+campuslocation);
-//        LogEvent logEvent= LogEventFactory.BuildGenericResponseObj(HttpStatus.OK.toString(),"location created!");
-//        Location saveLocation = null;
-//        if(campuslocation == null|| campuslocation.trim().isEmpty()||campuslocation.equalsIgnoreCase("null")){
-//            logEvent.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-//            logEvent.setResponseDescription("Provide a location!");
-//        }else{
-//            saveLocation = locationSevice.retrieveByDesc(campuslocation);
-//        }if (saveLocation !=null){
-//        logEvent.setResponseDescription("location already exist");
-//    }else {
-//        saveLocation = LocationFactory.GenericBuilder(campuslocation);
-//        saveLocation =locationSevice.create(saveLocation);
-//    }
-//        logEvent.setResponse(saveLocation);
-//
-//        return ResponseEntity.ok(logEvent);
-//    }
-//
+
 
 }

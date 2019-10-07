@@ -18,29 +18,5 @@ import za.ac.cputassignment.service.eventTrigger.impl.RideStatusServiceImpl;
 @RequestMapping("/domainproject1/ridestatus")
 public class RideStatusController {
 
-//    @Autowired
-//    RideStatusServiceImpl rideStatusService;
-//
-//    @PostMapping(value = "/create/{ridestatus}", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity createArletInfor(@PathVariable String ridestatus)
-//    {
-//        System.out.println("Entered Value: "+ridestatus);
-//        LogEvent logEvent= LogEventFactory.BuildGenericResponseObj(HttpStatus.OK.toString(),"RideStatus created!");
-//        RideStatus savedRStatus = null;
-//        if(ridestatus == null|| ridestatus.trim().isEmpty()||ridestatus.equalsIgnoreCase("null")){
-//            logEvent.setResponseCode(HttpStatus.PRECONDITION_FAILED.toString());
-//            logEvent.setResponseDescription("Provide a RideStatus!");
-//        }else{
-//            savedRStatus = rideStatusService.retrieveByDesc(ridestatus);
-//        }if (savedRStatus !=null){
-//        logEvent.setResponseDescription("rideStatus already exist");
-//    }else {
-//        savedRStatus = RideStatusFactory.GenericBuilder(ridestatus);
-//        savedRStatus =rideStatusService.create(savedRStatus);
-//    }
-//        logEvent.setResponse(savedRStatus);
-//
-//        return ResponseEntity.ok(logEvent);
-//    }
 
 }

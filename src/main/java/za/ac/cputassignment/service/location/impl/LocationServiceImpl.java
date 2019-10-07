@@ -9,39 +9,60 @@ import za.ac.cputassignment.domain.location.Location;
 import za.ac.cputassignment.service.location.LocationService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 
 public class LocationServiceImpl implements LocationService  {
 
+    private static LocationService locationService= null;
+
+    @Autowired
+    private LocationRepository campusLocationRepository;
+
+    private LocationServiceImpl() {
+    }
+
+    public static LocationService getVehicleService(){
+        if (locationService ==null) locationService=new LocationServiceImpl();
+        return locationService;
+    }
 
     @Override
-    public Location retrieveByDesc(String locationDesc) {
+    public Location retrieveByDesc(String vehicleDesc) {
+        List<Location> campusLocations= getAll();
+        for(Location campusRepository: campusLocations)
+        {
+            if (campusRepository.getResidenceName().equalsIgnoreCase(vehicleDesc))
+                return  campusRepository;
+        }
         return null;
     }
 
     @Override
     public List<Location> getAll() {
-        return null;
+        return this.campusLocationRepository.findAll();
     }
 
     @Override
-    public Location create(Location location) {
-        return null;
+    public Location create(Location campusRepository) {
+
+        return this.campusLocationRepository.save(campusRepository);
     }
 
     @Override
     public Location read(String s) {
-        return null;
+        Optional<Location> optVehicle =this.campusLocationRepository.findById(s);
+        return optVehicle.orElse(null);
     }
 
     @Override
-    public Location update(Location location) {
-        return null;
+    public Location update(Location campusRepository) {
+        return this.campusLocationRepository.save(campusRepository);
     }
 
     @Override
     public void delete(String s) {
-
+        this.campusLocationRepository.deleteById(s);
     }
 }

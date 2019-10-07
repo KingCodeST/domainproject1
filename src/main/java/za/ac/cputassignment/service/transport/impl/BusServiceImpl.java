@@ -11,40 +11,62 @@ import za.ac.cputassignment.service.transport.BusInforService;
 import za.ac.cputassignment.service.transport.BusService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 
 public class BusServiceImpl implements BusService {
 
+    private static BusService busService= null;
+
+    @Autowired
+    private BusRepository busRepository;
+
+    private BusServiceImpl() {
+    }
+
+    public static BusService getVehicleService(){
+        if (busService ==null) busService=new BusServiceImpl();
+        return busService;
+    }
 
     @Override
-    public Bus retrieveByDesc(String busDesc) {
+    public Bus retrieveByDesc(String vehicleDesc) {
+        List<Bus> campusLocations= getAll();
+        for(Bus campusRepository: campusLocations)
+        {
+            if (campusRepository.getModelNo().equalsIgnoreCase(vehicleDesc))
+                return  campusRepository;
+        }
         return null;
     }
 
     @Override
     public List<Bus> getAll() {
-        return null;
+        return this.busRepository.findAll();
     }
 
     @Override
-    public Bus create(Bus bus) {
-        return null;
+    public Bus create(Bus campusRepository) {
+
+        return this.busRepository.save(campusRepository);
     }
 
     @Override
     public Bus read(String s) {
-        return null;
+        Optional<Bus> optVehicle =this.busRepository.findById(s);
+        return optVehicle.orElse(null);
     }
 
     @Override
-    public Bus update(Bus bus) {
-        return null;
+    public Bus update(Bus campusRepository) {
+        return this.busRepository.save(campusRepository);
     }
 
     @Override
     public void delete(String s) {
-
+        this.busRepository.deleteById(s);
     }
+
 }
 

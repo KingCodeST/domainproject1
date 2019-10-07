@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 public interface CampusService  extends IService<Campus,String> {
-    Campus retrieveByDesc(String campusDesc);
-    List<Campus> getAll();
+  //  Campus retrieveByDesc(String campusDesc);
+    Set<Campus> getAll();
 }
