@@ -17,7 +17,6 @@ import java.util.Set;
 
 
 @ComponentScan
-
 public class CampusServiceImpl implements CampusService{
 
     @Autowired

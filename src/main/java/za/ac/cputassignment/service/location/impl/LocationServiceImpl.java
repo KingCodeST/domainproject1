@@ -15,9 +15,10 @@ import java.util.Set;
 
 public class LocationServiceImpl implements LocationService  {
 
+    @Autowired
     private static LocationService locationService= null;
 
-    @Autowired
+
     private LocationRepository campusLocationRepository;
 
     private LocationServiceImpl() {
