@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 import za.ac.cputassignment.Repository.location.CampusRepository;
 
 import za.ac.cputassignment.domain.location.Campus;
@@ -16,7 +17,7 @@ import java.util.Optional;
 import java.util.Set;
 
 
-@ComponentScan
+@Service("CampusServiceImpl")
 public class CampusServiceImpl implements CampusService{
 
     @Autowired
