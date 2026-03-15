@@ -1,36 +1,40 @@
 package za.ac.cputassignment.Controller;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
 
-@EnableAutoConfiguration
 @RestController
+@RequestMapping("/")
 public class IndexController {
 
-    @RequestMapping(value = {"/","/domainproject1"})
- //   @ResponseBody
-    public ResponseEntity<String> home(){
-        return new ResponseEntity<>("welcome to HG app!", HttpStatus.OK);
+    @RequestMapping(value = {"", "/"})
+    public ResponseEntity<Map<String, String>> home() {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Welcome to Student Shuttles API");
+        response.put("version", "1.0.0");
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/student")
-    public String student(){
-        return ("<h1> Welcome Student</h1>");
+    public ResponseEntity<Map<String, String>> student() {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Welcome Student");
+        response.put("role", "USER");
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/admin")
-    public  String admin()
-    {
-        return ("<h1> Welcome Admin </h1>");
+    public ResponseEntity<Map<String, String>> admin() {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Welcome Admin");
+        response.put("role", "ADMIN");
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
-
-
 
 }

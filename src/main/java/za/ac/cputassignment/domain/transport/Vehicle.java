@@ -1,27 +1,47 @@
 package za.ac.cputassignment.domain.transport;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
-@EntityScan
+@Entity
+@Table(name = "vehicles", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "vehicleId")
+})
 public class Vehicle {
 
-
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String typeVehicle,disklicense,capacity,vehicleId;
+
+    @Column(nullable = false, length = 50)
+    @NotBlank(message = "Vehicle type is required")
+    private String typeVehicle;
+
+    @Column(nullable = false, length = 30)
+    @NotBlank(message = "Disk license is required")
+    private String diskLicense;
+
+    @Column(nullable = false)
+    @Min(value = 1, message = "Capacity must be at least 1")
+    @Max(value = 200, message = "Capacity cannot exceed 200")
+    private int capacity;
+
+    @Column(nullable = false, unique = true, length = 20)
+    @NotBlank(message = "Vehicle ID is required")
+    private String vehicleId;
 
 
     private Vehicle(){}
 
     private Vehicle(Builder builder){
-        this.typeVehicle =builder.typeVehicle;
-       this.disklicense=builder.disklicense;
-       this.capacity=builder.capacity;
-       this.vehicleId =builder.vehicleId;
+        this.typeVehicle = builder.typeVehicle;
+        this.diskLicense = builder.diskLicense;
+        this.capacity = builder.capacity;
+        this.vehicleId = builder.vehicleId;
     }
+
+    private Vehicle() {}
 
     public String getVehicleId() {
         return vehicleId;
@@ -31,47 +51,53 @@ public class Vehicle {
         return typeVehicle;
     }
 
-    public String getDisklicense() {
-        return disklicense;
+    public String getDiskLicense() {
+        return diskLicense;
     }
 
-    public String getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public static class Builder{
-        private String typeVehicle,disklicense,capacity,vehicleId;
+        private String typeVehicle;
+        private String diskLicense;
+        private int capacity;
+        private String vehicleId;
 
-        public Builder setTypeVehicle(String typeVehicle)
-        {
-            this.typeVehicle =typeVehicle;
+        public Builder typeVehicle(String typeVehicle) {
+            this.typeVehicle = typeVehicle;
             return this;
         }
 
-        public Builder setVicleId(String vehicleId)
-        {
-            this.vehicleId =vehicleId;
+        public Builder vehicleId(String vehicleId) {
+            this.vehicleId = vehicleId;
             return this;
         }
 
-        public Builder setDisklicense(String disklicense)
-        {
-            this.disklicense =disklicense;
+        public Builder diskLicense(String diskLicense) {
+            this.diskLicense = diskLicense;
             return this;
         }
 
-        public Builder setCapacity(String capacity)
-        {
-            this.capacity =capacity;
+        public Builder capacity(int capacity) {
+            this.capacity = capacity;
             return this;
         }
 
-        public Builder copy(Vehicle vehicle)
-        {
-            this.capacity =vehicle.capacity;
-            this.disklicense =vehicle.disklicense;
-            this.typeVehicle=vehicle.typeVehicle;
-            this.vehicleId=vehicle.vehicleId;
+        public Builder copy(Vehicle vehicle) {
+            this.capacity = vehicle.capacity;
+            this.diskLicense = vehicle.diskLicense;
+            this.typeVehicle = vehicle.typeVehicle;
+            this.vehicleId = vehicle.vehicleId;
             return this;
         }
 
@@ -88,14 +114,22 @@ public class Vehicle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vehicle vehicle = (Vehicle) o;
-        return Objects.equals(typeVehicle, vehicle.typeVehicle) &&
-                Objects.equals(disklicense, vehicle.disklicense) &&
-                Objects.equals(capacity, vehicle.capacity) &&
-                vehicleId.equals(vehicle.vehicleId);
+        return vehicleId.equals(vehicle.vehicleId);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(vehicleId);
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id='" + id + '\'' +
+                ", typeVehicle='" + typeVehicle + '\'' +
+                ", diskLicense='" + diskLicense + '\'' +
+                ", capacity=" + capacity +
+                ", vehicleId='" + vehicleId + '\'' +
+                '}';
     }
 }

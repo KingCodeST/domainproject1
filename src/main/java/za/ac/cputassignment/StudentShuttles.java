@@ -9,20 +9,23 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
 
-//@Configuration
+@Configuration
 @EntityScan("za.ac.cputassignment.domain")
-@EnableJpaRepositories (basePackages = "za.ac.cputassignment.Repository" )
+@EnableJpaRepositories(basePackages = "za.ac.cputassignment.Repository")
+@ComponentScan(basePackages = {
+        "za.ac.cputassignment.Controller",
+        "za.ac.cputassignment.service",
+        "za.ac.cputassignment.security"
+})
 @SpringBootApplication
 public class StudentShuttles {
 
     @Bean
-    public RestTemplate restTemplate()
-    {
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         SpringApplication.run(StudentShuttles.class, args);
     }
 

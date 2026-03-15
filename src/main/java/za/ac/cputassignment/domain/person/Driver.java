@@ -1,19 +1,47 @@
 package za.ac.cputassignment.domain.person;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
-
-@EntityScan
+@Entity
+@Table(name = "drivers", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "driverID"),
+        @UniqueConstraint(columnNames = "licenseCode")
+})
 public class Driver {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String driverID, driverName,driverLastName,licanseCode;
+
+    @Column(nullable = false, unique = true, length = 20)
+    @NotBlank(message = "Driver ID is required")
+    private String driverID;
+
+    @Column(nullable = false, length = 50)
+    @NotBlank(message = "Driver first name is required")
+    @Size(min = 2, max = 50, message = "Name must be 2-50 characters")
+    private String driverName;
+
+    @Column(nullable = false, length = 50)
+    @NotBlank(message = "Driver last name is required")
+    @Size(min = 2, max = 50, message = "Name must be 2-50 characters")
+    private String driverLastName;
+
+    @Column(nullable = false, unique = true, length = 20)
+    @NotBlank(message = "License code is required")
+    private String licenseCode;
+
+    @Column(nullable = false)
+    @Min(value = 18, message = "Driver must be at least 18")
+    @Max(value = 75, message = "Driver must be 75 or younger")
     private int age;
+
+    @Column(length = 20)
     private String gender;
+
+    @Column(length = 20)
     private String race;
 
 
@@ -40,9 +68,17 @@ public class Driver {
         return  driverName;
     }
 
-    public String getLicanseCode()
+    public String getLicenseCode()
     {
-        return  licanseCode;
+        return  licenseCode;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     public int getAge()
     {
@@ -98,9 +134,9 @@ public class Driver {
             return this;
         }
 
-        public Builder licanseCode(String licanseCode)
+        public Builder licenseCode(String licenseCode)
         {
-            this.licanseCode =licanseCode;
+            this.licenseCode = licenseCode;
             return this;
         }
 
@@ -115,7 +151,7 @@ public class Driver {
             this.driverID = driver.driverID;
             this.driverName = driver.driverName;
             this.driverLastName = driver.driverLastName;
-            this.licanseCode = driver.licanseCode;
+            this.licenseCode = driver.licenseCode;
             this.race =driver.race;
             this.gender =driver.gender;
 
@@ -125,7 +161,7 @@ public class Driver {
 
         public Driver build()
         {
-            return new Driver();
+            return new Driver(this);
         }
 
 

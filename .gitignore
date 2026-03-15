@@ -1,0 +1,61 @@
+# IDE and Build Tools
+.idea/
+.vscode/
+*.iml
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Maven
+.m2/
+mvn-dependency-tree.txt
+
+# Database
+*.db
+*.sqlite
+*.h2.db
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Documentation (except README)
+# Keep README.md only, ignore all other markdown files
+TECHNICAL_CONTEXT.md
+PHASE_2_3_COMPLETION.md
+START_HERE.md
+REFACTORING_CHECKLIST.md
+REFACTORING_COMPLETE.md
+FILE_BY_FILE_CHANGES.md
+*.md
+!README.md
+
+# Docker
+docker-compose.override.yml
+
+# Gradle
+.gradle/
+build/
